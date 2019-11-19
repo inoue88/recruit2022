@@ -24,7 +24,7 @@
     color: var(--white);
   }
   padding: 4rem 0;
-  background: #111;
+  background: var(--primary);
   color: var(--white);
   &__copy-right {
     display: block;

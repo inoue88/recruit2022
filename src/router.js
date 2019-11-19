@@ -6,6 +6,7 @@ import Home from "./views/Home.vue";
 import About from "./views/About.vue";
 import Message from "./views/Message.vue";
 import Culture from "./views/Culture.vue";
+import Job from "./views/Job.vue";
 import Entry from "./views/Entry.vue";
 import Interview from "./views/Interview.vue";
 import InterviewDetail from "./views/InterviewDetail.vue";
@@ -59,16 +60,34 @@ export default new Router({
         footer: Footer,
         default: Interview
       }
+    },
+    {
+      path: "/job",
+      name: "job",
+      components: {
+        header: Header,
+        footer: Footer,
+        default: Job
+      }
+    },
+    {
+      path: "/entry",
+      name: "entry",
+      components: {
+        header: Header,
+        footer: Footer,
+        default: Entry
+      }
+    },
+    {
+      path: "/interview/:id",
+      name: "InterviewDetail",
+      components: {
+        header: Header,
+        default: InterviewDetail,
+        footer: Footer
+      }
     }
-    // {
-    //   path: "/interview/:id",
-    //   name: "InterviewDetail",
-    //   components: {
-    //     header: Header,
-    //     footer: Footer,
-    //     default: InterviewDetail
-    //   }
-    // },
     // {
     //   path: "/entry",
     //   name: "entry",

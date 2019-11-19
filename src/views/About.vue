@@ -13,7 +13,8 @@
       b-container
         .about-sec01
           .about-sec01__img
-            img(src='https://placehold.jp/250x100.png')
+            //- img(src='https://placehold.jp/250x100.png')
+            b-img(v-bind:src="'/img/about/image01.jpg'")
           .about-sec01__body
             h1.about-sec__title 働き方にとらわれず、<br>様々なスタッフが在籍
             p.about-sec__txt ITによって世の中が進歩するとよく言われますが、実際は違うと思っています。すでに進歩を通り越した突然変異が起きる時代です。非連続で誰も想像しなかったことが一気に起きる時代。
@@ -38,9 +39,9 @@
       b-container
         .about-sec02
           .about-sec02__img
-            img(src='https://placehold.jp/300x400.png')
+            b-img(v-bind:src="'/img/about/image02.jpg'")
           .about-sec02__body
-            h1.about-sec__title 働き方にとらわれず、<br>様々なスタッフが在籍
+            h1.about-sec__title 毎年約130%の売上げ拡大
             p.about-sec__txt ITによって世の中が進歩するとよく言われますが、実際は違うと思っています。すでに進歩を通り越した突然変異が起きる時代です。非連続で誰も想像しなかったことが一気に起きる時代。
     section.about-sec
       b-container(data-delighter)
@@ -62,14 +63,14 @@
             td 久利可奈恵
           tr
             th 本社所在地
-            td 
+            td
               |〒102-0083 東京都千代田区麹町3-2 麹町共同ビル3F
           tr
             th 大阪サテライト
             td 〒553-0003 大阪府大阪市福島区福島5-1-1 若杉西梅田ビル10F
           tr
             th 事業内容
-            td 
+            td
               | ○ 人材紹介事業（正社員/契約社員）
               br
               | ○ プロジェクト就労支援事業（フリーランス）
@@ -97,18 +98,15 @@ export default {
 .about-intro {
   margin-bottom: 6rem;
 }
-.home-intro {
-  background: red;
-}
 .about-sec01 {
-  overflow: hidden;
+  // overflow: hidden;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: end;
   align-items: flex-end;
-  height: 439px;
+  // height: 439px;
   margin-bottom: 3rem;
   &__body {
     width: 50%;
@@ -121,11 +119,26 @@ export default {
   }
   &__img {
     width: 80%;
+    padding-top: 35%;
     position: absolute;
-    bottom: 0;
+    overflow: hidden;
+    top: 0;
     right: 0;
     img {
+      position: absolute;
+      top: 0;
+
       width: 100%;
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 100%;
+      padding-top: 50%;
+      background: red;
+      transform: translate(-2rem, 2rem);
+      z-index: -1;
     }
   }
 }
@@ -138,11 +151,11 @@ export default {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: 439px;
+  height: 600px;
   margin-bottom: 3rem;
   flex-direction: row-reverse;
   &__body {
-    width: 50%;
+    width: 70%;
     height: auto;
     /* margin-right: -5%; */
     padding: 2rem;
@@ -151,9 +164,9 @@ export default {
     position: relative;
   }
   &__img {
-    width: 80%;
+    width: 40%;
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     img {
       width: 100%;
@@ -169,7 +182,6 @@ export default {
     line-height: 1.2;
   }
 }
-
 .about-sec {
   margin: 8rem 0;
   &__title {
@@ -199,7 +211,6 @@ export default {
     color: #888;
   }
 }
-
 .aaa {
   background: #eee;
   padding-top: 5rem;

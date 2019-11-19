@@ -1,22 +1,27 @@
 <template lang="pug">
   div
-    router-link.interview-list(v-for="(item, index, n) in Interview" v-bind:key="item.id" v-bind:to="/interview/01")
-      img(src='http://placehold.jp/600x400.png')
+    router-link.interview-list(
+      v-for="(item, index, n) in Interview"
+      v-bind:key="item.id" :to="item.path"
+      v-bind:class="{'interview-list--rev': index % 2 !== 0 }")
+      b-img.interview-list__img(v-bind:src='`/img/interview/image0${index +1 }.jpg`')
+      //- b-img(v-bind:src="'/img/about/image01.jpg'")
       .interview-list__body
         h3.interview-list__title(v-html="item.Title")
         div
-          span.interview-list__dep 2016年入/HRC事業部 CAチーム  
+          span.interview-list__dep {{item.YearEntry}} / {{item.Department}}
         div
-          span.interview-list__name {{item.Name}}
+          h3.interview-list__name {{item.Name}}
           span.interview-list__name-en {{item.NameEn}}
-        .interview-list__count 01
+        .interview-list__count 0{{index +1 }}
 </template>
 
 <script>
+// import InterviewData from "../api/Interview.json";
 import Interview from "../api/Interview.json";
 export default {
   name: "InterviewList",
-  props: ["Title", "Name", "Department", "DataNum"],
+  // props: ["Title", "Name", "Department", "DataNum"],
   data() {
     return {
       Interview: Interview
@@ -29,21 +34,30 @@ export default {
 @import "../assets/scss/custom.scss";
 
 .interview-list {
+  $parent: &;
   display: block;
   margin-bottom: 15rem;
   display: flex;
+  color: var(--body-color);
+  &--rev {
+    flex-direction: row-reverse;
+    #{$parent}__count {
+      left: 0;
+      right: unset;
+    }
+    #{$parent}__body {
+      padding: 6rem 2rem 0 0;
+    }
+  }
 
   &__title {
     line-height: 1.6;
   }
-  // &__img {
-  //   // transform: translateY(-50%);
-  // }
   &__dep {
     border: 1px solid var(--primary);
     color: var(--primary);
     display: inline-block;
-    padding: 0.5rem;
+    padding: 0.5rem 3rem;
   }
   &__count {
     position: absolute;
@@ -52,38 +66,47 @@ export default {
     top: 0;
     line-height: 1;
     font-size: 3rem;
-    letter-spacing: -0.1em;
+    padding-left: 2.4rem;
+    padding-top: 1rem;
+    letter-spacing: 2px;
     &:before {
       content: "case";
       font-size: 12px;
       position: absolute;
-      left: -2.5em;
-      top: -1.4em;
+      left: 0;
+      top: 0;
       letter-spacing: 0.1em;
     }
     &:after {
       content: "";
-      position: absolute;
+      position: relative;
       transform: rotate(-50deg);
       display: block;
       width: 45px;
       height: 1px;
       background: var(--primary);
       right: 1.8rem;
-      top: 2px;
+      top: -2.4rem;
     }
   }
   &__body {
     position: relative;
-    padding: 2rem;
+    padding: 6rem 0 0 2rem;
     display: flex;
     flex-direction: column;
   }
+  &__name {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+  &__name-en {
+    padding-left: 1rem;
+  }
   @include media-breakpoint-up(lg) {
     &__body {
-      padding-top: 6rem;
-      padding-right: 5rem;
-      padding-bottom: 0;
+    }
+    &__img {
+      max-width: 630px;
     }
     &__title {
       margin-bottom: auto;

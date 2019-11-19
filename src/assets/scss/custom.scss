@@ -2,23 +2,27 @@ $grid-breakpoints: (
   xs: 0,
   sm: 480px,
   md: 640px,
-  lg: 1300px,
-  xl: 1300px
+  lg: 1140px,
+  xl: 1140px
 );
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1400px
+  xl: 1140px
 );
 
 $body-color: #292b2e;
-$link-color: $body-color;
+$link-color: #001377;
 $primary: #001377;
+$theme-colors: (
+  "impact": #d61231
+);
 $font-family-sans-serif: Noto Sans JP, "Hiragino Sans", "ヒラギノ角ゴ ProN W3",
   "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Helvetica Neue", Helvetica,
   sans-serif;
 $font-weight-normal: 300;
+$font-weight-bold: 600;
 $headings-font-weight: 600;
 
 // button
@@ -28,6 +32,22 @@ $input-btn-padding-x-lg: 8rem;
 $input-btn-font-size-sm: 0.8125rem;
 $input-btn-padding-y-sm: 0.5rem;
 $input-btn-padding-x-sm: 1rem;
-// @import url("https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP:400,700&display=swap&subset=japanese");
+$btn-font-weight: 600;
+
+// form
+$input-btn-font-size: 0.875rem;
+$input-padding-y: 1rem;
+// $input-line-height: 2aa;
+
+@import url("https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP:400,700&display=swap&subset=japanese");
 @import "node_modules/bootstrap/scss/bootstrap";
 // @import "node_modules/bootstrap-vue/src/index.scss";
+
+@include media-breakpoint-up(lg) {
+  .container--small {
+    width: 918px;
+  }
+}
+p a {
+  text-decoration: underline;
+}

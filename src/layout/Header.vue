@@ -1,20 +1,26 @@
 <template lang="pug">
 header.header
   router-link.header__logo(to="/")
-    img(src='http://placehold.jp/60x60.png')
+    img(src='img/logo.svg')
     span.header__title-sub 2020新卒採用
   input.header__btn(type='checkbox' id='header-btn')
   label.header__icon(for='header-btn')
     span.header__bar
   .header__nav
-    router-link.header__nav-item(to="about")
+    router-link.header__nav-item(to="/about")
+      span.header__reading 私達について
       | about us
-    router-link.header__nav-item(to="message")
+    router-link.header__nav-item(to="/message")
+      span.header__reading 代表メッセージ
       | message
-    router-link.header__nav-item(to="culture")
+    router-link.header__nav-item(to="/culture")
+      span.header__reading カルチャー
       | culture
-    router-link.header__nav-item(to="interview")
+    router-link.header__nav-item(to="/interview")
+      span.header__reading 社員インタビュー
       | interview
+    router-link.header__nav-item(to="job")
+      b-button(size="sm" variant='impact' squared) ENTRY
 </template>
 
 <style lang="scss" scoped>
@@ -86,7 +92,7 @@ header.header
     &:before {
       content: "";
       display: block;
-      background: green;
+      background-color: var(--primary);
       position: fixed;
       left: 0;
       z-index: -1;
@@ -105,22 +111,47 @@ header.header
     margin-left: 1rem;
   }
   &__nav-item {
+    display: block;
     color: #fff;
-    display: inline-block;
     padding: 1rem;
     text-transform: uppercase;
+    transition: color 0.5s ease-out;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &__reading {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: normal;
+  }
+}
+@include media-breakpoint-down(lg) {
+  .header__title-sub {
+  }
+  button.btn-impact {
+    width: 100%;
+    height: 4rem;
   }
 }
 @include media-breakpoint-up(lg) {
   .header {
     &__nav {
+      font-size: 13px;
+      font-weight: bold;
       display: block;
-      width: auto;
+      width: auto !important;
       &:before {
         display: none;
       }
     }
+    &__nav-item {
+      display: inline-block;
+    }
     &__bar {
+      display: none;
+    }
+    &__reading {
       display: none;
     }
   }

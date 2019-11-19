@@ -16,15 +16,15 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/scss/custom.scss";
 .culture-list {
-  margin: 0 2rem;
+  margin: 1rem;
   &__img {
     width: 100%;
   }
   &__body {
-    background: #eee;
-    padding: 1rem 2rem 0.5rem;
-    transform: translate(2rem, -5rem);
-    margin-bottom: -2rem;
+    // background: #eee;
+    padding: 1rem;
+    // transform: translate(2rem, -5rem);
+    // margin-bottom: -2rem;
   }
   &__ttl {
     font-family: Lato;
