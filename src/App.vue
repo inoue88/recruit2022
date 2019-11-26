@@ -1,35 +1,23 @@
 <template>
   <div id="app">
-    <router-view name="header"></router-view>
-    <main>
-      <transition mode="out-in">
-        <router-view />
-      </transition>
-    </main>
-    <router-view name="footer"></router-view>
+    <img src="./assets/logo.png">
+    <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-.v-enter {
-  transform: translate(-100px, 0);
-  opacity: 0;
+<script>
+export default {
+  name: 'App'
 }
-.v-enter-to {
-  opacity: 1;
-}
-.v-enter-active {
-  transition: all 1s 0s ease;
-}
-.v-leave {
-  transform: translate(0, 0);
-  opacity: 1;
-}
-.v-leave-to {
-  transform: translate(100px, 0);
-  opacity: 0;
-}
-.v-leave-active {
-  transition: all 0.5s 0s ease;
+</script>
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
 }
 </style>
