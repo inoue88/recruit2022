@@ -1,8 +1,10 @@
-<template>
-  <div id="app">
-    <img src="./assets/logo.png" />
-    <router-view />
-  </div>
+<template lang='pug'>
+  //- <!-- <div id="app">
+  //-   <img src="./assets/logo.png" />
+  //-   <router-view />
+  //- </div> -->
+  #app
+    h1 home
 </template>
 
 <script>
