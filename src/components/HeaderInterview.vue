@@ -1,17 +1,14 @@
 <template lang='pug'>
-.interview
-  h1 Interview
-  p {{$route.params.id}}
+.header-interview
+  h2 {{titleJa}}
 </template>
 
 <script>
 export default {
-  name: 'Interview'
+  name: 'HeaderInterview'
+  // props: ['title']
 }
 </script>
 
 <style lang='scss' scoped>
-.interview{
-  padding: 3rem;
-}
 </style>

@@ -47,6 +47,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 []sassに変更したい
 [✓]interviewにてcomponentsを読めない
 []自動整形
+[]interviewtitleの値
 
 ##
 []ナビゲーションのactive

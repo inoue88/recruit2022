@@ -4,13 +4,13 @@ import Router from 'vue-router'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 // page
-import Home from '@/components/Home'
-import About from '@/components/About'
-import Message from '@/components/Message'
-import Culture from '@/components/Culture'
-import InterviewList from '@/components/InterviewList'
-import Interview from '@/components/Interview'
-import Job from '@/components/Job'
+import Home from '@/views/Home'
+import About from '@/views/About'
+import Message from '@/views/Message'
+import Culture from '@/views/Culture'
+import InterviewList from '@/views/InterviewList'
+import Interview from '@/views/Interview'
+import Job from '@/views/Job'
 Vue.use(Router)
 
 export default new Router({
@@ -58,18 +58,16 @@ export default new Router({
     },
     {
       path: '/interview/:id(\\d+)',
-      // component: Interview,
-      // props: route => ({
-      //   id: Number(route.params.id)
-      // })
       components: {
         header: Header,
         footer: Footer,
-        default: Interview,
+        default: Interview
       },
-      props: route => ({
-        id: Number(route.params.id)
-      })
+      props: {
+        default: route => ({
+          id: Number(route.params.id)
+        })
+      }
     },
     {
       path: '/job',
