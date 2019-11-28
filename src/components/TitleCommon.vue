@@ -7,9 +7,13 @@
   .title-common__wrap
     h1.title-common__main {{title.Ja}}
     span.title-common__sub {{title.En}}
+    <h1 class="ml13">Rising Strong</h1>
+
 </template>
 
 <script>
+script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"
+
 export default {
   data () {
     return {

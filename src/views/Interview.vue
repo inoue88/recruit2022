@@ -2,12 +2,15 @@
 .interview
   .interview-header
     picture.interview-header__img
-      //- source(media="(min-width: 960px)" v-bind:srcset="'/static/images/common/header-' + `${title.Code}` + '--pc.jpg'")
-      //- source(media="(min-width: 320px)" v-bind:srcset="'/static/images/common/header-' + `${title.Code}` + '--sp.jpg'")
-      //- img(src="images/picture_s.gif" alt="")
-    interview-header__wrap
-      h1.TitleCommon__main {{ item.name }}
-      span.TitleCommon__sub {{ item.name }}
+      source(media="(min-width: 960px)" v-bind:srcset="'/static/images/interview/0' + `${num}` + '/header--pc.jpg'")
+      source(media="(min-width: 320px)" v-bind:srcset="'/static/images/interview/0' + `${num}` + '/header--sp.jpg'")
+      img(src="images/picture_s.gif" alt="")
+    b-container
+      .interview-header__title(v-html='`${item.title}`')
+      .interview-header__body
+        h1 {{ item.name }}
+        span {{ item.name }}
+        span.interview-header__discription {{ item.discription }}
   b-container
     div(v-if='item' key='product')
       .interview__intro
@@ -28,14 +31,9 @@
 
 <script>
 import interview from '@/api/interview.js'
-// import TitleInterview from '@/components/TitleInterview.vue'
-
 export default {
   name: 'Interview',
   props: {id: Number},
-  // components: {
-  //   TitleInterview
-  // },
   data () {
     return {
       item: null,
@@ -89,23 +87,22 @@ export default {
 .interview-header {
   position: relative;
   margin-bottom: 3rem;
-  text-align: center;
-  background: var(--primary);
-  overflow: hidden;
   top: 0;
   left: 0;
   z-index: 2;
-  height: 60vh;
+  // height: 60vh;
   max-height: 640px;
   &__img {
+    background: var(--primary);
     overflow: hidden;
     width: 100%;
     height: 60vw;
-    opacity: 0.6;
     transform: translateZ(0);
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0) scale(1, 1);
+    z-index: 1;
     img {
+      opacity: 0.6;
       position: absolute;
       top: 0;
       left: 0;
@@ -124,15 +121,41 @@ export default {
     color: var(--white);
     width: 100%;
     top: 50%;
-    text-align: center;
     // left: 50%;
     // -webkit-transform: translate(-50%, 0%);
     // transform: translate(-50%, 0%);
     z-index: 3;
   }
   &__title {
+    position: relative;
     font-size: 40px;
-    font-weight: 600;
+    color:#fff;
+    font-weight: 400;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    text-align: left;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+  &__body {
+    background: black;
+    position: absolute;
+    color: #fff;
+    bottom:0;
+    left: 0;
+    width: 40%;
+    padding: 3rem;
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%);
+  }
+  &__discription {
+    font-size: .9rem;
+  }
+  >.container{
+    position: relative;
+    height: 100%;
+    width: 100%
   }
   @include media-breakpoint-up(md) {
     margin-bottom: 7rem;

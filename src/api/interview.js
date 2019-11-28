@@ -6,6 +6,7 @@ const database = [
     nameEn: 'Okayasu Tsunetoshi',
     yearEntry: '2016',
     department: 'TOS Division RA Section',
+    discription: '自己紹介文：複素数体であれば、任意のCM-タイプの A は、実際、数体である定義体（英語版）(field of definition)を持っている。自己準同型環の可能なタイプは、対合（ロサチの対合（英語版）(Rosati involution）をもつ環として既に分類されていて、CM-タイプのアーベル多様体の分類を導き出す。楕円曲線と同じような方法でCM-タイプの多様体を構成するには、Cd の中の格子 Λ か',
     title:
       '自分の価値を高めるためには?と考えたとき<br>それを実現できる会社がどんなものなのか考えて',
     answer: [
@@ -27,6 +28,7 @@ const database = [
     nameEn: 'Tasaki Aoi',
     yearEntry: '2016',
     department: 'TOS Division RA Section',
+    discription: '自己紹介文：複素数体であれば、任意のCM-タイプの A は、実際、数体である定義体（英語版）(field of definition)を持っている。自己準同型環の可能なタイプは、対合（ロサチの対合（英語版）(Rosati involution）をもつ環として既に分類されていて、CM-タイプのアーベル多様体の分類を導き出す。楕円曲線と同じような方法でCM-タイプの多様体を構成するには、Cd の中の格子 Λ か',
     title:
       'リクルーティングアドバイザーとして、フリーランスのWebエンジニア向けの企',
     answer: [
@@ -47,6 +49,7 @@ const database = [
     nameEn: 'Tsujikawa Naoki',
     yearEntry: '2016',
     department: 'HRC Division  CS Section',
+    discription: '自己紹介文：複素数体であれば、任意のCM-タイプの A は、実際、数体である定義体（英語版）(field of definition)を持っている。自己準同型環の可能なタイプは、対合（ロサチの対合（英語版）(Rosati involution）をもつ環として既に分類されていて、CM-タイプのアーベル多様体の分類を導き出す。楕円曲線と同じような方法でCM-タイプの多様体を構成するには、Cd の中の格子 Λ か',
     title:
       '東北大学の大学院修士課程を修了しています。理論物理を専攻していたので、黒板',
     answer: [
@@ -68,6 +71,7 @@ const database = [
     nameEn: 'Nakata Yuko',
     yearEntry: '2016',
     department: 'HRC Division  RA Section ',
+    discription: '自己紹介文：複素数体であれば、任意のCM-タイプの A は、実際、数体である定義体（英語版）(field of definition)を持っている。自己準同型環の可能なタイプは、対合（ロサチの対合（英語版）(Rosati involution）をもつ環として既に分類されていて、CM-タイプのアーベル多様体の分類を導き出す。楕円曲線と同じような方法でCM-タイプの多様体を構成するには、Cd の中の格子 Λ か',
     title:
       '中途採用支援業務の企業担当をしています。企業がうまく人材を採用できるように',
     answer: [
@@ -88,6 +92,7 @@ const database = [
     nameEn: 'Sakamoto Takahiro',
     yearEntry: '2016',
     department: 'HRC Division  RA Section ',
+    discription: '自己紹介文：複素数体であれば、任意のCM-タイプの A は、実際、数体である定義体（英語版）(field of definition)を持っている。自己準同型環の可能なタイプは、対合（ロサチの対合（英語版）(Rosati involution）をもつ環として既に分類されていて、CM-タイプのアーベル多様体の分類を導き出す。楕円曲線と同じような方法でCM-タイプの多様体を構成するには、Cd の中の格子 Λ か',
     title:
       '帝京大学で学生時代を過ごしましたが、当時打ち込んでいたことはサークルと趣味',
     answer: [
@@ -109,6 +114,7 @@ const database = [
     nameEn: 'Matsuura Yuga',
     yearEntry: '2016',
     department: 'HRC Division  Osaka Section ',
+    discription: '自己紹介文：複素数体であれば、任意のCM-タイプの A は、実際、数体である定義体（英語版）(field of definition)を持っている。自己準同型環の可能なタイプは、対合（ロサチの対合（英語版）(Rosati involution）をもつ環として既に分類されていて、CM-タイプのアーベル多様体の分類を導き出す。楕円曲線と同じような方法でCM-タイプの多様体を構成するには、Cd の中の格子 Λ か',
     title:
       '私は神奈川大学にいたのですが、学業もサークルも好きでしたね。でも、思い出に',
     answer: [

@@ -71,6 +71,7 @@ export default new Router({
       components: {
         header: Header,
         footer: Footer,
+        footerEntry: FooterEntry,
         default: Interview
       },
       props: {
