@@ -3,6 +3,8 @@ import Router from 'vue-router'
 // commonparts
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import FooterEntry from '@/components/FooterEntry'
+import TitleCommon from '@/components/TitleCommon'
 // page
 import Home from '@/views/Home'
 import About from '@/views/About'
@@ -11,6 +13,7 @@ import Culture from '@/views/Culture'
 import InterviewList from '@/views/InterviewList'
 import Interview from '@/views/Interview'
 import Job from '@/views/Job'
+import Entry from '@/views/Entry'
 Vue.use(Router)
 
 export default new Router({
@@ -29,6 +32,8 @@ export default new Router({
       components: {
         header: Header,
         footer: Footer,
+        footerEntry: FooterEntry,
+        title: TitleCommon,
         default: About
       }
     },
@@ -37,6 +42,8 @@ export default new Router({
       components: {
         header: Header,
         footer: Footer,
+        footerEntry: FooterEntry,
+        title: TitleCommon,
         default: Message
       }
     },
@@ -45,6 +52,8 @@ export default new Router({
       components: {
         header: Header,
         footer: Footer,
+        footerEntry: FooterEntry,
+        title: TitleCommon,
         default: Culture
       }
     },
@@ -53,6 +62,7 @@ export default new Router({
       components: {
         header: Header,
         footer: Footer,
+        title: TitleCommon,
         default: InterviewList
       }
     },
@@ -74,7 +84,17 @@ export default new Router({
       components: {
         header: Header,
         footer: Footer,
+        title: TitleCommon,
         default: Job
+      }
+    },
+    {
+      path: '/entry',
+      components: {
+        header: Header,
+        footer: Footer,
+        title: TitleCommon,
+        default: Entry
       }
     }
   ]

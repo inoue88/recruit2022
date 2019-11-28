@@ -1,6 +1,5 @@
 <template lang='pug'>
 .interview-list
-  h1 InterviewList
   b-container
     CardInterview(v-for='(list) in list'
       :name='`${ list.name }`'

@@ -1,7 +1,7 @@
 <template lang='pug'>
 header.header
   router-link.header__logo(to="/")
-    img(alt='aim factory' src='/img/common/logo.svg')
+    img(src="/static/images/common/logo.svg")
     span.header__title-sub RECRUIT 2020
   input.header__btn(type='checkbox' id='header-btn')
   label.header__icon(for='header-btn')
@@ -22,19 +22,151 @@ header.header
     b-button(variant='aimred' to="/job" squared class='entry-button') ENTRY
 </template>
 
-<script>
-export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+<style lang="scss" scoped>
+@import "../assets/scss/custom.scss";
+.header {
+  $parent: &;
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  &__btn {
+    display: none;
+    &:checked ~ #{$parent}__icon {
+      #{$parent}__bar {
+        background: transparent;
+        &:before {
+          transform: rotate(-45deg);
+          top: 0;
+        }
+        &:after {
+          transform: rotate(45deg);
+          top: 0;
+        }
+      }
+    }
+    &:checked ~ #{$parent}__nav:before {
+      height: 100vh;
+    }
+    &:checked ~ #{$parent}__nav {
+      display: block;
+      width: 100%;
     }
   }
+  &__icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 24px 20px;
+    position: relative;
+    user-select: none;
+    margin-left: auto;
+  }
+  &__bar {
+    background: #fff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background 0.2s ease-out;
+    width: 18px;
+    &::before,
+    &::after {
+      background: #fff;
+      content: "";
+      display: block;
+      position: absolute;
+      transition: all 0.2s ease-out;
+      height: 100%;
+      width: 100%;
+    }
+    &::before {
+      top: 5px;
+    }
+    &::after {
+      top: -5px;
+    }
+  }
+  &__nav {
+    display: none;
+    &:before {
+      content: "";
+      display: block;
+      background: var(--primary);
+      position: fixed;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 0;
+      top: 0;
+    }
+  }
+  &__logo {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &__title-sub {
+    color: #fff;
+    margin-left: 1rem;
+  }
+  &__nav-item {
+    color: #fff;
+    display: block;
+    padding: 1rem;
+    text-transform: uppercase;
+    display: block;
+    position: relative;
+    text-decoration: none;
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: 0.5rem;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: white;
+      transition: all 0.3s ease 0s;
+    }
+    &:hover {
+      cursor: pointer;
+      text-decoration: none;
+    }
+    &:hover::after {
+      width: 4rem;
+    }
+    &--ja {
+      display: block;
+      font-size: 1.6rem;
+    }
+  }
+  .entry-button {
+    width: 100%;
+    padding: 1.5rem;
+  }
 }
-</script>
-
-<style lang='scss' scoped>
-.header{
-  padding: 3rem;
+@include media-breakpoint-up(lg) {
+  .header {
+    &__nav {
+      display: block;
+      width: auto;
+      margin-right: 1rem;
+      &:before {
+        display: none;
+      }
+    }
+    &__bar {
+      display: none;
+    }
+    &__nav-item {
+      display: inline-block;
+      &--ja {
+        display: none;
+      }
+    }
+    .entry-button {
+      width: auto;
+      padding: 6px 1.5rem;
+    }
+  }
 }
 </style>
