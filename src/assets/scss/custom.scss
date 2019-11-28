@@ -39,9 +39,10 @@ $input-btn-padding-x-lg: 8rem;
 $input-btn-font-size-sm: 0.8125rem;
 $input-btn-padding-y-sm: 0.5rem;
 $input-btn-padding-x-sm: 1rem;
-// @import url("https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP:400,700&display=swap&subset=japanese");
+
+@import url("https://fonts.googleapis.com/css?family=Lato|Noto+Sans+JP:400,700&display=swap&subset=japanese");
 @import "node_modules/bootstrap/scss/bootstrap";
-// @import "node_modules/bootstrap-vue/src/index.scss";
+@import "node_modules/bootstrap-vue/src/index.scss";
 
 @include media-breakpoint-up(lg) {
   .container-small {
