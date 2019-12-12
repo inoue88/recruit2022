@@ -26,7 +26,4 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-.culture{
-  padding: 3rem;
-}
 </style>

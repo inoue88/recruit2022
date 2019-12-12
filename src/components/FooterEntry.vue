@@ -4,7 +4,7 @@
     b-container
       b-row(align-v="center")
         b-col(lg='9')
-          h1.foot-entry__title 社会に変革をもたらす<br>ヒトと企業を加速する
+          h2.foot-entry__title 社会に変革をもたらす<br>ヒトと企業を加速する
           p 私たちは、ミッションである「社会に変革をもたらすヒトと企業を加速する」を着実に実現してきました。<br>しかし、まだまだご支援したい企業・IT人材のため、実現したいサービス、チャレンジしたい事業があり、私たちの挑戦は続きます。<br>ともに挑戦し、アイムファクトリーの未来を創るトップリーダーとして活躍してください。
         b-col
           b-button(size="lg" variant='aimred' squared) ENTRY

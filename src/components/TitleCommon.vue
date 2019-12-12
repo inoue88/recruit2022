@@ -1,19 +1,17 @@
 <template lang="pug">
 .title-common
-  picture.title-common__img
-    source(media="(min-width: 960px)" v-bind:srcset="'/static/images/common/header-' + `${title.Code}` + '--pc.jpg'")
-    source(media="(min-width: 320px)" v-bind:srcset="'/static/images/common/header-' + `${title.Code}` + '--sp.jpg'")
-    img(src="images/picture_s.gif" alt="")
   .title-common__wrap
+    picture.title-common__img
+      source(media="(min-width: 960px)" v-bind:srcset="'/static/images/common/header-' + `${title.Code}` + '--pc.jpg'")
+      source(media="(min-width: 320px)" v-bind:srcset="'/static/images/common/header-' + `${title.Code}` + '--sp.jpg'")
+      img(src="images/picture_s.gif" alt="")
+  .title-common__body
     h1.title-common__main {{title.Ja}}
     span.title-common__sub {{title.En}}
-    <h1 class="ml13">Rising Strong</h1>
-
+  //- script(src='https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js')
 </template>
 
 <script>
-script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"
-
 export default {
   data () {
     return {
@@ -54,45 +52,34 @@ export default {
 .title-common {
   position: relative;
   margin-bottom: 3rem;
-  text-align: center;
   background: var(--primary);
-  overflow: hidden;
-  top: 0;
-  left: 0;
   z-index: 2;
   height: 60vh;
-  max-height: 500px;
-  &__img {
+  &__wrap{
+    position: relative;
     overflow: hidden;
     width: 100%;
-    height: 60vw;
-    opacity: 0.6;
-    transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translateZ(0) scale(1, 1);
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: auto;
-      min-width: 100%;
-      min-height: 100%;
-      max-width: inherit;
-      background-attachment: fixed;
-      animation: grow 60s linear 10ms infinite;
-      transition: all 0.2s ease-in-out;
-    }
+    height: 100%;
   }
-  &__wrap {
+  &__img img{
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    min-width: 100%;
+    // min-height: 100%;
+    max-width: inherit;
+    background-attachment: fixed;
+    animation: grow 60s linear 10ms infinite;
+  }
+  &__body {
     position: absolute;
     color: var(--white);
     width: 100%;
     top: 50%;
     text-align: center;
-    // left: 50%;
-    // -webkit-transform: translate(-50%, 0%);
-    // transform: translate(-50%, 0%);
     z-index: 3;
   }
   &__title {
@@ -100,7 +87,7 @@ export default {
     font-weight: 600;
   }
   @include media-breakpoint-up(md) {
-    margin-bottom: 7rem;
+    margin-bottom: 5rem;
     & {
       height: 25vw;
     }
@@ -115,4 +102,5 @@ export default {
     transform: scale(1);
   }
 }
+
 </style>

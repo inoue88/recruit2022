@@ -1,91 +1,41 @@
-<template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
-  </div>
+<template lang="pug">
+.home
+  .header-hero
+    carousel(
+      :per-page="1"
+      :pagination-enabled='false'
+      :mouse-drag="false"
+      :autoplay="true"
+      :loop="true"
+      :autoplay-timeout="8000")
+      slide
+        picture
+          source(media="(min-width: 960px)" v-bind:srcset="'/static/images/common/header-job--pc.jpg'")
+          source(media="(min-width: 320px)" v-bind:srcset="'/static/images/common/header-job--sp.jpg'")
+          img(src="images/picture_s.gif" alt="")
+      //- slide
+      //-   picture
+      //-     source(media="(min-width: 960px)" v-bind:srcset="'/static/images/common/header-about--pc.jpg'")
+      //-     source(media="(min-width: 320px)" v-bind:srcset="'/static/images/common/header-about--sp.jpg'")
+      //-     img(src="images/picture_s.gif" alt="")
+      //- slide
+      //-   picture
+      //-     source(media="(min-width: 960px)" v-bind:srcset="'/static/images/common/header-message--pc.jpg'")
+      //-     source(media="(min-width: 320px)" v-bind:srcset="'/static/images/common/header-message--sp.jpg'")
+      //-     img(src="images/picture_s.gif" alt="")
+    .header-hero__content
+      h1 社会に変革をもたらす<br>ヒトと企業を加速する
+      p Bringing change to society Accelerate people and companies
 </template>
 
 <script>
+import { Carousel, Slide } from 'vue-carousel'
 export default {
-  name: 'HelloWorld',
+  name: 'home',
+  components: {
+    Carousel,
+    Slide
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
@@ -95,19 +45,39 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
+<style lang="scss" scoped>
+.header-hero{
+  position: relative;
+  &__content{
+    position: absolute;
+    color: #fff;
+    bottom: 40%;
+    left: 50%;
+    font-weight: normal;
+    transform: translateX( -50%);
+    text-align: center;
+  }
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.VueCarousel{
+  &-slide{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    height: 80vh;
+    background: var(--primary);
+    img{
+      opacity: 0.6;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      min-width: 100%;
+      min-height: 100%;
+      max-width: inherit;
+      background-attachment: fixed;
+      animation: grow 60s linear 10ms infinite;
+    }
+  }
 }
 </style>
