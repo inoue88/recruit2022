@@ -2,6 +2,9 @@
 router-link.cardInterview(:to="`/interview/${ id }`" v-bind:class="`${ id % 2 ? '':'cardInterview--rev'}`" v-bind:key="`${ id }`")
   //- img(src='http://placehold.jp/600x400.png')
   b-img.cardInterview__image(v-bind:src="`/static/images/interview/0${ id }/image01.jpg`")
+  div
+    span.cardInterview__name {{name}}
+    span.cardInterview__name-en {{nameEn}}
   .cardInterview__body
     h3.cardInterview__title(v-html='`${title}`')
     .cardInterview__count 0{{id}}

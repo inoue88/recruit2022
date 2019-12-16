@@ -6,31 +6,35 @@
         source(media="(min-width: 960px)" v-bind:srcset="'/static/images/interview/0' + `${num}` + '/header--pc.jpg'")
         source(media="(min-width: 320px)" v-bind:srcset="'/static/images/interview/0' + `${num}` + '/header--sp.jpg'")
         img(src="images/picture_s.gif" alt="")
-    .title-interview__body
-      .title-interview__title(v-html='`${item.title}`')
-      .title-interview__introduction
+    b-container
+      .title-interview__body
+        .title-interview__title(v-html='`${item.title}`')
         h3 {{ item.name }}
-        p.title-interview__discription {{ item.discription }}
+      //- .title-interview__introduction
+      //-   p.title-interview__discription {{ item.discription }}
   b-container
     div(v-if='item' key='product')
       .interview-content
         .interview-content__section(v-for='(n,index) in 3' )
           h3.interview-content__q
             |{{question[index]}}
-            span.interview-content__count 0{{index + 1}}
           .interview-content__a {{item.answer[`${index}`]}}
-      .interview-content.interview-content--rev
-        .interview-content__section(v-for='(n,index) in 3')
-          h3.interview-content__q
-            |{{question[index +3]}}
-            span.interview-content__count 0{{index + 4}}
-          .interview-content__a(v-html="item.answer[`${index+3}`]")
-      .interview-content
-        .interview-content__section(v-for='(n,index) in 3')
-          h3.interview-content__q
-            |{{question[index +6]}}
-            span.interview-content__count 0{{index + 7}}
-          .interview-content__a(v-html="item.answer[`${index+6}`]")
+  .interview-image01
+    b-img(v-bind:src="`/static/images/interview/0${ id }/image02.jpg`")
+  b-container
+    .interview-content.interview-content--rev
+      .interview-content__section(v-for='(n,index) in 3')
+        h3.interview-content__q
+          |{{question[index +3]}}
+        .interview-content__a(v-html="item.answer[`${index+3}`]")
+    .interview-content
+      .interview-content__section(v-for='(n,index) in 3')
+        h3.interview-content__q
+          |{{question[index +6]}}
+        .interview-content__a(v-html="item.answer[`${index+6}`]")
+    .interview-image02
+      b-img(v-bind:src="`/static/images/interview/0${ id }/image03.jpg`")
+
 </template>
 
 <script>
@@ -122,8 +126,7 @@ export default {
     color: var(--white);
     width: 100%;
     z-index: 3;
-    max-width: 1140px;
-    margin: 0 1rem -3rem 1rem;
+    padding-bottom: 8%;
   }
   &__discription{
     font-size: 12px;
@@ -136,7 +139,7 @@ export default {
   }
   &__title {
     font-weight: 600;
-    font-size: 28px;
+    font-size: 2rem;
     line-height: 1.4;
     margin-bottom: 2rem;
   }
@@ -149,8 +152,9 @@ export default {
       padding-right: 30%;
     }
     &__title{
-      font-size: 36px;
-      margin-bottom: 4rem;
+      font-size: 2.5rem;
+      font-weight: normal;
+      margin-bottom: 2rem;
     }
   }
 }
@@ -181,37 +185,42 @@ export default {
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px dotted c;
-    padding-left: 5rem;
   }
   &__q{
     font-size: 1.4rem;
     line-height: 1.5;
     margin-bottom: 1rem;
     position: relative;
+    color: #001377;
+    &:first-letter{
+      font-size: 1.8em;
+      border-bottom: 3px solid #001377;
+    }
   }
   &__a{
-    font-size: 0.8125rem;
-  }
-  &__count{
-    position: absolute;
-    font-size: 1.9rem;
-    top: 0;
-    left: -4rem;
-    color: var(--primary);
-    text-align: center;
-    line-height: 1;
-    &:before{
-      content: 'Question';
-      display: block;
-      font-size: 10px;
-      font-weight: normal;
-    }
+    // font-size: 0.8125rem;
   }
   @include media-breakpoint-up(md) {
     width: 80%;
   }
 }
-
+.interview-image01{
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+  margin-bottom: -5rem;
+  img{
+    display: block;
+    width: 75%;
+    margin-left: auto;
+    z-index: -1;
+  }
+}
+.interview-image02{
+  img{
+    width: 100%;
+  }
+}
 @keyframes grow {
   /*微差で拡大/縮小するアニメーション設定*/
   0% {
