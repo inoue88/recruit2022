@@ -39,13 +39,10 @@
       b-img(v-bind:src="`/static/images/interview/0${ id }/image03.jpg`")
       .interview-footer__discription
         span.interview-footer__dep
-          |{{ item.yearEntry }}入社　/　
+          |{{ item.yearEntry }}入社/
           |{{ item.department }}
         h3.interview-footer__name {{ item.name }}
         p {{ item.discription }}
-
-
-
 </template>
 
 <script>
@@ -247,7 +244,6 @@ export default {
   &__name{
     font-size: 1.4rem;
     margin: .5rem 0 1rem;
-    
   }
   &__dep{
     border: 1px solid white;

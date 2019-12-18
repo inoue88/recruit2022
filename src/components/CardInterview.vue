@@ -8,7 +8,7 @@ router-link.cardInterview(:to="`/interview/${ id }`" v-bind:class="`${ id % 2 ? 
     .cardInterview__count 0{{id}}
     div
       span.cardInterview__dep
-        |{{ yearEntry }}入社 / 
+        |{{ yearEntry }}入社/
         |{{ dep }}
     div
       span.cardInterview__name {{name}}
