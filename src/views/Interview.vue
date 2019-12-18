@@ -9,7 +9,10 @@
     b-container
       .title-interview__body
         .title-interview__title(v-html='`${item.title}`')
-        h3 {{ item.name }}
+        span.title-interview__name {{ item.name }}
+        span.title-interview__dep
+          |{{ item.yearEntry }}入社 /
+          |{{ item.department }}
       //- .title-interview__introduction
       //-   p.title-interview__discription {{ item.discription }}
   b-container
@@ -32,8 +35,16 @@
         h3.interview-content__q
           |{{question[index +6]}}
         .interview-content__a(v-html="item.answer[`${index+6}`]")
-    .interview-image02
+    .interview-footer
       b-img(v-bind:src="`/static/images/interview/0${ id }/image03.jpg`")
+      .interview-footer__discription
+        span.interview-footer__dep
+          |{{ item.yearEntry }}入社　/　
+          |{{ item.department }}
+        h3.interview-footer__name {{ item.name }}
+        p {{ item.discription }}
+
+
 
 </template>
 
@@ -137,6 +148,16 @@ export default {
     background: #222;
     padding: 1.5rem;
   }
+  &__name{
+    font-size: 1.4rem;
+  }
+  &__dep{
+    border: 1px solid white;
+    padding: .3rem;
+    margin-left: 1rem;
+    font-size: 0.8125rem;
+    vertical-align: text-bottom;
+  }
   &__title {
     font-weight: 600;
     font-size: 2rem;
@@ -152,7 +173,7 @@ export default {
       padding-right: 30%;
     }
     &__title{
-      font-size: 2.5rem;
+      font-size: 3.2rem;
       font-weight: normal;
       margin-bottom: 2rem;
     }
@@ -216,9 +237,35 @@ export default {
     z-index: -1;
   }
 }
-.interview-image02{
+.interview-footer{
+  position: relative;
+  overflow: visible;
+  margin-bottom: 3rem;
   img{
     width: 100%;
+  }
+  &__name{
+    font-size: 1.4rem;
+    margin: .5rem 0 1rem;
+    
+  }
+  &__dep{
+    border: 1px solid white;
+    padding: .3rem;
+    font-size: 0.8125rem;
+    vertical-align: text-bottom;
+  }
+  &__discription{
+    padding: 2rem 2rem 1rem;
+    background: var(--primary);
+    margin-bottom: -2rem;
+    margin-left: -2rem;
+    color: #fff;
+    width: 45%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 0.8125rem;
   }
 }
 @keyframes grow {

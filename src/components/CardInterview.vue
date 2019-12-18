@@ -1,22 +1,22 @@
 <template lang="pug">
 router-link.cardInterview(:to="`/interview/${ id }`" v-bind:class="`${ id % 2 ? '':'cardInterview--rev'}`" v-bind:key="`${ id }`")
   //- img(src='http://placehold.jp/600x400.png')
-  b-img.cardInterview__image(v-bind:src="`/static/images/interview/0${ id }/image01.jpg`")
-  div
-    span.cardInterview__name {{name}}
-    span.cardInterview__name-en {{nameEn}}
+  figure.cardInterview__image
+    b-img(v-bind:src="`/static/images/interview/0${ id }/image01.jpg`")
   .cardInterview__body
     h3.cardInterview__title(v-html='`${title}`')
     .cardInterview__count 0{{id}}
     div
-      span.cardInterview__dep 2016年入/HRC事業部 CAチーム
+      span.cardInterview__dep
+        |{{ yearEntry }}入社 / 
+        |{{ dep }}
     div
       span.cardInterview__name {{name}}
       span.cardInterview__name-en {{nameEn}}
 </template>
 
 <script>
-export default {props: ['name', 'nameEn', 'yearEntry', 'title', 'id']}
+export default {props: ['name', 'nameEn', 'yearEntry', 'title', 'id', 'dep']}
 </script>
 
 <style lang="scss" scoped>
@@ -25,6 +25,15 @@ export default {props: ['name', 'nameEn', 'yearEntry', 'title', 'id']}
   $parent: &;
   display: block;
   margin-bottom: 5rem;
+  &:hover{
+    text-decoration: none;
+    color: var(--primary);
+    figure img {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+      opacity: .8;
+    }
+  }
   &--rev {
     flex-direction: row-reverse;
     #{$parent}__count {
@@ -36,18 +45,39 @@ export default {props: ['name', 'nameEn', 'yearEntry', 'title', 'id']}
     // }
   }
   &__title {
-    font-size: 1.2rem;
+    font-size: 2rem;
     line-height: 1.6;
   }
   &__image {
     width: 100%;
+    padding-top: 50%;
+    background: var(--primary);
+    position: relative;
+    overflow: hidden;
+    img{
+      width: 100%;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+      position: absolute;
+      opacity: 1;
+      top: 0;
+      left: 0;
+    }
   }
-
+  &__name{
+    font-size: 1.5rem;
+  }
+  &__name-en{
+    padding-left: 1rem;
+  }
   &__dep {
     border: 1px solid var(--primary);
     color: var(--primary);
     display: inline-block;
-    padding: 0.5rem;
+    padding: 0.3rem;
+    font-size: 0.8125rem;
   }
   &__count {
     position: absolute;
@@ -90,21 +120,23 @@ export default {props: ['name', 'nameEn', 'yearEntry', 'title', 'id']}
     display: flex;
     &--rev {
       #{$parent}__body {
-        padding: 6rem 3rem 0 0;
+        padding: 5rem 3rem 0 0;
       }
     }
     &__image {
-      width: 50%;
+    width: 50%;
+    padding-top: 32%;
     }
     &__title {
       font-size: 2rem;
-      margin-bottom: auto;
+      margin-bottom: 3rem;
     }
     &__count {
       top: 0;
     }
     &__body {
-      padding: 6rem 0 0 3rem;
+      padding: 5rem 0 0 3rem;
+      width: 45%;
     }
   }
 }

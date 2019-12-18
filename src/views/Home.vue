@@ -3,11 +3,13 @@
   .header-hero
     carousel(
       :per-page="1"
-      :pagination-enabled='true'
+      :pagination-enabled='false'
+      :pagination-position='top'
       :mouse-drag="false"
       :autoplay="true"
       :loop="true"
-      :autoplay-timeout="8000")
+      :autoplay-timeout="1000"
+      )
       slide
         picture
           source(media="(min-width: 960px)" v-bind:srcset="'/static/images/common/header-job--pc.jpg'")
@@ -26,6 +28,9 @@
     .header-hero__content
       h1 社会に変革をもたらす<br>ヒトと企業を加速する
       p Bringing change to society Accelerate people and companies
+    p.header-hero__scroll
+      |SCROLL
+      span.header-hero__bar
   b-container
     .section-intro
       h2 社会に変革をもたらすヒトと企業を加速する
@@ -97,6 +102,39 @@ export default {
     transform: translateX( -50%);
     text-align: center;
   }
+  &__scroll {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    right: 35px;
+    bottom: 0;
+    width: 18px;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    transition: opacity .8s cubic-bezier(.43,.2,.02,1);
+    color: white;
+  }
+  &__bar {
+    position: relative;
+    display: block;
+    width: 1px;
+    height: 96px;
+    margin: 0 auto;
+    overflow: hidden;
+    &:before{
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      -webkit-animation: cmn-induction 3s cubic-bezier(.43,.2,.02,1) 1s infinite;
+      animation: cmn-induction 3s cubic-bezier(.43,.2,.02,1) 1s infinite;
+    }
+  }
 }
 .VueCarousel{
   &-slide{
@@ -119,6 +157,7 @@ export default {
       animation: grow 60s linear 10ms infinite;
     }
   }
+
 }
 .section-intro{
   text-align: center;
@@ -158,5 +197,22 @@ export default {
       margin-top: 3rem;
     }
   }
+}
+.VueCarousel-pagination{
+  background: red;
+}
+
+@keyframes cmn-induction {
+    0% {
+        transform: translateY(-101%)
+    }
+
+    70% {
+        transform: translateY(101%)
+    }
+
+    to {
+        transform: translateY(101%)
+    }
 }
 </style>
