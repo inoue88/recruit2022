@@ -30,7 +30,12 @@
         h3.interview-content__q
           |{{question[index +3]}}
         .interview-content__a(v-html="item.answer[`${index+3}`]")
-    .interview-content
+  .interview-message
+    .interview-message__text.interview-message__text01
+    .interview-message__text.interview-message__text02
+    .interview-message__text.interview-message__text03
+  b-container
+    .interview-content(data-delighter)
       .interview-content__section(v-for='(n,index) in 3')
         h3.interview-content__q
           |{{question[index +6]}}
@@ -49,6 +54,9 @@
 import interview from '@/api/interview.js'
 export default {
   name: 'Interview',
+  components: {
+    // delighters
+  },
   props: {id: Number},
   data () {
     return {
@@ -262,6 +270,47 @@ export default {
     bottom: 0;
     left: 0;
     font-size: 0.8125rem;
+  }
+}
+.interview-message{
+  overflow: hidden;
+  padding: 40px;
+  position: relative;
+  z-index: -2;
+  margin-bottom: -600px;
+  &__text{
+    background-position: right center;
+    height: 180px;
+    width: 3384px;
+  }
+  &__text01{
+    background: url(/static/images/interview/text01.svg) repeat-x;
+    animation: slide1 60s linear infinite;
+  }
+  &__text02{
+    background: url(/static/images/interview/text02.svg) repeat-x;
+    animation: slide2 60s linear infinite;
+  }
+  &__text03{
+    background: url(/static/images/interview/text03.svg) repeat-x;
+    animation: slide1 60s linear infinite;
+  }
+}
+
+@keyframes slide1{
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  100%{
+    transform: translate3d(-1692px, 0, 0);
+  }
+}
+@keyframes slide2{
+  0%{
+    transform: translate3d(-1692px, 0, 0);
+  }
+  100%{
+    transform: translate3d(0, 0, 0);
   }
 }
 @keyframes grow {
