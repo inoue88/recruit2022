@@ -67,6 +67,7 @@ export default {
     &:checked ~ #{$parent}__nav {
       display: block;
       width: 100%;
+      padding: 2rem;
     }
   }
   &__icon {
@@ -127,7 +128,7 @@ export default {
   &__nav-item {
     color: #fff;
     display: block;
-    padding: 1rem;
+    padding: 0 0 2rem;
     text-transform: uppercase;
     display: block;
     position: relative;
@@ -151,7 +152,8 @@ export default {
     }
     &--ja {
       display: block;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
+      line-height: 1.2;
     }
   }
   .entry-button {
@@ -175,6 +177,7 @@ export default {
     }
     &__nav-item {
       display: inline-block;
+      padding: 1rem;
       &--ja {
         display: none;
       }
@@ -182,6 +185,7 @@ export default {
   &__btn {
     display: none;
     &:checked ~ #{$parent}__nav {
+      padding: 0;
       width: auto;
     }
   }
