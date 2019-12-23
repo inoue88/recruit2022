@@ -3,25 +3,40 @@ header.header
   router-link.header__logo(to="/")
     img(src="/static/images/common/logo.svg")
     span.header__title-sub RECRUIT 2020
-  input.header__btn(type='checkbox' id='header-btn')
+  input.header__btn(type='checkbox' id='header-btn' v-model='menuCheck')
   label.header__icon(for='header-btn')
     span.header__bar
   .header__nav
-    router-link.header__nav-item(to="/about")
+    router-link.header__nav-item(to="/about" @click.native='clearCheck')
       span.header__nav-item--ja 私達について
       span.header__nav-item--en about us
-    router-link.header__nav-item(to="/message")
+    router-link.header__nav-item(to="/message" @click.native='clearCheck')
       span.header__nav-item--ja 代表メッセージ
       span.header__nav-item--en message
-    router-link.header__nav-item(to="/culture")
+    router-link.header__nav-item(to="/culture" @click.native='clearCheck')
       span.header__nav-item--ja カルチャー
       span.header__nav-item--en culture
-    router-link.header__nav-item(to="/interview")
+    router-link.header__nav-item(to="/interview" @click.native='clearCheck')
       span.header__nav-item--ja 社員インタビュー
       span.header__nav-item--en interview
     b-button(variant='aimred' to="/job" squared class='entry-button') ENTRY
 </template>
 
+<script>
+export default {
+  data () {
+    return {
+      menuCheck: true
+    }
+  },
+  methods: {
+    clearCheck: function () {
+      this.$data.menuCheck = false
+    }
+  }
+}
+
+</script>
 <style lang="scss" scoped>
 @import "../assets/scss/custom.scss";
 .header {
@@ -146,6 +161,7 @@ header.header
 }
 @include media-breakpoint-up(lg) {
   .header {
+    $parent: &;
     &__nav {
       display: block;
       width: auto;
@@ -163,6 +179,12 @@ header.header
         display: none;
       }
     }
+  &__btn {
+    display: none;
+    &:checked ~ #{$parent}__nav {
+      width: auto;
+    }
+  }
     .entry-button {
       width: auto;
       padding: 6px 1.5rem;
