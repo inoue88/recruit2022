@@ -11,13 +11,7 @@
           p アイムファクトリーは、IT人材キャリア支援のプロとしてこの想いに共感し、<br>「常に考え、行動する」メンバーとともにミッションを実現していきたいと考えています。
   section
     b-container
-      //- .about-sec01
-      //-   .about-sec01__body
-      //-     h1.about-sec__title 働き方にとらわれず、<br>様々なスタッフが在籍
-      //-     p.about-sec__txt ITによって世の中が進歩するとよく言われますが、実際は違うと思っています。すでに進歩を通り越した突然変異が起きる時代です。非連続で誰も想像しなかったことが一気に起きる時代。
-      //-   .about-sec01__img
-      //-     img(src='https://placehold.jp/250x100.png')
-      b-row(align-v="top" class='text-center about-sec-member')
+      b-row(class='text-center about-sec-member')
         b-col(cols="6" lg="3")
           span.about-sec-member__title 68
           |%
@@ -44,7 +38,7 @@
           p.about-sec__txt ITによって世の中が進歩するとよく言われますが、実際は違うと思っています。すでに進歩を通り越した突然変異が起きる時代です。非連続で誰も想像しなかったことが一気に起きる時代。
   section.about-sec
     b-container(data-delighter)
-      b-row(align-v="center")
+      b-row
         b-col(cols="12" lg="6")
           h2.about-sec__title
             |働き方にとらわれず、<br>さまざまなスタッフが在籍

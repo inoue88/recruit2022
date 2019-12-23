@@ -13,20 +13,18 @@
         span.title-interview__dep
           |{{ item.yearEntry }}入社 /
           |{{ item.department }}
-      //- .title-interview__introduction
-      //-   p.title-interview__discription {{ item.discription }}
   b-container
     div(v-if='item' key='product')
       .interview-content
-        .interview-content__section(v-for='(n,index) in 3' )
+        section.interview-content__section(v-for='(n,index) in 3' data-scroll)
           h3.interview-content__q
             |{{question[index]}}
           .interview-content__a {{item.answer[`${index}`]}}
   .interview-image01
     b-img(v-bind:src="`/static/images/interview/0${ id }/image02.jpg`")
-  b-container
+  b-container(v-if='item' key='product')
     .interview-content.interview-content--rev
-      .interview-content__section(v-for='(n,index) in 3')
+      section.interview-content__section(v-for='(n,index) in 3' data-scroll)
         h3.interview-content__q
           |{{question[index +3]}}
         .interview-content__a(v-html="item.answer[`${index+3}`]")
@@ -35,28 +33,29 @@
     .interview-message__text.interview-message__text02
     .interview-message__text.interview-message__text03
   b-container
-    .interview-content(data-delighter)
-      .interview-content__section(v-for='(n,index) in 3')
-        h3.interview-content__q
-          |{{question[index +6]}}
-        .interview-content__a(v-html="item.answer[`${index+6}`]")
-    .interview-footer
-      b-img(v-bind:src="`/static/images/interview/0${ id }/image03.jpg`")
-      .interview-footer__discription
-        span.interview-footer__dep
-          |{{ item.yearEntry }}入社/
-          |{{ item.department }}
-        h3.interview-footer__name {{ item.name }}
-        p {{ item.discription }}
+    div(v-if='item' key='product')
+      .interview-content(data-delighter)
+        section.interview-content__section(v-for='(n,index) in 3' data-scroll)
+          h3.interview-content__q
+            |{{question[index +6]}}
+          .interview-content__a(v-html="item.answer[`${index+6}`]")
+      .interview-footer
+        b-img(v-bind:src="`/static/images/interview/0${ id }/image03.jpg`")
+        .interview-footer__discription
+          span.interview-footer__dep
+            |{{ item.yearEntry }}入社/
+            |{{ item.department }}
+          h3.interview-footer__name {{ item.name }}
+          p {{ item.discription }}
 </template>
 
 <script>
 import interview from '@/api/interview.js'
+import ScrollOut from 'scroll-out'
+
 export default {
   name: 'Interview',
-  components: {
-    // delighters
-  },
+  components: {},
   props: {id: Number},
   data () {
     return {
@@ -101,6 +100,15 @@ export default {
       },
       immediate: true
     }
+  },
+  mounted: function () {
+    ScrollOut({
+      threshold: 0.2,
+      once: true,
+      onShown (el) {
+        el.classList.add('animated', 'fadeInUp')
+      }
+    })
   }
 }
 
@@ -108,6 +116,39 @@ export default {
 
 <style lang='scss' scoped>
 @import "../assets/scss/custom.scss";
+
+.block {
+  width: 100%;
+  height: 200px;
+  background-color: white;
+  border: dashed 2px #888;
+  margin-bottom: 10px;
+  transform-origin: center center;
+  padding: .5rem 1rem;
+  position: relative;
+}
+.block::before {
+  position: absolute;
+  content: 'Start Scrolling';
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// // exit to top
+// [data-scroll-dir-y="-1"] .block::before {
+//   content: 'I am scrolling up';
+// }
+
+// // exit to bottom
+// [data-scroll-dir-y="1"] .block::before  {
+//   content: 'I am scrolling down';
+// }
+
 .title-interview {
   position: relative;
   margin-bottom: 6rem;

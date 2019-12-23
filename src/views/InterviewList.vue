@@ -14,6 +14,7 @@
 <script>
 import interview from '@/api/interview.js'
 import CardInterview from '@/components/CardInterview.vue'
+
 export default {
   name: 'InterviewList',
   components: {

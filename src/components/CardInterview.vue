@@ -1,6 +1,5 @@
 <template lang="pug">
-router-link.cardInterview(:to="`/interview/${ id }`" v-bind:class="`${ id % 2 ? '':'cardInterview--rev'}`" v-bind:key="`${ id }`")
-  //- img(src='http://placehold.jp/600x400.png')
+router-link.cardInterview(:to="`/interview/${ id }`" v-bind:class="`${ id % 2 ? '':'cardInterview--rev'}`" v-bind:key="`${ id }`" data-scroll)
   figure.cardInterview__image
     b-img(v-bind:src="`/static/images/interview/0${ id }/image01.jpg`")
   .cardInterview__body
@@ -16,7 +15,20 @@ router-link.cardInterview(:to="`/interview/${ id }`" v-bind:class="`${ id % 2 ? 
 </template>
 
 <script>
-export default {props: ['name', 'nameEn', 'yearEntry', 'title', 'id', 'dep']}
+import ScrollOut from 'scroll-out'
+export default {
+  props: ['name', 'nameEn', 'yearEntry', 'title', 'id', 'dep'],
+  mounted: function () {
+    ScrollOut({
+      threshold: 0.2,
+      once: true,
+      onShown (el) {
+        el.classList.add('animated', 'fadeInUp')
+      }
+    })
+  }
+}
+
 </script>
 
 <style lang="scss" scoped>
