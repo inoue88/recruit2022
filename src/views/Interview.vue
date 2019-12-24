@@ -1,5 +1,5 @@
 <template lang='pug'>
-.interview
+.interview(:class="`interview--` + `${num}`")
   .title-interview(v-if='item')
     .title-interview__wrap
       picture.title-interview__img
@@ -9,7 +9,7 @@
     b-container
       .title-interview__body
         .title-interview__title(v-html='`${item.title}`')
-        span.title-interview__name {{ item.name }}
+        div.title-interview__name {{ item.name }}
         span.title-interview__dep
           |{{ item.yearEntry }}入社 /
           |{{ item.department }}
@@ -35,7 +35,7 @@
   b-container
     div(v-if='item' key='product')
       .interview-content(data-delighter)
-        section.interview-content__section(v-for='(n,index) in 3' data-scroll)
+        section.interview-content__section(v-for='(n,index) in 3')
           h3.interview-content__q
             |{{question[index +6]}}
           .interview-content__a(v-html="item.answer[`${index+6}`]")
@@ -114,7 +114,7 @@ export default {
 
 </script>
 
-<style lang='scss' scoped>
+<style lang='scss'>
 @import "../assets/scss/custom.scss";
 
 .block {
@@ -200,15 +200,17 @@ export default {
   &__dep{
     border: 1px solid white;
     padding: .3rem;
-    margin-left: 1rem;
     font-size: 0.8125rem;
     vertical-align: text-bottom;
   }
   &__title {
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 1.4;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    br{
+      display: none;
+    }
   }
   @include media-breakpoint-up(md) {
     margin-bottom: 7rem;
@@ -216,12 +218,15 @@ export default {
       height: 40vw;
     }
     &__body{
-      padding-right: 30%;
+      padding-left: 40%;
     }
     &__title{
       font-size: 3.2rem;
       font-weight: normal;
       margin-bottom: 2rem;
+      br{
+        display: inline;
+      }
     }
   }
 }
@@ -335,6 +340,16 @@ export default {
   &__text03{
     background: url(/static/images/interview/text03.svg) repeat-x;
     animation: slide1 60s linear infinite;
+  }
+}
+.interview{
+  @include media-breakpoint-up(md) {
+    &--1,&--5{
+      .title-interview__body{
+        padding-right: 40%;
+        padding-left: 0;
+      }
+    }
   }
 }
 

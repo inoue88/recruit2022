@@ -13,7 +13,7 @@ header.footer
           b-nav-item(href="https://www.aim-factory.com/contacts/new" target="_blank") お問い合わせ
           b-nav-item(href="https://www.aim-factory.com/privacy" target="_blank") 個人情報保護方針
       b-col
-        img(src='/img/common/logo-landscape.svg' class='footer__logo')
+        img(src='/static/images/common/logo-landscape.svg' class='footer__logo')
         span 2020年新卒採用
         span.footer__copy-right Copyright (C) 2018 aimfactory Inc.
 </template>
@@ -29,6 +29,18 @@ export default {
 .footer {
   &__wrapper {
     display: block;
+    .col:last-child{
+      padding-top: 2rem;
+      text-align: center;
+      &:before{
+        content: '';
+        display: inline-block;
+        height: 1px;
+        width: 100%;
+        border-bottom: 1px solid #fff;
+        margin-bottom: 1.5rem;
+      }
+    }
   }
   a {
     color: var(--white);
@@ -52,6 +64,13 @@ export default {
     &__wrapper {
       display: flex;
       flex-direction: row-reverse;
+      .col:last-child{
+        padding-top: 0;
+        text-align: left;
+        &:before{
+          content: normal;
+        }
+      }
     }
     &__nav {
       justify-content: flex-end;

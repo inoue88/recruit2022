@@ -26,7 +26,7 @@ header.header
 export default {
   data () {
     return {
-      menuCheck: true
+      menuCheck: false
     }
   },
   methods: {
