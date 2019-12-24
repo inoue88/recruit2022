@@ -28,17 +28,17 @@
           td
             b-row
               b-col(lg='3')
-                b-form-select(v-model='selected' :options='options')
+                b-form-select(v-model='selectJob' :options='sex')
         tr
           th 生年月日
           td
-            b-row(no-gutters)
+            b-row.cell-space(no-gutters)
               b-col(lg='3')
-                b-form-select(v-model='selected' :options='options')
-              b-col(lg='3')
-                b-form-select(v-model='selected' :options='options')
-              b-col(lg='3')
-                b-form-select(v-model='selected' :options='options')
+                b-form-input(v-model='text' placeholder='2000')
+              b-col(lg='2')
+                b-form-input(v-model='text' placeholder='01')
+              b-col(lg='2')
+                b-form-input(v-model='text' placeholder='01')
         tr
           th メールアドレス
           td
@@ -52,15 +52,15 @@
         tr
           th 住所
           td
-            b-row
+            b-row.mb-1
               b-col(lg='3')
-                b-form-input(v-model='text' placeholder='※「-（ハイフン）」なし半角数字')
-            b-row
+                b-form-select(v-model='selectJob' :options='prefecture')
+            b-row.mb-1
               b-col(lg='11')
-                b-form-input(v-model='text' placeholder='※「-（ハイフン）」なし半角数字')
-            b-row
+                b-form-input(v-model='text' placeholder='市区町村 番地')
+            b-row.mb-1
               b-col(lg='11')
-                b-form-input(v-model='text' placeholder='※「-（ハイフン）」なし半角数字')
+                b-form-input(v-model='text' placeholder='アパート・マンション名、その他')
       div.entry__agreement
         |フォームへ入力する前に、
         a(href='#')
@@ -77,18 +77,65 @@ export default {
     return {
       selectJob: null,
       optJob: [
-        {
-          value: null,
-          text: '応募する求人を選択してください'
-        },
-        {
-          value: 1,
-          text: 'キャリアアドバイザー・コンサルタントセールス職【正社員】'
-        },
-        { value: 2, text: 'WEBマーケティング職【正社員】' },
-        { value: 3, text: '事業開発職【正社員】' },
-        { value: 5, text: '職種希望なし【正社員】' },
-        { value: 4, text: '学生インターン（大学1年生～3年生対象）' }
+        {value: null, text: '応募する求人を選択してください'},
+        {value: 1, text: 'キャリアアドバイザー・コンサルタントセールス職【正社員】'},
+        {value: 2, text: '事業開発職【正社員】'}
+      ],
+      sex: [
+        {value: null, text: ''},
+        {value: 1, text: '男'},
+        {value: 2, text: '女'},
+        {value: 3, text: '回答しない'}
+      ],
+      prefecture: [
+        {value: null, text: '都道府県'},
+        {value: 1, text: '北海道'},
+        {value: 2, text: '青森県'},
+        {value: 3, text: '岩手県'},
+        {value: 4, text: '宮城県'},
+        {value: 5, text: '秋田県'},
+        {value: 6, text: '山形県'},
+        {value: 7, text: '福島県'},
+        {value: 8, text: '茨城県'},
+        {value: 9, text: '栃木県'},
+        {value: 10, text: '群馬県'},
+        {value: 11, text: '埼玉県'},
+        {value: 12, text: '千葉県'},
+        {value: 13, text: '東京都'},
+        {value: 14, text: '神奈川県'},
+        {value: 15, text: '新潟県'},
+        {value: 16, text: '富山県'},
+        {value: 17, text: '石川県'},
+        {value: 18, text: '福井県'},
+        {value: 19, text: '山梨県'},
+        {value: 20, text: '長野県'},
+        {value: 21, text: '岐阜県'},
+        {value: 22, text: '静岡県'},
+        {value: 23, text: '愛知県'},
+        {value: 24, text: '三重県'},
+        {value: 25, text: '滋賀県'},
+        {value: 26, text: '京都府'},
+        {value: 27, text: '大阪府'},
+        {value: 28, text: '兵庫県'},
+        {value: 29, text: '奈良県'},
+        {value: 30, text: '和歌山県'},
+        {value: 31, text: '鳥取県'},
+        {value: 32, text: '島根県'},
+        {value: 33, text: '岡山県'},
+        {value: 34, text: '広島県'},
+        {value: 35, text: '山口県'},
+        {value: 36, text: '徳島県'},
+        {value: 37, text: '香川県'},
+        {value: 38, text: '愛媛県'},
+        {value: 39, text: '高知県'},
+        {value: 40, text: '福岡県'},
+        {value: 41, text: '佐賀県'},
+        {value: 42, text: '長崎県'},
+        {value: 43, text: '熊本県'},
+        {value: 44, text: '大分県'},
+        {value: 45, text: '宮崎県'},
+        {value: 46, text: '鹿児島県'},
+        {value: 47, text: '沖縄県'}
       ]
     }
   }
@@ -132,4 +179,11 @@ export default {
   text-align: center;
   padding: 3rem 1rem;
 }
+.cell-space{
+  [class^="col"]{
+    margin-right: .3rem;
+    margin-bottom: .3rem;
+  }
+}
+
 </style>
