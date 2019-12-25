@@ -34,7 +34,7 @@
     .interview-message__text.interview-message__text03
   b-container
     div(v-if='item' key='product')
-      .interview-content(data-delighter)
+      .interview-content
         section.interview-content__section(v-for='(n,index) in 3')
           h3.interview-content__q
             |{{question[index +6]}}
@@ -116,38 +116,6 @@ export default {
 
 <style lang='scss'>
 @import "../assets/scss/custom.scss";
-
-.block {
-  width: 100%;
-  height: 200px;
-  background-color: white;
-  border: dashed 2px #888;
-  margin-bottom: 10px;
-  transform-origin: center center;
-  padding: .5rem 1rem;
-  position: relative;
-}
-.block::before {
-  position: absolute;
-  content: 'Start Scrolling';
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-// // exit to top
-// [data-scroll-dir-y="-1"] .block::before {
-//   content: 'I am scrolling up';
-// }
-
-// // exit to bottom
-// [data-scroll-dir-y="1"] .block::before  {
-//   content: 'I am scrolling down';
-// }
 
 .title-interview {
   position: relative;
@@ -236,7 +204,7 @@ export default {
 }
 .interview-content{
   margin-right: auto;
-  margin-bottom: 8rem;
+  margin-bottom: 6rem;
   &--rev{
     position: relative;
     margin-right: 0;
@@ -246,7 +214,7 @@ export default {
       display: block;
       background: lighten(#001377, 73%);
       width: 120%;
-      height: 110%;
+      height: 105%;
       position: absolute;
       z-index: -1;
       margin-top: -5%;
@@ -259,35 +227,59 @@ export default {
     border-bottom: 1px dotted c;
   }
   &__q{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 1.5;
     margin-bottom: 1rem;
     position: relative;
     color: #001377;
     &:first-letter{
-      font-size: 1.8em;
+      font-size: 1.6em;
       border-bottom: 3px solid #001377;
     }
   }
   &__a{
-    // font-size: 0.8125rem;
+    font-size: 0.9375rem;
+
   }
   @include media-breakpoint-up(md) {
     width: 80%;
+    margin-bottom: 9rem;
+    &--rev{
+        &:before{
+          height: 110%;
+        }
+      }
+    &__q{
+      font-size: 1.4rem;
+      &:first-letter{
+        font-size: 1.8em;
+      }
+    }
   }
 }
+
 .interview-image01{
   overflow: hidden;
   position: relative;
   z-index: -1;
-  margin-bottom: -5rem;
   img{
     display: block;
-    width: 75%;
+    width: 140%;
     margin-left: auto;
     z-index: -1;
   }
+  @include media-breakpoint-up(md) {
+    margin-bottom: -5rem;
+    img{
+      display: block;
+      width: 75%;
+      margin-left: auto;
+      z-index: -1;
+    }
+  }
 }
+
+
 .interview-footer{
   position: relative;
   overflow: visible;
@@ -311,11 +303,14 @@ export default {
     margin-bottom: -2rem;
     margin-left: -2rem;
     color: #fff;
-    width: 45%;
+    width: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
     font-size: 0.8125rem;
+  }
+  @include media-breakpoint-up(md) {
+    width: 45%;
   }
 }
 .interview-message{

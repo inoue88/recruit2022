@@ -37,7 +37,7 @@
           h1.about-sec__title 毎年約130%の売上げ拡大
           p.about-sec__txt ITによって世の中が進歩するとよく言われますが、実際は違うと思っています。すでに進歩を通り越した突然変異が起きる時代です。非連続で誰も想像しなかったことが一気に起きる時代。
   section.about-sec
-    b-container(data-delighter)
+    b-container
       b-row
         b-col(cols="12" lg="6")
           h2.about-sec__title

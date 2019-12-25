@@ -18,18 +18,13 @@ router-link.cardInterview(:to="`/interview/${ id }`" v-bind:class="`${ id % 2 ? 
 import ScrollOut from 'scroll-out'
 export default {
   props: ['name', 'nameEn', 'yearEntry', 'title', 'id', 'dep'],
-  mounted: function () {
+  mounted () {
     ScrollOut({
       threshold: 0.2,
       once: true,
       onShown: function (el) {
-        // use the web animation API
         el.animate([{ opacity: 0 }, { opacity: 1 }], 1000)
       }
-      // onHidden: function (el) {
-      //   // hide the element initially
-      //   el.style.opacity = 0
-      // }
     })
   }
 }
