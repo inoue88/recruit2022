@@ -55,6 +55,7 @@ export default {
   background: var(--primary);
   z-index: 2;
   height: 60vh;
+  max-height: 600px;
   &__wrap{
     position: relative;
     overflow: hidden;
@@ -86,7 +87,7 @@ export default {
     font-size: 40px;
     font-weight: 600;
   }
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     margin-bottom: 5rem;
     & {
       height: 25vw;

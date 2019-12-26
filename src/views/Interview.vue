@@ -40,7 +40,7 @@
             |{{question[index +6]}}
           .interview-content__a(v-html="item.answer[`${index+6}`]")
       .interview-footer
-        b-img(v-bind:src="`/static/images/interview/0${ id }/image03.jpg`")
+        b-img.interview-footer__img(v-bind:src="`/static/images/interview/0${ id }/image03.jpg`")
         .interview-footer__discription
           span.interview-footer__dep
             |{{ item.yearEntry }}入社/
@@ -180,7 +180,7 @@ export default {
       display: none;
     }
   }
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     margin-bottom: 7rem;
     & {
       height: 40vw;
@@ -241,7 +241,7 @@ export default {
     font-size: 0.9375rem;
 
   }
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     width: 80%;
     margin-bottom: 9rem;
     &--rev{
@@ -268,7 +268,7 @@ export default {
     margin-left: auto;
     z-index: -1;
   }
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     margin-bottom: -5rem;
     img{
       display: block;
@@ -279,13 +279,16 @@ export default {
   }
 }
 
-
 .interview-footer{
   position: relative;
   overflow: visible;
   margin-bottom: 3rem;
-  img{
-    width: 100%;
+  &__img{
+    width: 160%;
+    margin-bottom: -2rem;
+    z-index: -1;
+    position: relative;
+    transform: translate(-5%,0);
   }
   &__name{
     font-size: 1.4rem;
@@ -300,17 +303,20 @@ export default {
   &__discription{
     padding: 2rem 2rem 1rem;
     background: var(--primary);
-    margin-bottom: -2rem;
-    margin-left: -2rem;
     color: #fff;
     width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     font-size: 0.8125rem;
+    // transform: translate(-5%,-0);
   }
-  @include media-breakpoint-up(md) {
-    width: 45%;
+  @include media-breakpoint-up(lg) {
+    &__img{
+      width: 100%;
+      transform: translate(0,0);
+    }
+    &__discription{
+      width: 480px;
+      transform: translate(-5%,-100%);
+    }
   }
 }
 .interview-message{
@@ -338,11 +344,17 @@ export default {
   }
 }
 .interview{
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     &--1,&--5{
       .title-interview__body{
         padding-right: 40%;
         padding-left: 0;
+      }
+    }
+    &--1,&--2,&--5,&--6{
+      .interview-footer__discription{
+        margin-left: auto;
+        transform: translate(5%,-100%);
       }
     }
   }

@@ -39,12 +39,8 @@ export default {
 @import '../assets/scss/custom.scss';
 .sec-message {
   $parent: &;
+  margin: 0 0 24rem 0;
   position: relative;
-  margin-top: 10rem;
-  &__body {
-    background: #fff;
-    width: 520px;
-  }
   &__title {
     font-size: 1.6rem;
   }
@@ -68,13 +64,13 @@ export default {
   }
   &__img-wrap {
     z-index: inherit;
-    width: 60%;
+    width: 100%;
     position: absolute;
     right: 0;
-    top: 0;
-    margin-top: -5rem;
+    top: 100%;
+    margin-top: 2rem;
     z-index: -1;
-}
+  }
   &--rev {
     #{$parent}__body {
       margin-left: auto;
@@ -86,12 +82,23 @@ export default {
   }
   @include media-breakpoint-up(md) {
     padding: 0 0 3rem;
+    margin: 10rem 0 0 0;
     &__body {
-      background: #fff;
+      background: rgba(255, 255, 255, .8);
       padding: 2rem;
+      width: 520px;
     }
     &__txt {
       margin-top: 3rem;
+    }
+    &__img-wrap {
+      z-index: inherit;
+      width: 60%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin-top: -5rem;
+      z-index: -1;
     }
   }
 }
