@@ -1,5 +1,8 @@
 <template lang="pug">
-router-link.interview-list(:to="`/interview/${ id }`" v-bind:class="`${ id % 2 ? '':'interview-list--odd'}`" v-bind:key="`${ id }`")
+router-link.interview-list(
+  :to="`/interview/${ id }`"
+  v-bind:class="`${ id % 2 ? '':'interview-list--odd'}`"
+  v-bind:key="`${ id }`" data-scroll)
   //- b-img.interview-list__image(v-bind:src="`/img/interview/0${ id }/image01.jpg`")
   b-img(v-bind:src="`/static/images/interview/0${ id }/image01.jpg`" class="interview-list__image")
   .interview-list__body
@@ -11,9 +14,20 @@ router-link.interview-list(:to="`/interview/${ id }`" v-bind:class="`${ id % 2 ?
 </template>
 
 <script>
+import ScrollOut from 'scroll-out'
 export default {
-  props: ['name', 'nameEn', 'yearEntry', 'title', 'id']
+  props: ['name', 'nameEn', 'yearEntry', 'title', 'id'],
+  mounted () {
+    ScrollOut({
+      threshold: 0.2,
+      once: true,
+      onShown: function (el) {
+        el.animate([{ opacity: 0 }, { opacity: 1 }], 1000)
+      }
+    })
+  }
 }
+
 </script>
 
 <style lang="scss" scoped>

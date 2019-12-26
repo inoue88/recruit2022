@@ -25,31 +25,31 @@
       //-     source(media="(min-width: 960px)" v-bind:srcset="'/static/images/common/header-message--pc.jpg'")
       //-     source(media="(min-width: 320px)" v-bind:srcset="'/static/images/common/header-message--sp.jpg'")
       //-     img(src="images/picture_s.gif" alt="")
-    .header-hero__content
+    .header-hero__content(data-scroll)
       h1 社会に変革をもたらす<br>ヒトと企業を加速する
       p Bringing change to society Accelerate people and companies
     p.header-hero__scroll
       |SCROLL
       span.header-hero__bar
   b-container
-    .section-intro
+    .section-intro(data-scroll)
       h2 社会に変革をもたらすヒトと企業を加速する
       p 私たち、アイムファクトリー株式会社は世の中に新しい価値を提供する【IT人材】に特化したビジネスを展開し、2008年の創業以来、増収増益を続けています。
       p 2018年には関西サテライトオフィスがオープン。これから、IT人材サービスのプラットフォームとしてサービスのフルラインナップ化を実現すべく事業領域拡大にも力を入れていきます。
-    .section
+    .section(data-scroll)
       .section__bg
-        img.section__img(src="")
+        img.section__img(src="/static/images/home/about.jpg")
       .section__body
-        h2 私達について
-        p 2018年には関西サテライトオフィスがオープン。これから、IT人材サービスのプラットフォームとしてサービスのフルラインナップ化を実現すべく事業領域拡大にも力を入れていきます。
-        a.btn(href='#') READ ME
-    .section.section--rev
+        h2.h3 私達について
+        p.small 2018年には関西サテライトオフィスがオープン。これから、IT人材サービスのプラットフォームとしてサービスのフルラインナップ化を実現すべく事業領域拡大にも力を入れていきます。
+        router-link(to="/about" tag="b-button") READ ME
+    .section.section--rev(data-scroll)
       .section__bg
-        img.section__img(src="")
+        img.section__img(src="/static/images/home/message.jpg")
       .section__body
-        h2 代表メッセージ
-        p 2018年には関西サテライトオフィスがオープン。これから、IT人材サービスのプラットフォームとしてサービスのフルラインナップ化を実現すべく事業領域拡大にも力を入れていきます。
-        a.btn(href='#') READ ME
+        h2.h3 代表メッセージ
+        p.small 2018年には関西サテライトオフィスがオープン。これから、IT人材サービスのプラットフォームとしてサービスのフルラインナップ化を実現すべく事業領域拡大にも力を入れていきます。
+        router-link(to="/message" tag="b-button" variant="primary" squared) READ ME
     section
       b-row(align-v="center")
         b-col(cols="12" lg="6")
@@ -71,6 +71,8 @@
 import interview from '@/api/interview.js'
 import CardInterviewSmall from '@/components/CardInterviewSmall.vue'
 import { Carousel, Slide } from 'vue-carousel'
+import ScrollOut from 'scroll-out'
+
 export default {
   name: 'home',
   components: {
@@ -85,6 +87,15 @@ export default {
   },
   computed: {
     list: () => interview.fetch()
+  },
+  mounted () {
+    ScrollOut({
+      threshold: 0.2,
+      once: true,
+      onShown: function (el) {
+        el.animate([{ opacity: 0 }, { opacity: 1 }], 1000)
+      }
+    })
   }
 }
 </script>
@@ -166,23 +177,32 @@ export default {
 .section{
   $parent:&;
   position: relative;
-  padding-bottom: 10rem;
+  margin-bottom: 10rem;
   &__bg{
     width: 100%;
-    height: 480px;
+    padding-top: 45%;
     background: #ccc;
+    overflow: hidden;
+    position: relative;
+    img{
+      width: 100%;
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%,-50%)
+    }
   }
   &__body{
     position: absolute;
-    right: calc(50% - 50vw);
-    top: 160px;
-    width: 40vw;
-    padding: 80px;
+    right: 0;
+    bottom: 0;
+    width: 45%;
+    padding: 3rem;
     background: #fff;
   }
   &--rev{
     #{$parent}__body{
-      left: calc(50% - 50vw);
+      left: 0;
     }
   }
 }
