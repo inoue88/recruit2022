@@ -105,6 +105,7 @@ export default {
     ScrollOut({
       threshold: 0.2,
       once: true,
+      targets: '.u-line',
       onShown (el) {
         el.classList.add('animated', 'fadeInUp')
       }
