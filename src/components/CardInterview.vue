@@ -70,8 +70,8 @@ export default {
       width: 100%;
       -webkit-transform: scale(1);
       transform: scale(1);
-      -webkit-transition: .3s ease-in-out;
-      transition: .3s ease-in-out;
+      -webkit-transition: .6s ease-in-out;
+      transition: .6s ease-in-out;
       position: absolute;
       opacity: 1;
       top: 0;

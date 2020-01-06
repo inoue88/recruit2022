@@ -10,7 +10,6 @@
           p.sec-message__txt しかし私としては給与をもらいながらトライアンドエラーを繰り返していける環境というのは非常に魅力的で不満は一切ありませんでした。顧客の声を聴き世の中のニーズを理解し最適解を見つける。一つひとつの体験を幅広く積み上げていけたのはベンチャーならではだったと思います。
           p.sec-message__txt 会社も自分の成長と歩調を合わせるように大きくなっていったので、とてもやりがいを感じビジネスの醍醐味を経験できました。
         .sec-message__img-wrap
-          //- img.sec-message__img(src='https://placehold.jp/1200x800.png')
           b-img(v-bind:src="`/static/images/message/image01.jpg`" class="sec-message__img")
       .sec-message.sec-message--rev(data-scroll)
         .sec-message__body
@@ -19,7 +18,7 @@
           p.sec-message__txt 世の中を通し、感じ、見て、じっくり考えることができたのは幸運でもありました。
           p.sec-message__txt 新しい価値観が生れ、また大きく変わっていくであろう節目にマンションの一室を借りて、スタートしたのがアイムファクトリーです。
         .sec-message__img-wrap
-          img.sec-message__img(src='https://placehold.jp/1200x800.png')
+          b-img(v-bind:src="`/static/images/message/image02.jpg`" class="sec-message__img")
       .sec-message(data-scroll)
         .sec-message__body
           h2.sec-message__title アイムファクトリーという<br>会社でのやりがい
@@ -28,7 +27,7 @@
           p.sec-message__txt ITエンジニアは技術と経験さえあれば、年齢も性別も問いません。<br >働き方もキャリアも多様化しています。転職回数が多いのは悪いことですか。正社員が安定？非正規はネガティブでしょうか。正解はつねに変化しています。
           p.sec-message__txt 答えがないものを考えサービスを豊かにすることがイノベーティブでありキャリアだと思います。
         .sec-message__img-wrap
-          img.sec-message__img(src='https://placehold.jp/1200x800.png')
+          b-img(v-bind:src="`/static/images/message/image03.jpg`" class="sec-message__img")
       .sec-message(data-scroll)
         .sec-message__body-center
           h2.sec-message__title メッセージ
@@ -61,7 +60,7 @@ export default {
 @import '../assets/scss/custom.scss';
 .sec-message {
   $parent: &;
-  margin: 0 0 24rem 0;
+  margin: 0 0 28rem 0;
   position: relative;
   &__title {
     font-size: 1.6rem;
