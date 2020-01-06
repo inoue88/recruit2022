@@ -4,19 +4,41 @@
     b-container
       .sec-message
         .sec-message__body
-          h2.sec-message__title 700年の歴史ある産業が、<br>創業数ヶ月の会社に完敗する時代
-          p.sec-message__txt ITによって世の中が進歩するとよく言われますが、実際は違うと思っています。<br>すでに進歩を通り越した突然変異が起きる時代です。<br>非連続で誰も想像しなかったことが一気に起きる時代。<br>
-          p.sec-message__txt 先日もサービスインして数ヶ月の質屋アプリ開発会社が大手資本に70億円で買収されたということが話題になりました。<br>買収価格70億円ということはその企業には少なくとも70億円以上の価値を生み出す力があるということです。質屋産業は鎌倉時代に誕生したと言われていますので700年以上の歴史があります。それだけの企業価値を数ヶ月で作れた会社が今までありましたでしょうか？<br>ここ数十年の間に旧来の個人商店型から大型化、特定商品への特化などで急激に成長した企業もありました。ただ、それでも数十年かかっています。
+          h2.sec-message__title 仕事の根幹
+          p.sec-message__txt 私のビジネスパーソンとして始まりは、従業員10名程の小さなベンチャー企業からスタートしました。業種は今と同じく、IT人材のキャリア支援をやっていたのですが、当時はOJTもなく女性の営業は私のみでもちろんメンター制度などもありません。
+          p.sec-message__txt 何もかも自分で考えながらやっていかなければならない状況の中、ビジネスの本質も理解できていなかったので毎日が試行錯誤の連続でした。
+          p.sec-message__txt しかし私としては給与をもらいながらトライアンドエラーを繰り返していける環境というのは非常に魅力的で不満は一切ありませんでした。顧客の声を聴き世の中のニーズを理解し最適解を見つける。一つひとつの体験を幅広く積み上げていけたのはベンチャーならではだったと思います。
+          p.sec-message__txt 会社も自分の成長と歩調を合わせるように大きくなっていったので、とてもやりがいを感じビジネスの醍醐味を経験できました。
         .sec-message__img-wrap
-          img.sec-message__img(src='https://placehold.jp/1200x800.png')
+          //- img.sec-message__img(src='https://placehold.jp/1200x800.png')
+          b-img(v-bind:src="`/static/images/message/image01.jpg`" class="sec-message__img")
       .sec-message.sec-message--rev(data-scroll)
         .sec-message__body
-          h2.sec-message__title 変化し続ける顧客のニーズに<br>対して臨機応変に対応
-          p.sec-message__txt 我々はITエンジニアに特化したビジネスを展開していますが、前述のように今すべての業界で急速なIT化が進み、一人ひとりの働き方も変化しています。<br>それに伴い、ITエンジニア自身の働き方も大きく変化。
-          p.sec-message__txt 「ITエンジニア＝プログラムを書いて開発する」というスタイルから、「サービス自体を考え、設計し、プロデュースする」<br>といったように、より広範囲かつ大きな責任を伴うポジションに変化してきています。
-          p.sec-message__txt そうなると私たちが顧客に対して提供すべきサービスにも、大きな変化が求められることになり、毎日新しい技術が開発されるIT業界の変化に終わりはありません。<br>つまり私たちのビジネスも「変化することが前提」で、変化し続ける顧客のニーズに対して臨機応変に対応していかなければ、将来に渡る事業成長はないということです。
+          h2.sec-message__title 卒業と起業
+          p.sec-message__txt 出産などのライフイベントが重なり自身のバランスと時間を確保する為にその会社を卒業しましたが今なら様々な働き方がありますので辞めていなかったかもしれません。<br>そして当時はリーマンショックが起こったまさにその時だったので、多くの組織が崩壊し色々な人が職を失っていくのをみました。「安定」とは何か、「キャリア」とはどうあるべきなのか。
+          p.sec-message__txt 世の中を通し、感じ、見て、じっくり考えることができたのは幸運でもありました。
+          p.sec-message__txt 新しい価値観が生れ、また大きく変わっていくであろう節目にマンションの一室を借りて、スタートしたのがアイムファクトリーです。
         .sec-message__img-wrap
           img.sec-message__img(src='https://placehold.jp/1200x800.png')
+      .sec-message(data-scroll)
+        .sec-message__body
+          h2.sec-message__title アイムファクトリーという<br>会社でのやりがい
+          p.sec-message__txt 私たちの仕事は「IT×人材」の領域にあります。
+          p.sec-message__txt IT業界には「世の中はもっと便利になる」イノベーションを起こし熱意と技術を持って臨んでいる人々がたくさんいます。私たちはその企業と人、そして世の中の点と線を繋げる仕事です。
+          p.sec-message__txt ITエンジニアは技術と経験さえあれば、年齢も性別も問いません。<br >働き方もキャリアも多様化しています。転職回数が多いのは悪いことですか。正社員が安定？非正規はネガティブでしょうか。正解はつねに変化しています。
+          p.sec-message__txt 答えがないものを考えサービスを豊かにすることがイノベーティブでありキャリアだと思います。
+        .sec-message__img-wrap
+          img.sec-message__img(src='https://placehold.jp/1200x800.png')
+      .sec-message(data-scroll)
+        .sec-message__body-center
+          h2.sec-message__title メッセージ
+          p.sec-message__txt 今はクリック一つで仕事も選択できる時代です。
+          p.sec-message__txt では我々はなぜ存在しているのか。
+          p.sec-message__txt 我々の介在価値はどこにあるのか。
+          p.sec-message__txt これからキャリアはもっと自由になっていく。
+          p.sec-message__txt そんな世の中で我々は必要とされるサービスを常に生み出していきたい、
+          p.sec-message__txt そう考えています。
+          p.sec-message__txt 様々なキャリアを受容し、圧倒的な成長と共に変化していく仲間を求めています。
 </template>
 
 <script>
@@ -82,14 +104,19 @@ export default {
   }
   @include media-breakpoint-up(md) {
     padding: 0 0 3rem;
-    margin: 10rem 0 0 0;
+    margin: 8rem 0 0 0;
     &__body {
-      background: rgba(255, 255, 255, .8);
+      background: rgba(255, 255, 255, .9);
       padding: 2rem;
       width: 520px;
     }
+    &__body-center {
+      margin: 0 auto;
+      text-align: center;
+      width: 800px;
+    }
     &__txt {
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
     &__img-wrap {
       z-index: inherit;

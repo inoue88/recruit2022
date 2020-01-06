@@ -2,7 +2,7 @@
 header.header
   router-link.header__logo(to="/")
     img(src="/static/images/common/logo.svg")
-    span.header__title-sub RECRUIT 2020
+    span.header__title-sub RECRUIT 2021
   input.header__btn(type='checkbox' id='header-btn' v-model='menuCheck')
   label.header__icon(for='header-btn')
     span.header__bar

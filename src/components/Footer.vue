@@ -14,7 +14,7 @@ header.footer
           b-nav-item(href="https://www.aim-factory.com/privacy" target="_blank") 個人情報保護方針
       b-col
         img(src='/static/images/common/logo-landscape.svg' class='footer__logo')
-        span 2020年新卒採用
+        span RECRUIT 2021
         span.footer__copy-right Copyright (C) 2018 aimfactory Inc.
 </template>
 

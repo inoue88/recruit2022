@@ -34,21 +34,21 @@
   b-container
     .section-intro(data-scroll)
       h2 社会に変革をもたらすヒトと企業を加速する
-      p 私たち、アイムファクトリー株式会社は世の中に新しい価値を提供する【IT人材】に特化したビジネスを展開し、2008年の創業以来、増収増益を続けています。
-      p 2018年には関西サテライトオフィスがオープン。これから、IT人材サービスのプラットフォームとしてサービスのフルラインナップ化を実現すべく事業領域拡大にも力を入れていきます。
+      p アイムファクトリー株式会社は世の中に新しい価値を提供する【IT人材】に特化したビジネスを展開しています。
+      p 変化が早いIT業界だから湧いてくる好奇心。大企業への経営戦略支援、柔軟な思考と対応力を誇る私たちのベンチャースピリッツが次に目指すものは、IT人材サービスのフルラインナップ化と全国展開です。
     .section(data-scroll)
       .section__bg
         img.section__img(src="/static/images/home/about.jpg")
       .section__body
         h2.h3 私達について
-        p.small 2018年には関西サテライトオフィスがオープン。これから、IT人材サービスのプラットフォームとしてサービスのフルラインナップ化を実現すべく事業領域拡大にも力を入れていきます。
+        p.small IT人材と企業のために私達が大切にすること。それは変化を続けるニーズに即時対応する柔軟な対応力。常に考え、行動し、新たなイノベーションを生み出す私たちの企業風土をご紹介します。
         router-link(to="/about" tag="b-button") READ ME
     .section.section--rev(data-scroll)
       .section__bg
         img.section__img(src="/static/images/home/message.jpg")
       .section__body
         h2.h3 代表メッセージ
-        p.small 2018年には関西サテライトオフィスがオープン。これから、IT人材サービスのプラットフォームとしてサービスのフルラインナップ化を実現すべく事業領域拡大にも力を入れていきます。
+        p.small 次々に進化を続けるIT業界の変革スピード。IT人材-企業の間に、私たちアイムファクトリーが存在する価値とは。アイムファクトリー代表久利からのメッセージ。
         router-link(to="/message" tag="b-button" variant="primary" squared) READ ME
     section
       b-row(align-v="center")
