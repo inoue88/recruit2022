@@ -45,7 +45,7 @@ export default {
   a {
     color: var(--white);
   }
-  padding: 4rem 0;
+  padding: 1rem 0;
   background: var(--primary);
   color: var(--white);
   &__nav {
@@ -61,6 +61,7 @@ export default {
     font-size: small;
   }
   @include media-breakpoint-up(lg) {
+    padding: 4rem 0;
     &__wrapper {
       display: flex;
       flex-direction: row-reverse;
