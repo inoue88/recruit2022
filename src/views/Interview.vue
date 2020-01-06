@@ -32,6 +32,8 @@
     .interview-message__text.interview-message__text01
     .interview-message__text.interview-message__text02
     .interview-message__text.interview-message__text03
+    .interview-message__text.interview-message__text04
+    .interview-message__text.interview-message__text05
   b-container
     div(v-if='item' key='product')
       .interview-content
@@ -325,11 +327,11 @@ export default {
   padding: 40px;
   position: relative;
   z-index: -2;
-  margin-bottom: -600px;
+  margin-bottom: -760px;
   &__text{
     background-position: right center;
-    height: 180px;
-    width: 3384px;
+    height: 140px;
+    width: 3600px;
   }
   &__text01{
     background: url(/static/images/interview/text01.svg) repeat-x;
@@ -341,6 +343,14 @@ export default {
   }
   &__text03{
     background: url(/static/images/interview/text03.svg) repeat-x;
+    animation: slide1 60s linear infinite;
+  }
+  &__text04{
+    background: url(/static/images/interview/text04.svg) repeat-x;
+    animation: slide1 60s linear infinite;
+  }
+  &__text05{
+    background: url(/static/images/interview/text05.svg) repeat-x;
     animation: slide1 60s linear infinite;
   }
 }
