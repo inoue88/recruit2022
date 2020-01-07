@@ -39,7 +39,7 @@ export default {
     font-family: Lato;
     font-weight: bold;
     line-height: 1.5;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin-bottom: 0.5rem;
   }
   &__txt {
