@@ -31,7 +31,7 @@ export default {
     width: 100%;
   }
   &__body {
-    padding: 1rem;
+    padding: 1rem 0;
     margin-bottom: 2rem;
     position: relative;
   }
@@ -39,7 +39,7 @@ export default {
     font-family: Lato;
     font-weight: bold;
     line-height: 1.5;
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: 0.5rem;
   }
   &__txt {
@@ -58,7 +58,7 @@ export default {
     opacity: 0.2;
   }
   @include media-breakpoint-up(lg) {
-    margin: 0 3rem;
+    margin: 0 1rem;
   }
 }
 </style>
