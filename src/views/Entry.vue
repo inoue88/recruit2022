@@ -53,8 +53,8 @@
             td
               b-row
                 b-col(lg='7')
-                  b-form-input(v-model='entry.tel1' placeholder='※「-（ハイフン）」なし半角数字')
-                  <!-- b-form-input(v-model='entry.tel1' placeholder='※「-（ハイフン）」なし半角数字' required='required') -->
+                  b-form-input(v-model='entry.tel1' type='number' placeholder='※「-（ハイフン）」なし半角数字')
+                  <!-- b-form-input(v-model='entry.tel1' type='number' placeholder='※「-（ハイフン）」なし半角数字' required='required') -->
           tr
             th 住所
             td
@@ -163,10 +163,21 @@ export default {
   },
   methods: {
     post_entry: function () {
-      // console.log('post_entry')
-      // console.log(this.entry)
-      axios.post('/api/entries', { new_graduate: this.entry }).then((res) => {
-        this.$router.push({ path: '/' })
+      axios.defaults.headers.common['Accept'] = 'application/json'
+      axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+      axios.post('/api/entries', { new_graduate: this.entry }).then((response) => {
+        if (response.data.status === 'success') {
+          console.log('成功')
+          console.log(response)
+          // thanksページへ遷移
+          // this.$router.push({ path: '/' })
+        } else {
+          console.log('失敗')
+          console.log(response)
+          console.log(response.data.messages[0])
+          // alert(response.data.messages)
+          // response
+        }
       }, (error) => {
         console.log(error)
       })
