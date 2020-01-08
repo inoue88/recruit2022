@@ -7,7 +7,7 @@
           tr
             th 応募職種
             td
-              b-form-select(v-model='entry.job' :options='optJob')
+              b-form-select(v-model='entry.entry_type' :options='optJob' required='required')
           tr
             th
               |お名前
@@ -45,6 +45,9 @@
             th メールアドレス
             td
               b-form-input(v-model='entry.email' type='email' placeholder='recruit@aim-factory.co.jp' required='required')
+            td
+              b-form-input(v-model='entry.email_confirmation' type='email' placeholder='確認のためもう一度ご入力ください' required='required')
+
           tr
             th 電話番号
             td
@@ -74,25 +77,31 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'Entry',
   data () {
     return {
       entry: {
-        job: null,
+        entry_type: null,
         gender: null,
         prefecture_id: null,
         name: '',
         name_kana: '',
         birth: '',
         email: '',
+        email_confirmation: '',
         tel1: '',
-        address: ''
+        address: '',
+        agreement: '1',
+        confirming: '1',
+        entry_year: '2021'
       },
       optJob: [
         {value: null, text: '応募する求人を選択してください'},
         {value: 1, text: 'キャリアアドバイザー・コンサルタントセールス職【正社員】'},
-        {value: 2, text: '事業開発職【正社員】'}
+        // {value: 2, text: 'WEBマーケ職【正社員】'},
+        {value: 3, text: '事業開発職【正社員】'}
       ],
       gender: [
         {value: null, text: ''},
@@ -154,9 +163,13 @@ export default {
   },
   methods: {
     post_entry: function () {
-      // 本当はajax通信
-      console.log('post_entry')
-      console.log(this.entry)
+      // console.log('post_entry')
+      // console.log(this.entry)
+      axios.post('/api/entries', { new_graduate: this.entry }).then((res) => {
+        this.$router.push({ path: '/' })
+      }, (error) => {
+        console.log(error)
+      })
     }
   }
 }
