@@ -2,72 +2,75 @@
   .entry
     b-container.container-small
       p 必要項目を入力後、確認画面が表示されます。<br>内容に間違いがなければ、ページ最下部の確認ボタンを押して下さい。
-      table.entry-table
-        tr
-          th 応募職種
-          td
-            b-form-select(v-model='selectJob' :options='optJob')
-        tr
-          th
-            |お名前
-            span.entry-table__supplement (漢字)
-          td
-            b-row
-              b-col(lg='7')
-                b-form-input(v-model='text' placeholder='田中 太郎')
-        tr
-          th
-            |お名前
-            span.entry-table__supplement (カタカナ)
-          td
-            b-row
-              b-col(lg='7')
-                b-form-input(v-model='text' placeholder='タナカタロウ')
-        tr
-          th 性別
-          td
-            b-row
-              b-col(lg='3')
-                b-form-select(v-model='selectJob' :options='sex')
-        tr
-          th 生年月日
-          td
-            b-row.cell-space(no-gutters)
-              b-col(lg='3')
-                b-form-input(v-model='text' placeholder='2000')
-              b-col(lg='2')
-                b-form-input(v-model='text' placeholder='01')
-              b-col(lg='2')
-                b-form-input(v-model='text' placeholder='01')
-        tr
-          th メールアドレス
-          td
-            b-form-input(v-model='text' placeholder='recruit@aim-factory.co.jp')
-        tr
-          th 電話番号
-          td
-            b-row
-              b-col(lg='7')
-                b-form-input(v-model='text' placeholder='※「-（ハイフン）」なし半角数字')
-        tr
-          th 住所
-          td
-            b-row.mb-1
-              b-col(lg='3')
-                b-form-select(v-model='selectJob' :options='prefecture')
-            b-row.mb-1
-              b-col(lg='11')
-                b-form-input(v-model='text' placeholder='市区町村 番地')
-            b-row.mb-1
-              b-col(lg='11')
-                b-form-input(v-model='text' placeholder='アパート・マンション名、その他')
-      div.entry__agreement
-        |フォームへ入力する前に、
-        a(href='#')
-          |個人情報の取り扱い
-        |についてをよくお読み下さい。
-      .text-center.mb-5
-        b-button(size='lg' squared variant='aimred' to='/entry') ENTRY
+      <form @submit.prevent="post_entry">
+        table.entry-table
+          tr
+            th 応募職種
+            td
+              b-form-select(v-model='entry.job' :options='optJob')
+          tr
+            th
+              |お名前
+              span.entry-table__supplement (漢字)
+            td
+              b-row
+                b-col(lg='7')
+                  b-form-input(v-model='entry.name' required='required' placeholder='田中 太郎')
+          tr
+            th
+              |お名前
+              span.entry-table__supplement (カタカナ)
+            td
+              b-row
+                b-col(lg='7')
+                  b-form-input(v-model='entry.name_kana' required='required' placeholder='タナカタロウ')
+          tr
+            th 性別
+            td
+              b-row
+                b-col(lg='3')
+                  b-form-select(v-model='entry.gender' required='required' :options='gender')
+          tr
+            th 生年月日
+            td
+              b-row.cell-space(no-gutters)
+                b-col(lg='3')
+                  b-form-input(v-model='entry.birth' placeholder='2000' type='date')
+                  <!-- b-form-input(v-model='entry.birth' placeholder='2000' type='date' required='required') -->
+                <!-- b-col(lg='2')
+                  b-form-input(v-model='birth_month' placeholder='01')
+                b-col(lg='2')
+                  b-form-input(v-model='birth_date' placeholder='01') -->
+          tr
+            th メールアドレス
+            td
+              b-form-input(v-model='entry.email' type='email' placeholder='recruit@aim-factory.co.jp' required='required')
+          tr
+            th 電話番号
+            td
+              b-row
+                b-col(lg='7')
+                  b-form-input(v-model='entry.tel1' placeholder='※「-（ハイフン）」なし半角数字')
+                  <!-- b-form-input(v-model='entry.tel1' placeholder='※「-（ハイフン）」なし半角数字' required='required') -->
+          tr
+            th 住所
+            td
+              b-row.mb-1
+                b-col(lg='3')
+                  b-form-select(v-model='entry.prefecture_id' :options='prefecture_id' required='required')
+              b-row.mb-1
+                b-col(lg='11')
+                  b-form-input(v-model='entry.address' placeholder='以降住所')
+                  <!-- b-form-input(v-model='entry.address' placeholder='以降住所' required='required') -->
+
+        div.entry__agreement
+          |フォームへ入力する前に、
+          a(href='/privacy' target='_blank')
+            |個人情報の取り扱い
+          |についてをよくお読み下さい。
+        .text-center.mb-5
+          b-button(size='lg' type="submit" squared variant='aimred') ENTRY
+      </form>
 </template>
 
 <script>
@@ -75,19 +78,29 @@ export default {
   name: 'Entry',
   data () {
     return {
-      selectJob: null,
+      entry: {
+        job: null,
+        gender: null,
+        prefecture_id: null,
+        name: '',
+        name_kana: '',
+        birth: '',
+        email: '',
+        tel1: '',
+        address: ''
+      },
       optJob: [
         {value: null, text: '応募する求人を選択してください'},
         {value: 1, text: 'キャリアアドバイザー・コンサルタントセールス職【正社員】'},
         {value: 2, text: '事業開発職【正社員】'}
       ],
-      sex: [
+      gender: [
         {value: null, text: ''},
         {value: 1, text: '男'},
         {value: 2, text: '女'},
         {value: 3, text: '回答しない'}
       ],
-      prefecture: [
+      prefecture_id: [
         {value: null, text: '都道府県'},
         {value: 1, text: '北海道'},
         {value: 2, text: '青森県'},
@@ -137,6 +150,13 @@ export default {
         {value: 46, text: '鹿児島県'},
         {value: 47, text: '沖縄県'}
       ]
+    }
+  },
+  methods: {
+    post_entry: function () {
+      // 本当はajax通信
+      console.log('post_entry')
+      console.log(this.entry)
     }
   }
 }
