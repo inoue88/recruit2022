@@ -19,7 +19,7 @@
           tr
             th
               |お名前
-              span.entry-table__supplement (カタカナ)
+              span.entry-table__supplement (フリガナ)
             td
               b-row
                 b-col(lg='7')
@@ -35,12 +35,8 @@
             td
               b-row.cell-space(no-gutters)
                 b-col(lg='3')
-                  b-form-input(v-model='entry.birth' placeholder='2000' type='date')
-                  <!-- b-form-input(v-model='entry.birth' placeholder='2000' type='date' required='required') -->
-                <!-- b-col(lg='2')
-                  b-form-input(v-model='birth_month' placeholder='01')
-                b-col(lg='2')
-                  b-form-input(v-model='birth_date' placeholder='01') -->
+                  b-form-input(v-model='entry.birth' placeholder='2000' type='date' required='required')
+
           tr
             th メールアドレス
             td
@@ -53,8 +49,7 @@
             td
               b-row
                 b-col(lg='7')
-                  b-form-input(v-model='entry.tel1' type='number' placeholder='※「-（ハイフン）」なし半角数字')
-                  <!-- b-form-input(v-model='entry.tel1' type='number' placeholder='※「-（ハイフン）」なし半角数字' required='required') -->
+                  b-form-input(v-model='entry.tel1' placeholder='※「-（ハイフン）」なし半角数字' required='required')
           tr
             th 住所
             td
@@ -63,8 +58,7 @@
                   b-form-select(v-model='entry.prefecture_id' :options='prefecture_id' required='required')
               b-row.mb-1
                 b-col(lg='11')
-                  b-form-input(v-model='entry.address' placeholder='以降住所')
-                  <!-- b-form-input(v-model='entry.address' placeholder='以降住所' required='required') -->
+                  b-form-input(v-model='entry.address' placeholder='都道府県以降の住所をご入力ください' required='required')
 
         div.entry__agreement
           |フォームへ入力する前に、
@@ -92,6 +86,8 @@ export default {
         email: '',
         email_confirmation: '',
         tel1: '',
+        tel2: '',
+        zip: '',
         address: '',
         agreement: '1',
         confirming: '1',
@@ -167,19 +163,17 @@ export default {
       axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
       axios.post('/api/entries', { new_graduate: this.entry }).then((response) => {
         if (response.data.status === 'success') {
-          console.log('成功')
-          console.log(response)
-          // thanksページへ遷移
-          // this.$router.push({ path: '/' })
+          // TODO:inoue thanksページへ遷移。thanksページができたら以下のコメントアウトを外していただければと思います！
+          // this.$router.push({ path: '/thanks' })
         } else {
-          console.log('失敗')
-          console.log(response)
-          console.log(response.data.messages[0])
-          // alert(response.data.messages)
-          // response
+          var errorMessages = response.data.messages.join('\n')
+          // TODO:inoue 不正な値などの場合のエラーメッセージです。いい感じに表示お願いします！
+          alert(errorMessages)
         }
       }, (error) => {
         console.log(error)
+        // TODO:inoue サーバー側の予期せぬエラー(500系)の場合です。装飾と文章の調整をお願いいたします
+        alert('申し訳ございません。エラーが発生しました。\n時間をおいて、再度お試しください。')
       })
     }
   }
