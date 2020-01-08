@@ -34,27 +34,37 @@
             th 生年月日
             td
               b-row.cell-space(no-gutters)
-                b-col(lg='3')
+                b-col(lg='9')
                   b-form-input(v-model='entry.birth' placeholder='2000' type='date' required='required')
 
           tr
             th メールアドレス
             td
-              b-form-input(v-model='entry.email' type='email' placeholder='recruit@aim-factory.co.jp' required='required')
+              b-row
+                b-col(lg='7')
+                  b-form-input(v-model='entry.email' type='email' placeholder='recruit@aim-factory.co.jp' required='required')
             td
-              b-form-input(v-model='entry.email_confirmation' type='email' placeholder='確認のためもう一度ご入力ください' required='required')
+              b-row
+                b-col(lg='7')
+                  b-form-input(v-model='entry.email_confirmation' type='email' placeholder='確認のためもう一度ご入力ください' required='required')
 
           tr
             th 電話番号
             td
               b-row
-                b-col(lg='7')
+                b-col(lg='9')
                   b-form-input(v-model='entry.tel1' placeholder='※「-（ハイフン）」なし半角数字' required='required')
+          tr
+            th 郵便番号
+            td
+              b-row
+                b-col(lg='7')
+                  b-form-input(v-model='entry.zip' required='required')
           tr
             th 住所
             td
               b-row.mb-1
-                b-col(lg='3')
+                b-col(lg='5')
                   b-form-select(v-model='entry.prefecture_id' :options='prefecture_id' required='required')
               b-row.mb-1
                 b-col(lg='11')
@@ -163,8 +173,8 @@ export default {
       axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
       axios.post('/api/entries', { new_graduate: this.entry }).then((response) => {
         if (response.data.status === 'success') {
-          // TODO:inoue thanksページへ遷移。thanksページができたら以下のコメントアウトを外していただければと思います！
-          // this.$router.push({ path: '/thanks' })
+          // TODO:inoue thanksページへ遷移。thanksページができたら以下のpathをthanksページに修正お願いします！
+          this.$router.push({ path: '/' })
         } else {
           var errorMessages = response.data.messages.join('\n')
           // TODO:inoue 不正な値などの場合のエラーメッセージです。いい感じに表示お願いします！
