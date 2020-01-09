@@ -61,21 +61,11 @@ export default {
     position: relative;
     overflow: hidden;
     img{
-      // width: 100%;
-      // -webkit-transform: scale(1);
-      // transform: scale(1);
-      // -webkit-transition: .6s ease-in-out;
-      // transition: .6s ease-in-out;
-      // position: absolute;
-      // opacity: 1;
-      // top: 0;
-      // left: 0;
       width: 100%;
       height: 100%;
       position: absolute;
       top: 0;
       left: 0;
-      // background: no-repeat 50%;
       background-size: cover;
       opacity: 0;
       -webkit-transform: scale(1.2);
