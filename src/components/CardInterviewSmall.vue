@@ -50,11 +50,6 @@ export default {
     width: 100%;
     background: #ccc;
   }
-  // &__image {
-  //   display: block;
-  //   width: 100%;
-  //   margin-bottom: 1rem;
-  // }
   &__name {
     margin-top: .5rem;
   }

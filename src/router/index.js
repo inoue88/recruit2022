@@ -64,6 +64,7 @@ export default new Router({
       components: {
         header: Header,
         footer: Footer,
+        footerEntry: FooterEntry,
         title: TitleCommon,
         default: InterviewList
       }

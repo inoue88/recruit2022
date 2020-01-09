@@ -20,15 +20,12 @@ export default {
   props: ['name', 'nameEn', 'yearEntry', 'title', 'id', 'dep'],
   mounted () {
     ScrollOut({
-      threshold: 0.2,
       once: true,
-      onShown: function (el) {
-        el.animate([{ opacity: 0 }, { opacity: 1 }], 1000)
-      }
+      // offset: 400,
+      targets: '.cardInterview__image'
     })
   }
 }
-
 </script>
 
 <style lang="scss" scoped>
@@ -52,9 +49,6 @@ export default {
       left: 0;
       right: unset;
     }
-    // #{$parent}__body {
-    //   padding: 6rem 3rem 0 0;
-    // }
   }
   &__title {
     font-size: 2rem;
@@ -67,22 +61,39 @@ export default {
     position: relative;
     overflow: hidden;
     img{
+      // width: 100%;
+      // -webkit-transform: scale(1);
+      // transform: scale(1);
+      // -webkit-transition: .6s ease-in-out;
+      // transition: .6s ease-in-out;
+      // position: absolute;
+      // opacity: 1;
+      // top: 0;
+      // left: 0;
       width: 100%;
-      -webkit-transform: scale(1);
-      transform: scale(1);
-      -webkit-transition: .6s ease-in-out;
-      transition: .6s ease-in-out;
+      height: 100%;
       position: absolute;
-      opacity: 1;
       top: 0;
       left: 0;
+      // background: no-repeat 50%;
+      background-size: cover;
+      opacity: 0;
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+      transition-duration: 2s;
     }
+  }
+  &__image[data-scroll="in"] img{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
   }
   &__name{
     font-size: 1.5rem;
   }
   &__name-en{
     padding-left: 1rem;
+    text-transform: uppercase;
   }
   &__dep {
     border: 1px solid var(--primary);
@@ -136,8 +147,9 @@ export default {
       }
     }
     &__image {
-    width: 50%;
-    padding-top: 32%;
+      width: 60%;
+      padding-top: 36%;
+      margin-bottom: 0;
     }
     &__title {
       font-size: 2rem;
