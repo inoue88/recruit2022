@@ -72,8 +72,8 @@ export default {
   }
   &__img {
     width: 100%;
-    -webkit-box-shadow: 40px 40px rgba(0, 19, 119, .2);
-    box-shadow: 40px 40px #00137726;
+    -webkit-box-shadow: 40px 40px F0F1F7;
+    box-shadow: 40px 40px #F0F1F7;
   }
   &__img-bg {
     width: 100%;
@@ -107,7 +107,7 @@ export default {
     &__body {
       background: rgba(255, 255, 255, .9);
       padding: 2rem;
-      width: 520px;
+      width: 580px;
     }
     &__body-center {
       margin: 0 auto;
@@ -119,7 +119,7 @@ export default {
     }
     &__img-wrap {
       z-index: inherit;
-      width: 60%;
+      width: 70%;
       position: absolute;
       right: 0;
       top: 0;
