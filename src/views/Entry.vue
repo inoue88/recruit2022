@@ -66,8 +66,8 @@
         a(href='#')
           |個人情報の取り扱い
         |についてをよくお読み下さい。
-      .text-center.mb-5
-        b-button(size='lg' squared variant='aimred' to='/entry') ENTRY
+      .text-center
+        b-button(size='lg' squared variant='aimred' to='/entry') 個人情報の取扱に同意して応募
 </template>
 
 <script>
@@ -144,6 +144,9 @@ export default {
 
 <style lang='scss' scoped>
 @import '../assets/scss/custom.scss';
+.entry{
+  margin-bottom: 10rem;
+}
 .entry-table {
   width: 100%;
   &__supplement {
