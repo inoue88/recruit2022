@@ -34,20 +34,16 @@
             th 生年月日
             td
               b-row.cell-space(no-gutters)
-                b-col(lg='9')
+                b-col(lg='3')
                   b-form-input(v-model='entry.birth' placeholder='2000' type='date' required='required')
-
           tr
             th メールアドレス
             td
               b-row
-                b-col(lg='7')
+                b-col.mb-1(lg='7')
                   b-form-input(v-model='entry.email' type='email' placeholder='recruit@aim-factory.co.jp' required='required')
-            td
-              b-row
                 b-col(lg='7')
                   b-form-input(v-model='entry.email_confirmation' type='email' placeholder='確認のためもう一度ご入力ください' required='required')
-
           tr
             th 電話番号
             td
@@ -64,7 +60,7 @@
             th 住所
             td
               b-row.mb-1
-                b-col(lg='5')
+                b-col(lg='3')
                   b-form-select(v-model='entry.prefecture_id' :options='prefecture_id' required='required')
               b-row.mb-1
                 b-col(lg='11')
