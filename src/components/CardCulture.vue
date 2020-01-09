@@ -8,19 +8,9 @@
 </template>
 
 <script>
-import ScrollOut from 'scroll-out'
 export default {
   name: 'HeaderTitle',
-  props: ['title', 'txt', 'id'],
-  mounted () {
-    ScrollOut({
-      threshold: 0.2,
-      once: true,
-      onShown: function (el) {
-        el.animate([{ opacity: 0 }, { opacity: 1 }], 1000)
-      }
-    })
-  }
+  props: ['title', 'txt', 'id']
 }
 </script>
 

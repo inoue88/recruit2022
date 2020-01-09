@@ -7,20 +7,23 @@
     b-row.mb-4
       b-col(v-for='(n, index) in 3' v-bind:key='list.id' cols='12' lg='4')
         CardCulture(
-          :title='`${list[n].title}`'
-          :txt='`${list[n].txt}`'
+          :title='`${list[index].title}`'
+          :txt='`${list[index].txt}`'
           :id='`${n}`'
           )
-    .culture-head
-      .culture-head__title 仕事を「引き受ける」のではなく「生み出す」人材へ
-      .culture-head__text スキルアップやキャリアアップのための様々な機会を創出するだけでなく、個々のポテンシャルと意欲を信じて任せる文化があります。新規事業プロジェクトや、チームリーダーにも新卒入社のメンバーが抜擢されています。
-    b-row.mb-4
-      b-col(v-for='(n, index) in 3' v-bind:key='list.id' cols='12' lg='4')
-        CardCulture(
-          :title='`${list[index + 3].title}`'
-          :txt='`${list[index + 3].txt}`'
-          :id='`${index + 3}`'
-          )
+  .div.culture-wrap
+    b-container
+      .culture-head
+        .culture-head__title 仕事を「引き受ける」のではなく「生み出す」人材へ
+        .culture-head__text スキルアップやキャリアアップのための様々な機会を創出するだけでなく、個々のポテンシャルと意欲を信じて任せる文化があります。新規事業プロジェクトや、チームリーダーにも新卒入社のメンバーが抜擢されています。
+      b-row.mb-4
+        b-col(v-for='(n, index) in 3' v-bind:key='list.id' cols='12' lg='4')
+          CardCulture(
+            :title='`${list[index + 3].title}`'
+            :txt='`${list[index + 3].txt}`'
+            :id='`${index + 3}`'
+            )
+  b-container
     .culture-head
       .culture-head__title ライフイベントに左右されない環境で自己成長を続ける
       .culture-head__text アイムファクトリーは、ライフが充実するからこそ、仕事でアウトプットの質も上がると考えます。出産・育児・介護などライフイベントを経ても、ビジネスパーソンとして成長できる職場環境を目指して様々な制度、イベントでバックアップしています。
@@ -31,19 +34,12 @@
           :txt='`${list[index + 6].txt}`'
           :id='`${index + 6}`'
           )
-
-    //- b-row
-    //-   b-col(v-for='(list) in list' v-bind:key='list.id' cols='12' lg='6')
-    //-     CardCulture(
-    //-       :title='`${list.title}`'
-    //-       :txt='`${list.txt}`'
-    //-       :id='`${list.id}`'
-    //-       )
 </template>
 
 <script>
 import CardCulture from '../components/CardCulture.vue'
 import culture from '@/api/culture.js'
+import ScrollOut from 'scroll-out'
 
 export default {
   name: 'Culture',
@@ -52,6 +48,13 @@ export default {
   },
   computed: {
     list: () => culture.fetch()
+  },
+  mounted () {
+    ScrollOut({
+      once: true,
+      offset: 400,
+      targets: '.culture-wrap'
+    })
   }
 }
 </script>
@@ -66,6 +69,28 @@ export default {
       font-weight: bold;
       line-height: 1.5;
     }
-    &__text{}
+  }
+  .culture-wrap{
+    position: relative;
+    padding: 3rem 0 0;
+    margin-bottom: 3rem;
+    &:after{
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: #F0F1F7;
+      z-index: -1;
+      -webkit-transition: all 1s 100ms ease;
+      transition: all 1s 100ms ease;
+    }
+    &[data-scroll="in"]{
+      &:after{
+        width: 86%;
+      }
+    }
   }
 </style>
