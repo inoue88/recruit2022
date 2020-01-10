@@ -14,6 +14,7 @@ import InterviewList from '@/views/InterviewList'
 import Interview from '@/views/Interview'
 import Job from '@/views/Job'
 import Entry from '@/views/Entry'
+import EntryCompleted from '@/views/EntryCompleted'
 Vue.use(Router)
 
 export default new Router({
@@ -100,6 +101,15 @@ export default new Router({
         footer: Footer,
         title: TitleCommon,
         default: Entry
+      }
+    },
+    {
+      path: '/entry/completed',
+      components: {
+        header: Header,
+        footer: Footer,
+        title: TitleCommon,
+        default: EntryCompleted
       }
     }
   ],

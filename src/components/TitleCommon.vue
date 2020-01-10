@@ -37,8 +37,11 @@ export default {
         case '/job':
           title = {En: 'job', Ja: '採用情報', Code: 'job'}
           return title
-        case '/entry':
-          title = {En: 'Entry', Ja: 'エントリー', Code: 'Entry'}
+        case '/entry/':
+          title = {En: 'Entry', Ja: 'エントリー', Code: '　'}
+          return title
+        case '/entry/completed':
+          title = {En: 'Entry Completed', Ja: '応募完了', Code: 'EntryCompleted'}
           return title
       }
     }
@@ -90,7 +93,7 @@ export default {
   @include media-breakpoint-up(lg) {
     margin-bottom: 5rem;
     & {
-      height: 25vw;
+      height: 380px;
     }
   }
 }

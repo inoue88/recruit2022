@@ -8,17 +8,17 @@
       :mouse-drag="false"
       :autoplay="true"
       :loop="true"
-      :autoplay-timeout="1000"
+      :autoplay-timeout="3000"
       )
       slide
         picture
-          source(media="(min-width: 960px)" v-bind:srcset="'/static/images/common/header-job--pc.jpg'")
+          source(media="(min-width: 960px)" v-bind:srcset="'/static/images/home/header-home01--pc.jpg'")
           source(media="(min-width: 320px)" v-bind:srcset="'/static/images/common/header-job--sp.jpg'")
           img(src="images/picture_s.gif" alt="")
       slide
         picture
-          source(media="(min-width: 960px)" v-bind:srcset="'/static/images/common/header-about--pc.jpg'")
-          source(media="(min-width: 320px)" v-bind:srcset="'/static/images/common/header-about--sp.jpg'")
+          source(media="(min-width: 960px)" v-bind:srcset="'/static/images/home/header-home03--pc.jpg'")
+          source(media="(min-width: 320px)" v-bind:srcset="'/static/images/common/header-job--sp.jpg'")
           img(src="images/picture_s.gif" alt="")
       //- slide
       //-   picture
@@ -173,7 +173,7 @@ export default {
     width: 100%;
     height: 100%;
     height: 100vh;
-    max-height: 812px;
+    max-height: 1800px;
     background: var(--primary);
     img{
       opacity: 0.6;
@@ -191,7 +191,7 @@ export default {
   }
   @include media-breakpoint-up(md) {
     height: 100vh;
-    max-height: 812px;
+    max-height: 1800px;
   }
 }
 .section-intro{

@@ -1,7 +1,7 @@
 <template lang="pug">
 router-link.cardInterview(:to="`/interview/${ id }`" v-bind:class="`${ id % 2 ? '':'cardInterview--rev'}`" v-bind:key="`${ id }`" data-scroll)
-  figure.cardInterview__image
-    b-img(v-bind:src="`/static/images/interview/0${ id }/image01.jpg`")
+  .cardInterview__image
+    div(:style="{ backgroundImage: 'url(' + imageUrl(`${id}`) + ')' }")
   .cardInterview__body
     h3.cardInterview__title(v-html='`${title}`')
     .cardInterview__count 0{{id}}
@@ -18,6 +18,11 @@ router-link.cardInterview(:to="`/interview/${ id }`" v-bind:class="`${ id % 2 ? 
 import ScrollOut from 'scroll-out'
 export default {
   props: ['name', 'nameEn', 'yearEntry', 'title', 'id', 'dep'],
+  methods: {
+    imageUrl: function (id) {
+      return '/static/images/interview/0' + id + '/image01.jpg'
+    }
+  },
   mounted () {
     ScrollOut({
       once: true,
@@ -51,8 +56,8 @@ export default {
     }
   }
   &__title {
-    font-size: 2rem;
-    line-height: 1.6;
+    font-size: 1.4rem;
+    line-height: 1.4;
   }
   &__image {
     width: 100%;
@@ -60,20 +65,20 @@ export default {
     background: var(--primary);
     position: relative;
     overflow: hidden;
-    img{
+    >div{
       width: 100%;
       height: 100%;
       position: absolute;
+      background-size: cover;
       top: 0;
       left: 0;
-      background-size: cover;
       opacity: 0;
       -webkit-transform: scale(1.2);
       transform: scale(1.2);
       transition-duration: 2s;
     }
   }
-  &__image[data-scroll="in"] img{
+  &__image[data-scroll="in"] div{
     -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 1;
