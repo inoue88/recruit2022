@@ -17,8 +17,8 @@ header.header
       span.header__nav-item--ja カルチャー
       span.header__nav-item--en culture
     router-link.header__nav-item(to="/interview" @click.native='clearCheck')
-      span.header__nav-item--ja 社員インタビュー
-      span.header__nav-item--en interview
+      span.header__nav-item--ja メンバー
+      span.header__nav-item--en member
     b-button(variant='aimred' to="/job" squared class='entry-button') ENTRY
 </template>
 

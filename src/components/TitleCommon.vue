@@ -32,7 +32,7 @@ export default {
           title = {En: 'culture', Ja: 'カルチャー', Code: 'culture'}
           return title
         case '/interview':
-          title = {En: 'nterview', Ja: '社員インタビュー', Code: 'interview'}
+          title = {En: 'member', Ja: 'メンバー', Code: 'interview'}
           return title
         case '/job':
           title = {En: 'job', Ja: '採用情報', Code: 'job'}
