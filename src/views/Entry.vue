@@ -169,7 +169,7 @@ export default {
       axios.post('/api/entries', { new_graduate: this.entry }).then((response) => {
         if (response.data.status === 'success') {
           // TODO:inoue thanksページへ遷移。thanksページができたら以下のpathをthanksページに修正お願いします！
-          this.$router.push({ path: '/' })
+          this.$router.push({ path: '/entry/completed' })
         } else {
           var errorMessages = response.data.messages.join('\n')
           // TODO:inoue 不正な値などの場合のエラーメッセージです。いい感じに表示お願いします！
