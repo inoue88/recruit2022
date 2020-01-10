@@ -9,9 +9,10 @@
         :dep='`${ list[index].department }`'
         :title='`${ list[index].title }`'
         :id='`${ list[index].id }`'
-          v-bind:key='list[index].id'
+        :key='list[index].id'
+        :classRev='list[index].id  % 2 ? "cardInterview--large":"cardInterview--large cardInterview--large-rev"'
       )
-  .interview-wrap.interview-wrap--rev-bg
+  .interview-wrap.interview-wrap--rev
     b-container
       CardInterview(v-for='(n, index) in 2'
         :name='`${ list[index + 2].name }`'
@@ -20,7 +21,8 @@
         :dep='`${ list[index + 2].department }`'
         :title='`${ list[index + 2].title }`'
         :id='`${ list[index + 2].id }`'
-          v-bind:key='list[index + 2].id'
+        :key='list[index + 2].id'
+        :classRev='list[index].id  % 2 ? "cardInterview--large":"cardInterview--large cardInterview--large-rev"'
       )
   .interview-wrap
     b-container
@@ -31,7 +33,8 @@
         :dep='`${ list[index + 4].department }`'
         :title='`${ list[index + 4].title }`'
         :id='`${ list[index + 4].id }`'
-          v-bind:key='list[index + 4].id'
+        :key='list[index + 4].id'
+        :classRev='list[index].id  % 2 ? "cardInterview--large":"cardInterview--large cardInterview--large-rev"'
       )
 </template>
 <script>
@@ -57,12 +60,14 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+@import '../assets/scss/custom.scss';
+
 .interview-wrap{
   position: relative;
-  margin-bottom: 12rem;
+  margin-bottom: 6rem;
   &:after{
     position: absolute;
-    top: 5rem;
+    top: 2rem;
     left: 0;
     content: "";
     display: block;
@@ -72,7 +77,7 @@ export default {
     z-index: -1;
     transition: all 1s 100ms ease;
   }
-  &.interview-wrap--rev-bg{
+  &.interview-wrap--rev{
     &:after{
       left: inherit;
       right: 0;
@@ -81,6 +86,15 @@ export default {
   &[data-scroll="in"]{
     &:after{
       width: 86%;
+    }
+  }
+  .cardInterview{
+    margin-bottom: 3rem
+  }
+  @include media-breakpoint-up(lg) {
+    margin-bottom: 12rem;
+    &:after{
+      top: 5rem;
     }
   }
 }

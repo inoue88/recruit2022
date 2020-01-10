@@ -1,5 +1,5 @@
 <template lang="pug">
-router-link.cardInterview(:to="`/interview/${ id }`" v-bind:class="`${ id % 2 ? '':'cardInterview--rev'}`" v-bind:key="`${ id }`" data-scroll)
+router-link.cardInterview(:to="`/interview/${ id }`" v-bind:key="`${ id }`" v-bind:class="`${ classRev }`" data-scroll)
   .cardInterview__image
     div(:style="{ backgroundImage: 'url(' + imageUrl(`${id}`) + ')' }")
   .cardInterview__body
@@ -17,7 +17,7 @@ router-link.cardInterview(:to="`/interview/${ id }`" v-bind:class="`${ id % 2 ? 
 <script>
 import ScrollOut from 'scroll-out'
 export default {
-  props: ['name', 'nameEn', 'yearEntry', 'title', 'id', 'dep'],
+  props: ['name', 'nameEn', 'yearEntry', 'title', 'id', 'dep', 'classRev'],
   methods: {
     imageUrl: function (id) {
       return '/static/images/interview/0' + id + '/image01.jpg'
@@ -38,21 +38,14 @@ export default {
 .cardInterview {
   $parent: &;
   display: block;
-  margin-bottom: 5rem;
   &:hover{
     text-decoration: none;
     color: var(--primary);
-    figure img {
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
+    #{$parent}__image div {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
       opacity: .8;
-    }
-  }
-  &--rev {
-    flex-direction: row-reverse;
-    #{$parent}__count {
-      left: 0;
-      right: unset;
+      transition-duration: 1s;
     }
   }
   &__title {
@@ -101,7 +94,7 @@ export default {
     position: absolute;
     color: var(--primary);
     right: 0;
-    top: -18rem;
+    top: -2rem;
     line-height: 1;
     font-size: 3rem;
     letter-spacing: -0.1em;
@@ -131,31 +124,36 @@ export default {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    padding: 1rem 0;
+    padding: 1rem 0 0;
   }
   @include media-breakpoint-up(lg) {
-    margin-bottom: 10rem;
-    display: flex;
-    &--rev {
-      #{$parent}__body {
-        padding: 5rem 3rem 0 0;
+    &--large{
+      margin-bottom: 10rem;
+      display: flex;
+      #{$parent}__image {
+        width: 60%;
+        padding-top: 36%;
+        margin-bottom: 0;
       }
-    }
-    &__image {
-      width: 60%;
-      padding-top: 36%;
-      margin-bottom: 0;
-    }
-    &__title {
-      font-size: 2rem;
-      margin-bottom: 3rem;
-    }
-    &__count {
-      top: 0;
-    }
-    &__body {
-      padding: 5rem 0 0 3rem;
-      width: 45%;
+      #{$parent}__title {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+      }
+      #{$parent}__count {
+        top: 0;
+        right: 2rem;
+      }
+      #{$parent}__body {
+        padding: 5rem 0 0 3rem;
+        width: 45%;
+      }
+      &-rev {
+        flex-direction: row-reverse;
+        #{$parent}__body {
+          padding: 5rem 3rem 0 0 ;
+          width: 45%;
+        }
+      }
     }
   }
 }
