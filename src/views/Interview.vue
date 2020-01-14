@@ -18,7 +18,7 @@
         section.interview-content__section(v-for='(n,index) in 3')
           h3.interview-content__q
             |{{question[index]}}
-          .interview-content__a {{item.answer[`${index}`]}}
+          .interview-content__a(v-html="item.answer[`${index}`]")
   .interview-image01
     b-img(v-bind:src="`/static/images/interview/0${ id }/image02.jpg`")
   b-container(v-if='item')
@@ -110,6 +110,9 @@ export default {
       ScrollOut({
         once: true,
         targets: '.interview-image01'
+      })
+      ScrollOut({
+        targets: '.u-line'
       })
     })
   }
@@ -383,6 +386,15 @@ export default {
       }
     }
   }
+}
+.u-line{
+  border-bottom: solid;
+  border-color: #FFF27B;
+  border-width: 0px;
+  transition-duration: 2s;
+}
+.u-line[data-scroll="in"]{
+  border-width: 5px;
 }
 
 @keyframes slide1{
