@@ -13,18 +13,17 @@
         span.title-interview__dep
           |{{ item.yearEntry }}入社 /
           |{{ item.department }}
-  b-container
-    div(v-if='item' key='product')
+  b-container(v-if='item')
       .interview-content
-        section.interview-content__section(v-for='(n,index) in 3' data-scroll)
+        section.interview-content__section(v-for='(n,index) in 3')
           h3.interview-content__q
             |{{question[index]}}
           .interview-content__a {{item.answer[`${index}`]}}
   .interview-image01
     b-img(v-bind:src="`/static/images/interview/0${ id }/image02.jpg`")
-  b-container(v-if='item' key='product')
+  b-container(v-if='item')
     .interview-content.interview-content--rev
-      section.interview-content__section(v-for='(n,index) in 3' data-scroll)
+      section.interview-content__section(v-for='(n,index) in 3')
         h3.interview-content__q
           |{{question[index +3]}}
         .interview-content__a(v-html="item.answer[`${index+3}`]")
@@ -34,8 +33,7 @@
     .interview-message__text.interview-message__text03
     .interview-message__text.interview-message__text04
     .interview-message__text.interview-message__text05
-  b-container
-    div(v-if='item' key='product')
+  b-container(v-if='item')
       .interview-content
         section.interview-content__section(v-for='(n,index) in 3')
           h3.interview-content__q
@@ -103,14 +101,16 @@ export default {
       immediate: true
     }
   },
-  mounted: function () {
-    ScrollOut({
-      threshold: 0.2,
-      once: true,
-      targets: '.u-line',
-      onShown (el) {
-        el.classList.add('animated', 'fadeInUp')
-      }
+  updated () {
+    this.$nextTick(function () {
+      ScrollOut({
+        once: true,
+        targets: '.interview-content__section'
+      })
+      ScrollOut({
+        once: true,
+        targets: '.interview-image01'
+      })
     })
   }
 }
@@ -227,7 +227,13 @@ export default {
   &__section{
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 1px dotted c;
+    opacity: 0;
+    transform: translateY(50px);
+    transition-duration: 2s;
+  }
+  &__section[data-scroll="in"]{
+    transform: translateY(0);
+    opacity: 1;
   }
   &__q{
     font-size: 1.2rem;
@@ -260,17 +266,21 @@ export default {
     }
   }
 }
-
 .interview-image01{
   overflow: hidden;
   position: relative;
   z-index: -1;
+  opacity: 0;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  transition-duration: 2s;
   img{
     display: block;
     width: 140%;
     margin-left: auto;
     z-index: -1;
   }
+
   @include media-breakpoint-up(lg) {
     margin-bottom: -5rem;
     img{
@@ -281,7 +291,11 @@ export default {
     }
   }
 }
-
+.interview-image01[data-scroll="in"]{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
 .interview-footer{
   position: relative;
   overflow: visible;
@@ -387,13 +401,5 @@ export default {
     transform: translate3d(0, 0, 0);
   }
 }
-@keyframes grow {
-  /*微差で拡大/縮小するアニメーション設定*/
-  0% {
-    transform: scale(1.2);
-  }
-  50% {
-    transform: scale(1);
-  }
-}
+
 </style>

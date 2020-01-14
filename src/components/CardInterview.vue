@@ -16,6 +16,7 @@ router-link.cardInterview(:to="`/interview/${ id }`" v-bind:key="`${ id }`" v-bi
 
 <script>
 import ScrollOut from 'scroll-out'
+
 export default {
   props: ['name', 'nameEn', 'yearEntry', 'title', 'id', 'dep', 'classRev'],
   methods: {
