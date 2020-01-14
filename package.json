@@ -21,6 +21,7 @@
     "scroll-out": "^2.2.7",
     "vue": "^2.6.10",
     "vue-carousel": "^0.18.0",
+    "vue-head": "^2.2.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {

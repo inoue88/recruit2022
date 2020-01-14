@@ -11,7 +11,22 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    setMeta (to) {
+      if (to.meta.title) {
+        document.title = to.meta.title
+      }
+      if (to.meta.desc) {
+        document.querySelector("meta[name='description']").setAttribute('content', to.meta.desc)
+      }
+    }
+  },
+  watch: {
+    '$route' (to) {
+      this.setMeta(to)
+    }
+  }
 }
 </script>
 
