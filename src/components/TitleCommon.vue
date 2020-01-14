@@ -93,7 +93,7 @@ export default {
   @include media-breakpoint-up(lg) {
     margin-bottom: 5rem;
     & {
-      height: 380px;
+      height: 25vw;
     }
   }
 }
