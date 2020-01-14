@@ -72,8 +72,8 @@ export default {
   }
   .culture-wrap{
     position: relative;
-    padding: 3rem 0 0;
-    margin-bottom: 3rem;
+    padding: 5rem 0 1rem;
+    margin-bottom: 5rem;
     &:after{
       position: absolute;
       top: 0;
