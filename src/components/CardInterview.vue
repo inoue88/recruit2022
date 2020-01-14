@@ -26,7 +26,6 @@ export default {
   mounted () {
     ScrollOut({
       once: true,
-      // offset: 400,
       targets: '.cardInterview__image'
     })
   }

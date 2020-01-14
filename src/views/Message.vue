@@ -9,7 +9,7 @@
         p.sec-message__txt しかし私としては給与をもらいながらトライアンドエラーを繰り返していける環境というのは非常に魅力的で不満は一切ありませんでした。顧客の声を聴き世の中のニーズを理解し最適解を見つける。一つひとつの体験を幅広く積み上げていけたのはベンチャーならではだったと思います。
         p.sec-message__txt 会社も自分の成長と歩調を合わせるように大きくなっていったので、とてもやりがいを感じビジネスの醍醐味を経験できました。
       .sec-message__img-wrap
-        b-img(v-bind:src="`/static/images/message/image01.jpg`" class="sec-message__img")
+        .sec-message__img(:style="{ backgroundImage: 'url(/static/images/message/image01.jpg)' }")
     .sec-message.sec-message--rev(data-scroll)
       .sec-message__body
         h2.sec-message__title 卒業と起業
@@ -18,7 +18,7 @@
         p.sec-message__txt 世の中を通し、感じ、見て、じっくり考えることができたのは幸運でもありました。
         p.sec-message__txt 新しい価値観が生れ、また大きく変わっていくであろう節目にマンションの一室を借りて、スタートしたのがアイムファクトリーです。<br><br>
       .sec-message__img-wrap
-        b-img(v-bind:src="`/static/images/message/image02.jpg`" class="sec-message__img")
+        .sec-message__img(:style="{ backgroundImage: 'url(/static/images/message/image02.jpg)' }")
     .sec-message(data-scroll)
       .sec-message__body
         h2.sec-message__title アイムファクトリーという<br>会社でのやりがい
@@ -27,7 +27,7 @@
         p.sec-message__txt ITエンジニアは技術と経験さえあれば、年齢も性別も問いません。<br >働き方もキャリアも多様化しています。転職回数が多いのは悪いことですか。正社員が安定？非正規はネガティブでしょうか。正解はつねに変化しています。
         p.sec-message__txt 答えがないものを考えサービスを豊かにすることがイノベーティブでありキャリアだと思います。
       .sec-message__img-wrap
-        b-img(v-bind:src="`/static/images/message/image03.jpg`" class="sec-message__img")
+        .sec-message__img(:style="{ backgroundImage: 'url(/static/images/message/image03.jpg)' }")
   .sec-message.sec-message--last(data-scroll)
     b-container
       .sec-message__body-center
@@ -46,11 +46,12 @@ export default {
   name: 'Message',
   mounted () {
     ScrollOut({
-      threshold: 0.2,
       once: true,
-      onShown: function (el) {
-        el.animate([{ opacity: 0 }, { opacity: 1 }], 1000)
-      }
+      targets: '.sec-message__img'
+    })
+    ScrollOut({
+      once: true,
+      targets: '.sec-message__body'
     })
   }
 }
@@ -72,7 +73,10 @@ export default {
   margin-bottom: 8rem;
   position: relative;
   &__title {
-    font-size: 1.6rem;
+    font-size: 2rem;
+    br{
+      display: none;
+    }
   }
   &__txt {
     font-size: 0.875rem;
@@ -81,8 +85,23 @@ export default {
   }
   &__img {
     width: 100%;
-    -webkit-box-shadow: 40px 40px #F0F1F7;
+    height: 500px;
+    height: 207px;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0;
+    box-shadow: 0 0 #F0F1F7;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    transition-duration: 2s;
+  }
+  &__img[data-scroll="in"] {
     box-shadow: 40px 40px #F0F1F7;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
   }
   &__img-bg {
     width: 100%;
@@ -91,6 +110,15 @@ export default {
     left: 0;
     transform: translate(-10%, 15%);
     z-index: -1;
+  }
+  &__body{
+    opacity: 0;
+    transform: translateY(50px);
+    transition-duration: 2s;
+  }
+  &__body[data-scroll="in"] {
+    transform: translateY(0);
+    opacity: 1;
   }
   &__body-center {
     position: relative;
@@ -131,7 +159,7 @@ export default {
     }
   }
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     margin-bottom: 12rem;
     &--last{
       padding: 5rem 0;
@@ -144,18 +172,14 @@ export default {
       padding: 2rem;
       width: 580px;
     }
-    &__body-center {
+    &__body-center  {
       margin: 0 auto;
       width: 800px;
     }
-    &__img-wrap {
-      z-index: inherit;
-      width: 100%;
-      position: absolute;
-      right: 0;
-      top: 100%;
-      margin-top: 2rem;
-      z-index: -1;
+    &__title {
+      br{
+        display: block;
+      }
     }
     &__txt {
       margin-top: 2rem;
@@ -168,6 +192,9 @@ export default {
       top: 0;
       margin-top: -5rem;
       z-index: -1;
+    }
+    &__img {
+      height: 500px;
     }
   }
 }

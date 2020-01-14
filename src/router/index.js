@@ -30,7 +30,7 @@ export default new Router({
         footerEntry: FooterEntry,
         default: Home
       },
-      meta: { title: 'トップページ|アイムファクトリー株式会社 2021年新卒採用｜アイムファクトリー株式会社', desc: '' }
+      meta: { title: 'トップページ ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
     },
     {
       path: '/about',
@@ -41,7 +41,7 @@ export default new Router({
         title: TitleCommon,
         default: About
       },
-      meta: { title: '私達について|アイムファクトリー株式会社 2021年新卒採用｜アイムファクトリー株式会社', desc: '' }
+      meta: { title: '私達について ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
     },
     {
       path: '/message',
@@ -52,7 +52,7 @@ export default new Router({
         title: TitleCommon,
         default: Message
       },
-      meta: { title: '代表メッセージ|アイムファクトリー株式会社 2021年新卒採用｜アイムファクトリー株式会社', desc: '' }
+      meta: { title: '代表メッセージ ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
     },
     {
       path: '/culture',
@@ -63,7 +63,7 @@ export default new Router({
         title: TitleCommon,
         default: Culture
       },
-      meta: { title: 'カルチャー|アイムファクトリー株式会社 2021年新卒採用｜アイムファクトリー株式会社', desc: '' }
+      meta: { title: 'カルチャー ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
     },
     {
       path: '/interview',
@@ -74,7 +74,7 @@ export default new Router({
         title: TitleCommon,
         default: InterviewList
       },
-      meta: { title: '社員インタビュー|アイムファクトリー株式会社 2021年新卒採用｜アイムファクトリー株式会社', desc: '' }
+      meta: { title: '社員インタビュー ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
     },
     {
       path: '/interview/:id(\\d+)',
