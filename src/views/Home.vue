@@ -54,7 +54,10 @@
           b-button(variant='primary' to="/message" squared class='entry-button btn-sm') READ ME
     .section.section--spread(data-scroll)
       .section__bg
-        img.section__img(src="/static/images/home/culture2.jpg")
+        .section__img(:style="{ backgroundImage: 'url(/static/images/home/culture2.jpg)' }")
+        .section__img-blind
+      //- .section__bg
+      //-   img.section__img(src="/static/images/home/culture2.jpg")
       .section__body
         span.section__sub-title culture
         h2.section__title カルチャー
@@ -286,18 +289,17 @@ export default {
     }
   }
   &--spread{
-    height: 200px;
+    // height: 200px;
     position: unset;
     left: 0;
     #{$parent}__bg{
       position: relative;
       left: 0;
       width: 100%;
-      padding: 0;
-      height: 200px;
+      padding-top: 45%;
     }
-    #{$parent}__body{
-    }
+    // #{$parent}__body{
+    // }
     @include media-breakpoint-up(lg) {
       height: 600px;
         #{$parent}__bg{
@@ -305,7 +307,7 @@ export default {
         left: 0;
         width: 100vw;
         padding: 0;
-        height: 600px;
+        padding-top: 600px;
       }
       #{$parent}__body{
         position: relative;
