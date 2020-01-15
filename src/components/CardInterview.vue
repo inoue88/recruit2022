@@ -27,6 +27,10 @@ export default {
   mounted () {
     ScrollOut({
       once: true,
+      targets: '.cardInterview'
+    })
+    ScrollOut({
+      once: true,
       targets: '.cardInterview__image'
     })
   }
@@ -38,6 +42,9 @@ export default {
 .cardInterview {
   $parent: &;
   display: block;
+  opacity: 0;
+  transform: translateY(100px);
+  transition-duration: 3s;
   &:hover{
     text-decoration: none;
     color: var(--primary);
@@ -156,5 +163,9 @@ export default {
       }
     }
   }
+}
+.cardInterview[data-scroll="in"] {
+  transform: translateY(0);
+  opacity: 1;
 }
 </style>
