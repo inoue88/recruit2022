@@ -7,16 +7,16 @@ header.header
   label.header__icon(for='header-btn')
     span.header__bar
   .header__nav
-    router-link.header__nav-item(to="/about" @click.native='clearCheck')
-      span.header__nav-item--ja 私達について
-      span.header__nav-item--en about us
     router-link.header__nav-item(to="/message" @click.native='clearCheck')
       span.header__nav-item--ja 代表メッセージ
       span.header__nav-item--en message
     router-link.header__nav-item(to="/culture" @click.native='clearCheck')
       span.header__nav-item--ja カルチャー
       span.header__nav-item--en culture
-    router-link.header__nav-item(to="/interview" @click.native='clearCheck')
+    router-link.header__nav-item(to="/style" @click.native='clearCheck')
+      span.header__nav-item--ja スタイル
+      span.header__nav-item--en style
+    router-link.header__nav-item(to="/member" @click.native='clearCheck')
       span.header__nav-item--ja メンバー
       span.header__nav-item--en member
     b-button(variant='aimred' to="/job" squared class='entry-button') ENTRY

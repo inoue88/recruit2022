@@ -10,8 +10,6 @@
 </template>
 
 <script>
-// import ScrollOut from 'scroll-out'
-
 export default {
   data () {
     return {

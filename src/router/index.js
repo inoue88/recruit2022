@@ -17,6 +17,7 @@ import Entry from '@/views/Entry'
 import EntryCompleted from '@/views/EntryCompleted'
 Vue.use(Router)
 
+// メッセージ、カルチャー（アバウト）、スタイル（カルチャー）、メンバー
 export default new Router({
   mode: 'history',
   base: 'recruits',
@@ -31,17 +32,6 @@ export default new Router({
         default: Home
       },
       meta: { title: 'トップページ ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
-    },
-    {
-      path: '/about',
-      components: {
-        header: Header,
-        footer: Footer,
-        footerEntry: FooterEntry,
-        title: TitleCommon,
-        default: About
-      },
-      meta: { title: '私達について ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
     },
     {
       path: '/message',
@@ -61,12 +51,23 @@ export default new Router({
         footer: Footer,
         footerEntry: FooterEntry,
         title: TitleCommon,
+        default: About
+      },
+      meta: { title: 'カルチャー ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
+    },
+    {
+      path: '/style',
+      components: {
+        header: Header,
+        footer: Footer,
+        footerEntry: FooterEntry,
+        title: TitleCommon,
         default: Culture
       },
       meta: { title: 'カルチャー ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
     },
     {
-      path: '/interview',
+      path: '/member',
       components: {
         header: Header,
         footer: Footer,
@@ -77,7 +78,7 @@ export default new Router({
       meta: { title: '社員インタビュー ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
     },
     {
-      path: '/interview/:id(\\d+)',
+      path: '/member/:id(\\d+)',
       components: {
         header: Header,
         footer: Footer,

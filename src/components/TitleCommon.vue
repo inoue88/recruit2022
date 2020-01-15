@@ -22,17 +22,17 @@ export default {
     title: function () {
       let title = this.$route.path
       switch (title) {
-        case '/about':
-          title = {En: 'about', Ja: '私達について', Code: 'about'}
-          return title
         case '/message':
-          title = {En: 'message', Ja: '代表メッセージ', Code: 'message'}
+          title = {En: 'message', Ja: 'メッセージ', Code: 'message'}
           return title
         case '/culture':
           title = {En: 'culture', Ja: 'カルチャー', Code: 'culture'}
           return title
-        case '/interview':
-          title = {En: 'member', Ja: 'メンバー', Code: 'interview'}
+        case '/style':
+          title = {En: 'style', Ja: 'スタイル', Code: 'style'}
+          return title
+        case '/member':
+          title = {En: 'member', Ja: 'メンバー', Code: 'member'}
           return title
         case '/job':
           title = {En: 'job', Ja: '採用情報', Code: 'job'}
