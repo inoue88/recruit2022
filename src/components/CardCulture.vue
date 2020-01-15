@@ -30,6 +30,7 @@ export default {
 <style lang='scss' scoped>
 @import '../assets/scss/custom.scss';
 .culture-list {
+  overflow: hidden;
   &__img {
     width: 100%;
     padding-top: 60%;

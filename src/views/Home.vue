@@ -1,44 +1,41 @@
 <template lang="pug">
 .home
-  .header-hero
-    carousel(
-      :per-page="1"
-      :pagination-enabled='false'
-      :pagination-position='top'
-      :mouse-drag="false"
-      :autoplay="true"
-      :loop="true"
-      :autoplay-timeout="3000"
-      )
-      slide
-        picture
-          source(media="(min-width: 960px)" v-bind:srcset="'/static/images/home/header-home01--pc.jpg'")
-          source(media="(min-width: 320px)" v-bind:srcset="'/static/images/common/header-job--sp.jpg'")
-          img(src="images/picture_s.gif" alt="")
-      slide
-        picture
-          source(media="(min-width: 960px)" v-bind:srcset="'/static/images/home/header-home03--pc.jpg'")
-          source(media="(min-width: 320px)" v-bind:srcset="'/static/images/common/header-job--sp.jpg'")
-          img(src="images/picture_s.gif" alt="")
-      //- slide
-      //-   picture
-      //-     source(media="(min-width: 960px)" v-bind:srcset="'/static/images/common/header-message--pc.jpg'")
-      //-     source(media="(min-width: 320px)" v-bind:srcset="'/static/images/common/header-message--sp.jpg'")
-      //-     img(src="images/picture_s.gif" alt="")
-    .header-hero__content(data-scroll)
-      h1 社会に変革をもたらす<br>ヒトと企業を加速する
-      p Bringing change to society Accelerate people and companies
-    .header-hero__scroll
-      |SCROLL
-      span.header-hero__bar
+  Hero
+  //- .header-hero
+  //-   carousel(
+  //-     :per-page="1"
+  //-     :pagination-enabled='false'
+  //-     :pagination-position='top'
+  //-     :mouse-drag="false"
+  //-     :autoplay="true"
+  //-     :loop="true"
+  //-     :autoplay-timeout="3000"
+  //-     )
+  //-     slide
+  //-       picture
+  //-         source(media="(min-width: 960px)" v-bind:srcset="'/static/images/home/header-home01--pc.jpg'")
+  //-         source(media="(min-width: 320px)" v-bind:srcset="'/static/images/common/header-job--sp.jpg'")
+  //-         img(src="images/picture_s.gif" alt="")
+  //-     slide
+  //-       picture
+  //-         source(media="(min-width: 960px)" v-bind:srcset="'/static/images/home/header-home03--pc.jpg'")
+  //-         source(media="(min-width: 320px)" v-bind:srcset="'/static/images/common/header-job--sp.jpg'")
+  //-         img(src="images/picture_s.gif" alt="")
+  //-   .header-hero__content(data-scroll)
+  //-     h1 社会に変革をもたらす<br>ヒトと企業を加速する
+  //-     p Bringing change to society Accelerate people and companies
+  //-   .header-hero__scroll
+  //-     |SCROLL
+  //-     span.header-hero__bar
   b-container
-    .section-intro(data-scroll)
+    .section-intro
       h2.section-intro__title 社会に変革をもたらす<br>ヒトと企業を加速する
       p アイムファクトリー株式会社は世の中に新しい価値を提供する【IT人材】に特化したビジネスを展開しています。
       p 変化が早いIT業界だから湧いてくる好奇心。大企業への経営戦略支援、柔軟な思考と対応力を誇る私たちのベンチャースピリッツが次に目指すものは、IT人材サービスのフルラインナップ化と全国展開です。
-    .section(data-scroll)
+    .section
       .section__bg
-        img.section__img(src="/static/images/home/about.jpg")
+        .section__img(:style="{ backgroundImage: 'url(/static/images/home/about.jpg)' }")
+        .section__img-blind
       .section__body
         span.section__sub-title about us
         h2.section__title 私達について
@@ -47,7 +44,8 @@
           b-button(variant='primary' to="/about" squared class='entry-button btn-sm') READ ME
     .section.section--rev(data-scroll)
       .section__bg
-        img.section__img(src="/static/images/home/message.jpg")
+        .section__img(:style="{ backgroundImage: 'url(/static/images/home/message.jpg)' }")
+        .section__img-blind
       .section__body
         span.section__sub-title message
         h2.section__title 代表メッセージ
@@ -66,8 +64,8 @@
     section
       b-row(align-v="center")
         b-col(cols="12" lg="6")
-          span.section__sub-title interview
-          h2.section__title 社員インタビュー
+          span.section__sub-title MEMBER
+          h2.section__title メンバー
           p.small 目指すことこそ共有はしているけれど、哲学や美意識、信念、強みはさまざま。あなたにも、自分自身の譲れないものを胸に、あなたにしか生み出せない価値を発揮してほしいと思います。
       b-row(align-v="center" class='interview-lists')
         b-col.interview-lists__item(v-for='(list) in list' cols="12" lg="6" v-bind:key="list.id")
@@ -84,6 +82,7 @@
 <script>
 import interview from '@/api/interview.js'
 import CardInterview from '@/components/CardInterview.vue'
+import Hero from '@/components/Hero.vue'
 import { Carousel, Slide } from 'vue-carousel'
 import ScrollOut from 'scroll-out'
 
@@ -91,30 +90,30 @@ export default {
   name: 'home',
   components: {
     Carousel,
+    Hero,
     Slide,
     CardInterview
-  },
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
   },
   computed: {
     list: () => interview.fetch()
   },
   mounted () {
     ScrollOut({
-      threshold: 0.2,
       once: true,
-      onShown: function (el) {
-        el.animate([{ opacity: 0 }, { opacity: 1 }], 1000)
-      }
+      targets: '.section__img'
+    })
+    ScrollOut({
+      once: true,
+      targets: '.section__img-blind'
+    })
+    ScrollOut({
+      once: true,
+      targets: '.section-intro'
     })
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 @import '../assets/scss/custom.scss';
 
@@ -195,6 +194,7 @@ export default {
     max-height: 1800px;
   }
 }
+
 .section-intro{
   text-align: center;
   padding: 5rem 0 3rem;
@@ -205,7 +205,15 @@ export default {
   @include media-breakpoint-up(md) {
     padding: 6rem 4rem 12rem;
   }
+  opacity: 0;
+  transform: translateY(50px);
+  transition-duration: 4s;
 }
+.section-intro[data-scroll="in"]{
+  transform: translateY(0);
+  opacity: 1;
+}
+
 .section{
   $parent:&;
   position: relative;
@@ -225,16 +233,46 @@ export default {
   &__bg{
     width: 100%;
     padding-top: 45%;
-    background: #ccc;
     overflow: hidden;
     position: relative;
-    img{
-      position: absolute;
-      width: 100%;
-      top:50%;
-      left: 50%;
-      transform: translate(-50%,-50%)
-    }
+  }
+  &__img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    transition-duration: 2s;
+  }
+  &__img[data-scroll="in"] {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  &__img-blind{
+    width: 101%;
+    height: 101%;
+    position: absolute;
+    top: -.5%;
+    left: -.5%;
+    background: #fff;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    transition-duration: 0s;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+  }
+  &__img-blind[data-scroll="in"]{
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    transition-duration: .6s;
   }
   &__body{
     right: 0;
@@ -248,26 +286,38 @@ export default {
     }
   }
   &--spread{
-    height: 600px;
+    height: 200px;
     position: unset;
     left: 0;
     #{$parent}__bg{
-      position: absolute;
+      position: relative;
       left: 0;
-      width: 100vw;
+      width: 100%;
       padding: 0;
-      height: 600px;
+      height: 200px;
     }
     #{$parent}__body{
-      position: relative;
-      width: 60%;
-      top: 50%;
-      margin-left: auto;
-      transform: translate(0,-50%)
+    }
+    @include media-breakpoint-up(lg) {
+      height: 600px;
+        #{$parent}__bg{
+        position: absolute;
+        left: 0;
+        width: 100vw;
+        padding: 0;
+        height: 600px;
+      }
+      #{$parent}__body{
+        position: relative;
+        width: 60%;
+        top: 50%;
+        margin-left: auto;
+        transform: translate(0,-50%)
+      }
     }
   }
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     margin-bottom: 10rem;
     &__body{
       position: absolute;
@@ -279,11 +329,16 @@ export default {
     }
   }
 }
+
 .interview-lists{
   display: flex;
   flex-wrap: wrap;
-  padding-top: 6rem;
+  padding-top: 1rem;
+  &__item{
+    margin-bottom: 3rem;
+  }
   @include media-breakpoint-up(lg) {
+    padding-top: 6rem;
     &__item{
       margin-bottom: 3rem;
       &:nth-child(odd){
@@ -300,11 +355,9 @@ export default {
     0% {
         transform: translateY(-101%)
     }
-
     70% {
         transform: translateY(101%)
     }
-
     to {
         transform: translateY(101%)
     }
