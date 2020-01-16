@@ -1,47 +1,11 @@
 <template lang="pug">
 .home
   Hero
-  //- .header-hero
-  //-   carousel(
-  //-     :per-page="1"
-  //-     :pagination-enabled='false'
-  //-     :pagination-position='top'
-  //-     :mouse-drag="false"
-  //-     :autoplay="true"
-  //-     :loop="true"
-  //-     :autoplay-timeout="3000"
-  //-     )
-  //-     slide
-  //-       picture
-  //-         source(media="(min-width: 960px)" v-bind:srcset="'/static/images/home/header-home01--pc.jpg'")
-  //-         source(media="(min-width: 320px)" v-bind:srcset="'/static/images/common/header-job--sp.jpg'")
-  //-         img(src="images/picture_s.gif" alt="")
-  //-     slide
-  //-       picture
-  //-         source(media="(min-width: 960px)" v-bind:srcset="'/static/images/home/header-home03--pc.jpg'")
-  //-         source(media="(min-width: 320px)" v-bind:srcset="'/static/images/common/header-job--sp.jpg'")
-  //-         img(src="images/picture_s.gif" alt="")
-  //-   .header-hero__content(data-scroll)
-  //-     h1 社会に変革をもたらす<br>ヒトと企業を加速する
-  //-     p Bringing change to society Accelerate people and companies
-  //-   .header-hero__scroll
-  //-     |SCROLL
-  //-     span.header-hero__bar
   b-container
     .section-intro
       h2.section-intro__title 社会に変革をもたらす<br>ヒトと企業を加速する
       p アイムファクトリー株式会社は世の中に新しい価値を提供する【IT人材】に特化したビジネスを展開しています。
       p 変化が早いIT業界だから湧いてくる好奇心。大企業への経営戦略支援、柔軟な思考と対応力を誇る私たちのベンチャースピリッツが次に目指すものは、IT人材サービスのフルラインナップ化と全国展開です。
-    .section
-      .section__bg
-        .section__img(:style="{ backgroundImage: 'url(/static/images/home/about.jpg)' }")
-        .section__img-blind
-      .section__body
-        span.section__sub-title about us
-        h2.section__title 私達について
-        p.small IT人材と企業のために私達が大切にすること。それは変化を続けるニーズに即時対応する柔軟な対応力。常に考え、行動し、新たなイノベーションを生み出す私たちの企業風土をご紹介します。
-        .section__action
-          b-button(variant='primary' to="/about" squared class='entry-button btn-sm') READ ME
     .section.section--rev(data-scroll)
       .section__bg
         .section__img(:style="{ backgroundImage: 'url(/static/images/home/message.jpg)' }")
@@ -52,34 +16,36 @@
         p.small 次々に進化を続けるIT業界の変革スピード。IT人材-企業の間に、私たちアイムファクトリーが存在する価値とは。アイムファクトリー代表久利からのメッセージ。
         .section__action
           b-button(variant='primary' to="/message" squared class='entry-button btn-sm') READ ME
+    .section
+      .section__bg
+        .section__img(:style="{ backgroundImage: 'url(/static/images/home/about.jpg)' }")
+        .section__img-blind
+      .section__body
+        span.section__sub-title CULTURE
+        h2.section__title カルチャー
+        p.small IT人材と企業のために私達が大切にすること。それは変化を続けるニーズに即時対応する柔軟な対応力。常に考え、行動し、新たなイノベーションを生み出す私たちの企業風土をご紹介します。
+        .section__action
+          b-button(variant='primary' to="/culture" squared class='entry-button btn-sm') READ ME
     .section.section--spread(data-scroll)
       .section__bg
         .section__img(:style="{ backgroundImage: 'url(/static/images/home/culture2.jpg)' }")
         .section__img-blind
-      //- .section__bg
-      //-   img.section__img(src="/static/images/home/culture2.jpg")
       .section__body
-        span.section__sub-title culture
-        h2.section__title カルチャー
+        span.section__sub-title STYLE
+        h2.section__title スタイル
         p.small IT人材と企業のために私達が大切にすること。それは変化を続けるニーズに即時対応する柔軟な対応力。常に考え、行動し、新たなイノベーションを生み出す私たちの企業風土をご紹介します。
         .section__action
-          b-button(variant='primary' to="/about" squared class='entry-button btn-sm') READ ME
-    section
-      b-row(align-v="center")
-        b-col(cols="12" lg="6")
-          span.section__sub-title MEMBER
-          h2.section__title メンバー
-          p.small 目指すことこそ共有はしているけれど、哲学や美意識、信念、強みはさまざま。あなたにも、自分自身の譲れないものを胸に、あなたにしか生み出せない価値を発揮してほしいと思います。
-      b-row(align-v="center" class='interview-lists')
-        b-col.interview-lists__item(v-for='(list) in list' cols="12" lg="6" v-bind:key="list.id")
-          CardMember(
-                :name="`${ list.name }`"
-                :nameEn="`${ list.nameEn }`"
-                :yearEntry="`${ list.yearEntry }`"
-                :id="`${ list.id }`",
-                :title="`${ list.title }`"
-                :dep='`${ list.department }`'
-              )
+          b-button(variant='primary' to="/style" squared class='entry-button btn-sm') READ ME
+    .section.section--rev(data-scroll)
+      .section__bg
+        .section__img(:style="{ backgroundImage: 'url(/static/images/home/member.jpg)' }")
+        .section__img-blind
+      .section__body
+        span.section__sub-title MEMBER
+        h2.section__title メンバー
+        p.small 次々に進化を続けるIT業界の変革スピード。IT人材-企業の間に、私たちアイムファクトリーが存在する価値とは。アイムファクトリー代表久利からのメッセージ。
+        .section__action
+          b-button(variant='primary' to="/message" squared class='entry-button btn-sm') READ ME
 </template>
 
 <script>
@@ -328,27 +294,6 @@ export default {
     }
     &__action{
       text-align: left
-    }
-  }
-}
-
-.interview-lists{
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 1rem;
-  &__item{
-    margin-bottom: 3rem;
-  }
-  @include media-breakpoint-up(lg) {
-    padding-top: 6rem;
-    &__item{
-      margin-bottom: 3rem;
-      &:nth-child(odd){
-        margin-top: -6rem;
-      }
-      &:nth-child(even){
-        margin-top: 6rem;
-      }
     }
   }
 }
