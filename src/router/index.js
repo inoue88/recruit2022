@@ -17,7 +17,6 @@ import Entry from '@/views/Entry'
 import EntryCompleted from '@/views/EntryCompleted'
 Vue.use(Router)
 
-// メッセージ、カルチャー（アバウト）、スタイル（カルチャー）、メンバー
 export default new Router({
   mode: 'history',
   base: 'recruits',

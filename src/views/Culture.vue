@@ -21,7 +21,7 @@
           CardCulture(
             :title='`${list[index + 3].title}`'
             :txt='`${list[index + 3].txt}`'
-            :id='`${index + 3}`'
+            :id='`${n + 3}`'
             )
   b-container
     .culture-head
@@ -32,7 +32,7 @@
         CardCulture(
           :title='`${list[index + 6].title}`'
           :txt='`${list[index + 6].txt}`'
-          :id='`${index + 6}`'
+          :id='`${n + 6}`'
           )
 </template>
 
