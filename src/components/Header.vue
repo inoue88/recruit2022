@@ -8,7 +8,7 @@ header.header
     span.header__bar
   .header__nav
     router-link.header__nav-item(to="/message" @click.native='clearCheck')
-      span.header__nav-item--ja 代表メッセージ
+      span.header__nav-item--ja メッセージ
       span.header__nav-item--en message
     router-link.header__nav-item(to="/culture" @click.native='clearCheck')
       span.header__nav-item--ja カルチャー

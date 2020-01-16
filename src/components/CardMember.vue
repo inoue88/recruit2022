@@ -1,5 +1,5 @@
 <template lang="pug">
-router-link.cardInterview(:to="`/interview/${ id }`" v-bind:key="`${ id }`" v-bind:class="`${ classRev }`" data-scroll)
+router-link.cardInterview(:to="`/member/${ id }`" v-bind:key="`${ id }`" v-bind:class="`${ classRev }`" data-scroll)
   .cardInterview__image
     div(:style="{ backgroundImage: 'url(' + imageUrl(`${id}`) + ')' }")
   .cardInterview__body
@@ -21,7 +21,7 @@ export default {
   props: ['name', 'nameEn', 'yearEntry', 'title', 'id', 'dep', 'classRev'],
   methods: {
     imageUrl: function (id) {
-      return '/static/images/interview/0' + id + '/image01.jpg'
+      return '/static/images/member/0' + id + '/image01.jpg'
     }
   },
   mounted () {

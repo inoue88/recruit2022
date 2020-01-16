@@ -7,11 +7,11 @@ import FooterEntry from '@/components/FooterEntry'
 import TitleCommon from '@/components/TitleCommon'
 // page
 import Home from '@/views/Home'
-import About from '@/views/About'
-import Message from '@/views/Message'
 import Culture from '@/views/Culture'
-import InterviewList from '@/views/InterviewList'
-import Interview from '@/views/Interview'
+import Message from '@/views/Message'
+import Style from '@/views/Style'
+import MemberList from '@/views/MemberList'
+import Member from '@/views/Member'
 import Job from '@/views/Job'
 import Entry from '@/views/Entry'
 import EntryCompleted from '@/views/EntryCompleted'
@@ -50,7 +50,7 @@ export default new Router({
         footer: Footer,
         footerEntry: FooterEntry,
         title: TitleCommon,
-        default: About
+        default: Culture
       },
       meta: { title: 'カルチャー ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
     },
@@ -61,9 +61,9 @@ export default new Router({
         footer: Footer,
         footerEntry: FooterEntry,
         title: TitleCommon,
-        default: Culture
+        default: Style
       },
-      meta: { title: 'カルチャー ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
+      meta: { title: 'スタイル ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
     },
     {
       path: '/member',
@@ -72,9 +72,9 @@ export default new Router({
         footer: Footer,
         footerEntry: FooterEntry,
         title: TitleCommon,
-        default: InterviewList
+        default: MemberList
       },
-      meta: { title: '社員インタビュー ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
+      meta: { title: 'メンバー ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
     },
     {
       path: '/member/:id(\\d+)',
@@ -82,7 +82,7 @@ export default new Router({
         header: Header,
         footer: Footer,
         footerEntry: FooterEntry,
-        default: Interview
+        default: Member
       },
       props: {
         default: route => ({

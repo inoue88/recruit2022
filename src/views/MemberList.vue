@@ -2,7 +2,7 @@
 .interview-list
   .interview-wrap
     b-container
-      CardInterview(v-for='(n, index) in 2'
+      CardMember(v-for='(n, index) in 2'
         :name='`${ list[index].name }`'
         :nameEn='`${ list[index].nameEn }`'
         :yearEntry='`${ list[index].yearEntry }`'
@@ -14,7 +14,7 @@
       )
   .interview-wrap.interview-wrap--rev
     b-container
-      CardInterview(v-for='(n, index) in 2'
+      CardMember(v-for='(n, index) in 2'
         :name='`${ list[index + 2].name }`'
         :nameEn='`${ list[index + 2].nameEn }`'
         :yearEntry='`${ list[index + 2].yearEntry }`'
@@ -26,7 +26,7 @@
       )
   .interview-wrap
     b-container
-      CardInterview(v-for='(n, index) in 2'
+      CardMember(v-for='(n, index) in 2'
         :name='`${ list[index + 4].name }`'
         :nameEn='`${ list[index + 4].nameEn }`'
         :yearEntry='`${ list[index + 4].yearEntry }`'
@@ -40,12 +40,12 @@
 <script>
 import interview from '@/api/interview.js'
 import ScrollOut from 'scroll-out'
-import CardInterview from '@/components/CardInterview.vue'
+import CardMember from '@/components/CardMember.vue'
 
 export default {
   name: 'InterviewList',
   components: {
-    CardInterview
+    CardMember
   },
   computed: {
     list: () => interview.fetch()

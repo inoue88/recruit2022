@@ -72,7 +72,7 @@
           p.small 目指すことこそ共有はしているけれど、哲学や美意識、信念、強みはさまざま。あなたにも、自分自身の譲れないものを胸に、あなたにしか生み出せない価値を発揮してほしいと思います。
       b-row(align-v="center" class='interview-lists')
         b-col.interview-lists__item(v-for='(list) in list' cols="12" lg="6" v-bind:key="list.id")
-          CardInterview(
+          CardMember(
                 :name="`${ list.name }`"
                 :nameEn="`${ list.nameEn }`"
                 :yearEntry="`${ list.yearEntry }`"
@@ -84,7 +84,7 @@
 
 <script>
 import interview from '@/api/interview.js'
-import CardInterview from '@/components/CardInterview.vue'
+import CardMember from '@/components/CardMember.vue'
 import Hero from '@/components/Hero.vue'
 import { Carousel, Slide } from 'vue-carousel'
 import ScrollOut from 'scroll-out'
@@ -95,7 +95,7 @@ export default {
     Carousel,
     Hero,
     Slide,
-    CardInterview
+    CardMember
   },
   computed: {
     list: () => interview.fetch()

@@ -4,10 +4,10 @@ header.footer
     b-row.footer__wrapper(align-v="center")
       b-col
         b-nav.footer__nav
-          b-nav-item(to="/about") ABOUT US
           b-nav-item(to="/message") MESSAGE
-          b-nav-item(to="/culture") CULTURE
-          b-nav-item(to="/interview") INTERVIEW
+          b-nav-item(to="/culture") CULTUIRE
+          b-nav-item(to="/style") STYLE
+          b-nav-item(to="/member") MEMBER
         b-nav.footer__nav
           b-nav-item(href="https://www.aim-factory.com/" target="_blank") コーポレートサイト
           b-nav-item(href="https://www.aim-factory.com/contacts/new" target="_blank") お問い合わせ
