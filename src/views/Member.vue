@@ -3,8 +3,8 @@
   .title-interview(v-if='item')
     .title-interview__wrap
       picture.title-interview__img
-        source(media="(min-width: 960px)" v-bind:srcset="'/static/images/interview/0' + `${num}` + '/header--pc.jpg'")
-        source(media="(min-width: 320px)" v-bind:srcset="'/static/images/interview/0' + `${num}` + '/header--sp.jpg'")
+        source(media="(min-width: 960px)" v-bind:srcset="'/static/images/member/0' + `${num}` + '/header--pc.jpg'")
+        source(media="(min-width: 320px)" v-bind:srcset="'/static/images/member/0' + `${num}` + '/header--sp.jpg'")
         img(src="images/picture_s.gif" alt="")
     b-container
       .title-interview__body
@@ -20,7 +20,7 @@
             |{{question[index]}}
           .interview-content__a(v-html="item.answer[`${index}`]")
   .interview-image01
-    b-img(v-bind:src="`/static/images/interview/0${ id }/image02.jpg`")
+    b-img(v-bind:src="`/static/images/member/0${ id }/image02.jpg`")
   b-container(v-if='item')
     .interview-content.interview-content--rev
       section.interview-content__section(v-for='(n,index) in 3')
@@ -40,7 +40,7 @@
             |{{question[index +6]}}
           .interview-content__a(v-html="item.answer[`${index+6}`]")
       .interview-footer
-        b-img.interview-footer__img(v-bind:src="`/static/images/interview/0${ id }/image03.jpg`")
+        b-img.interview-footer__img(v-bind:src="`/static/images/member/0${ id }/image03.jpg`")
         .interview-footer__discription
           span.interview-footer__dep
             |{{ item.yearEntry }}入社/
@@ -373,7 +373,7 @@ export default {
 }
 .interview{
   @include media-breakpoint-up(lg) {
-    &--1,&--5{
+    &--1,&--2,&--6{
       .title-interview__body{
         padding-right: 40%;
         padding-left: 0;
