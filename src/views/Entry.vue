@@ -165,9 +165,6 @@ export default {
     }
   },
   methods: {
-    test: function () {
-      alert('aaa')
-    },
     post_entry: function () {
       axios.defaults.headers.common['Accept'] = 'application/json'
       axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
