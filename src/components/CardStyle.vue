@@ -11,7 +11,6 @@
 <script>
 import ScrollOut from 'scroll-out'
 export default {
-  name: 'HeaderTitle',
   props: ['title', 'txt', 'id'],
   methods: {
     imageUrl: function (id) {

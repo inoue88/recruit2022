@@ -33,7 +33,7 @@
       .section__body
         span.section__sub-title STYLE
         h2.section__title スタイル
-        p.small IT人材と企業のために私達が大切にすること。それは変化を続けるニーズに即時対応する柔軟な対応力。常に考え、行動し、新たなイノベーションを生み出す私たちの企業風土をご紹介します。
+        p.small 転職のプロとして天職は自らが切り開く。自分で選択したキャリアビジョンがチームと自らを成長させミッションを実現させる力になる。社員それぞれが自己成長を続ける、アイムファクトリーの社内制度とは。
         .section__action
           b-button(variant='primary' to="/style" squared class='entry-button btn-sm') READ ME
     .section.section--rev(data-scroll)

@@ -1,6 +1,5 @@
 <template lang='pug'>
 .job
-  HeaderTitle(titleEn='Job' titleJa='採用情報' code='job')
   b-container.container-small
     .mb-5
       h1.h2 2021年度新卒エントリー
@@ -14,7 +13,6 @@
 
 <script>
 export default {
-  name: 'Job',
   data () {
     return {
       EntryNum01: [

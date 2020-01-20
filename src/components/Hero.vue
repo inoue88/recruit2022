@@ -10,13 +10,6 @@
 </template>
 
 <script>
-
-export default {
-  data () {
-  },
-  mounted () {
-  }
-}
 </script>
 
 <style lang="scss" scoped>
@@ -39,25 +32,40 @@ export default {
   }
   &__message{
     span{
-      display: block;
-      position: relative;
-      margin-bottom: .5rem;
-      &:after{
-        content: '';
-        width: 101%;
-        height: 101%;
-        position: absolute;
-        top: -.5%;
-        left: -.5%;
-        background: #fff;
-        -webkit-transform: scaleX(1);
-        transform: scaleX(1);
-        transition-duration: 0s;
-        transition-property: -webkit-transform;
-        transition-property: transform;
+      width: 100%;
+      float: left;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+      transform: translateY(-50px);
+      opacity: 0;
+      animation-name: titleAnimation;
+      animation-timing-function:ease;
+      animation-duration: 3s;
+      animation-delay: 0.6s;
+      -webkit-animation-fill-mode: forwards;
+      &:first-child{
+        animation-delay: 0.7s;
+      }
+      &:last-child{
+        animation-delay: 0.5s;
       }
     }
   }
+  @keyframes titleAnimation {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+    }
+  }
+
   @include media-breakpoint-up(lg) {
     &__contain{
       left: 5%;
