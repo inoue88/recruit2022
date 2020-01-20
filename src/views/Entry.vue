@@ -182,7 +182,9 @@ export default {
       }, (error) => {
         console.log(error)
         // TODO:inoue サーバー側の予期せぬエラー(500系)の場合です。装飾と文章の調整をお願いいたします
-        alert('申し訳ございません。エラーが発生しました。\n時間をおいて、再度お試しください。')
+        // eslint-disable-next-line no-redeclare
+        var error = document.getElementById('error')
+        error.innerHTML = '申し訳ございません。エラーが発生しました。\n時間をおいて、再度お試しください。'
       })
     }
   }
