@@ -79,6 +79,13 @@
 
 <script>
 import axios from 'axios'
+function displayError (target, message) {
+  target.style.display = 'block'
+  target.innerHTML = message
+  var rect = target.getBoundingClientRect()
+  var targeTop = rect.top + window.pageYOffset
+  document.documentElement.scrollTop = targeTop
+}
 export default {
   name: 'Entry',
   data () {
@@ -174,14 +181,15 @@ export default {
         } else {
           var errorMessages = response.data.messages.join('<br/>')
           var invalidMassageTarget = document.getElementById('error')
-          invalidMassageTarget.style.display = 'block'
-          invalidMassageTarget.innerHTML = errorMessages
+          displayError(invalidMassageTarget, errorMessages)
         }
       }, (error) => {
         console.log(error)
         var errorMassageTarget = document.getElementById('error')
-        errorMassageTarget.style.display = 'block'
-        errorMassageTarget.innerHTML = '申し訳ございません。エラーが発生しました。時間をおいて、再度お試しください。'
+        displayError(
+          errorMassageTarget,
+          '申し訳ございません。エラーが発生しました。時間をおいて、再度お試しください。'
+        )
       })
     }
   }
