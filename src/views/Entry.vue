@@ -1,7 +1,9 @@
 <template lang='pug'>
   .entry
+    #entry__message
     b-container.container-small
-      p 必要項目を入力後、確認画面が表示されます。<br>内容に間違いがなければ、ページ最下部の確認ボタンを押して下さい。
+      p.mb-4 必要項目を入力後、確認画面が表示されます。<br>内容に間違いがなければ、ページ最下部の確認ボタンを押して下さい。
+      div#error
       <form @submit.prevent="post_entry">
         table.entry-table
           tr
@@ -163,6 +165,9 @@ export default {
     }
   },
   methods: {
+    test: function () {
+      alert('aaa')
+    },
     post_entry: function () {
       axios.defaults.headers.common['Accept'] = 'application/json'
       axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
@@ -173,7 +178,9 @@ export default {
         } else {
           var errorMessages = response.data.messages.join('\n')
           // TODO:inoue 不正な値などの場合のエラーメッセージです。いい感じに表示お願いします！
-          alert(errorMessages)
+          // alert(errorMessages)
+          var error = document.getElementById('error')
+          error.innerHTML = errorMessages
         }
       }, (error) => {
         console.log(error)
@@ -187,11 +194,23 @@ export default {
 
 <style lang='scss' scoped>
 @import '../assets/scss/custom.scss';
+
+#error{
+  &__txt{
+    background-color: #ffdada;
+    padding: 1rem;
+    border: 1px solid red;
+    color: red;
+    font-weight: bold;
+  }
+}
+
 .entry{
   margin-bottom: 10rem;
 }
 .entry-table {
   width: 100%;
+  margin-top: 2rem;
   &__supplement {
     font-size: 0.75rem;
     margin-left: 0.5rem;

@@ -8,7 +8,6 @@
   .title-common__body
     h1.title-common__main {{title.Ja}}
     span.title-common__sub {{title.En}}
-  //- script(src='https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js')
 </template>
 
 <script>
@@ -37,8 +36,8 @@ export default {
         case '/job':
           title = {En: 'job', Ja: '採用情報', Code: 'job'}
           return title
-        case '/entry/':
-          title = {En: 'Entry', Ja: 'エントリー', Code: '　'}
+        case '/entry':
+          title = {En: 'entry', Ja: 'エントリー', Code: 'entry'}
           return title
         case '/entry/completed':
           title = {En: 'Entry Completed', Ja: '応募完了', Code: 'EntryCompleted'}

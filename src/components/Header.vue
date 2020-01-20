@@ -19,7 +19,7 @@ header.header
     router-link.header__nav-item(to="/member" @click.native='clearCheck')
       span.header__nav-item--ja メンバー
       span.header__nav-item--en member
-    b-button(variant='aimred' to="/job" squared class='entry-button') ENTRY
+    b-button(variant='aimred' to="/job" squared class='entry-button' @click.native='clearCheck') ENTRY
 </template>
 
 <script>
