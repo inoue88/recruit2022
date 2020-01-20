@@ -17,7 +17,7 @@
             td
               b-row
                 b-col(lg='7')
-                  b-form-input(v-model='entry.name' required='required' placeholder='田中 太郎')
+                  b-form-input(v-model='entry.name' required='required' placeholder='田中    太郎')
           tr
             th
               |お名前
@@ -25,7 +25,7 @@
             td
               b-row
                 b-col(lg='7')
-                  b-form-input(v-model='entry.name_kana' required='required' placeholder='タナカタロウ')
+                  b-form-input(v-model='entry.name_kana' required='required' placeholder='タナカ    タロウ')
           tr
             th 性別
             td
@@ -170,19 +170,18 @@ export default {
       axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
       axios.post('/api/entries', { new_graduate: this.entry }).then((response) => {
         if (response.data.status === 'success') {
-          // TODO:inoue thanksページへ遷移。thanksページができたら以下のpathをthanksページに修正お願いします！
           this.$router.push({ path: '/entry/completed' })
         } else {
-          var errorMessages = response.data.messages.join('\n')
-          // TODO:inoue 不正な値などの場合のエラーメッセージです。いい感じに表示お願いします！
-          // alert(errorMessages)
-          var error = document.getElementById('error')
-          error.innerHTML = errorMessages
+          var errorMessages = response.data.messages.join('<br/>')
+          var invalidMassageTarget = document.getElementById('error')
+          invalidMassageTarget.style.display = 'block'
+          invalidMassageTarget.innerHTML = errorMessages
         }
       }, (error) => {
         console.log(error)
-        // TODO:inoue サーバー側の予期せぬエラー(500系)の場合です。装飾と文章の調整をお願いいたします
-        alert('申し訳ございません。エラーが発生しました。\n時間をおいて、再度お試しください。')
+        var errorMassageTarget = document.getElementById('error')
+        errorMassageTarget.style.display = 'block'
+        errorMassageTarget.innerHTML = '申し訳ございません。エラーが発生しました。時間をおいて、再度お試しください。'
       })
     }
   }
@@ -193,13 +192,12 @@ export default {
 @import '../assets/scss/custom.scss';
 
 #error{
-  &__txt{
-    background-color: #ffdada;
-    padding: 1rem;
-    border: 1px solid red;
-    color: red;
-    font-weight: bold;
-  }
+  background-color: #ffdada;
+  padding: 1rem;
+  border: 1px solid red;
+  color: red;
+  font-weight: bold;
+  display: none;
 }
 
 .entry{
