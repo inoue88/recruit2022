@@ -2,7 +2,7 @@
 .culture
   b-container
     .culture-head
-      .culture-head__title 「転職」のプロとして「天職」は自らが切り開く
+      .culture-head__title 「転職」のプロとして<br>「天職」は自らが切り開く
       .culture-head__text 私たちは、【社会に変革をもたらす】IT人材のキャリアビジョン実現をサポートするために自分の選択した【WILL＝キャリアビジョン】に向かって、【CAN＝できること】を拡大させ、アイムファクトリーの【MUST＝ミッション実現】できる人材を求めています。
     b-row.mb-4
       b-col(v-for='(n, index) in 3' v-bind:key='list.id' cols='12' lg='4')
@@ -14,7 +14,7 @@
   .div.culture-wrap
     b-container
       .culture-head
-        .culture-head__title 仕事を「引き受ける」のではなく「生み出す」人材へ
+        .culture-head__title 仕事を「引き受ける」のではなく<br>「生み出す」人材へ
         .culture-head__text スキルアップやキャリアアップのための様々な機会を創出するだけでなく、個々のポテンシャルと意欲を信じて任せる文化があります。新規事業プロジェクトや、チームリーダーにも新卒入社のメンバーが抜擢されています。
       b-row.mb-4
         b-col(v-for='(n, index) in 3' v-bind:key='list.id' cols='12' lg='4')
@@ -25,7 +25,7 @@
             )
   b-container
     .culture-head
-      .culture-head__title ライフイベントに左右されない環境で自己成長を続ける
+      .culture-head__title ライフイベントに左右されない環境で<br>自己成長を続ける
       .culture-head__text アイムファクトリーは、ライフが充実するからこそ、仕事でアウトプットの質も上がると考えます。出産・育児・介護などライフイベントを経ても、ビジネスパーソンとして成長できる職場環境を目指して様々な制度、イベントでバックアップしています。
     b-row.mb-4
       b-col(v-for='(n, index) in 3' v-bind:key='list.id' cols='12' lg='4')
@@ -65,7 +65,7 @@ export default {
     margin-bottom: 2rem;
     border-bottom: 1px solid #000;
     &__title{
-      font-size: 1.6rem;
+      font-size: 2rem;
       font-weight: bold;
       line-height: 1.5;
     }
