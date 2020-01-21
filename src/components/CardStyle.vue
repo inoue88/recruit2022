@@ -14,7 +14,7 @@ export default {
   props: ['title', 'txt', 'id'],
   methods: {
     imageUrl: function (id) {
-      return '/static/images/culture/image0' + id + '.jpg'
+      return '/static/images/style/image0' + id + '.jpg'
     }
   },
   mounted () {

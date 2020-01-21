@@ -18,6 +18,7 @@
         section.interview-content__section(v-for='(n,index) in 3')
           h3.interview-content__q(v-html="item.question[`${index}`]")
           .interview-content__a(v-html="item.answer[`${index}`]")
+      .bg-text 2021
   .interview-image01
     b-img(v-bind:src="`/static/images/member/0${ id }/image02.jpg`")
   b-container(v-if='item')
@@ -270,6 +271,7 @@ export default {
 .interview-footer{
   position: relative;
   overflow: visible;
+  z-index: 1;
   margin-bottom: 3rem;
   &__img{
     width: 160%;
@@ -382,4 +384,17 @@ export default {
   }
 }
 
+.container{
+  position: relative;
+}
+.bg-text{
+  position: fixed;
+  top: 0;
+  right: 0;
+  font-size: 40rem;
+  font-weight: bold;
+  opacity: .7;
+  z-index: -5;
+  color: lighten(#001377, 73%);
+}
 </style>
