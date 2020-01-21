@@ -28,7 +28,7 @@
           b-button(variant='primary' to="/culture" squared class='entry-button btn-sm') READ ME
     .section.section--spread(data-scroll)
       .section__bg
-        .section__img(:style="{ backgroundImage: 'url(/static/images/home/culture2.jpg)' }")
+        .section__img(:style="{ backgroundImage: 'url(/static/images/home/culture.jpg)' }")
         .section__img-blind
       .section__body
         span.section__sub-title STYLE

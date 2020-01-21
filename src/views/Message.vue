@@ -1,5 +1,18 @@
 <template lang='pug'>
 .message
+  .sec-message-intro
+    .sec-message-intro__body
+      p 今はクリック一つで仕事も選択できる時代です。
+      p では我々はなぜ存在しているのか。
+      p 我々の介在価値はどこにあるのか。
+      p これからキャリアはもっと自由になっていく。
+      p そんな世の中で我々は必要とされるサービスを常に生み出していきたい、そう考えています。
+      p 様々なキャリアを受容し、圧倒的な成長と共に変化していく仲間を求めています。
+    .sec-message-intro__text.sec-message-intro__text01
+    .sec-message-intro__text.sec-message-intro__text02
+    .sec-message-intro__text.sec-message-intro__text03
+    .sec-message-intro__text.sec-message-intro__text04
+    .sec-message-intro__text.sec-message-intro__text05
   b-container
     .sec-message
       .sec-message__body
@@ -28,15 +41,6 @@
         p.sec-message__txt 答えがないものを考えサービスを豊かにすることがイノベーティブでありキャリアだと思います。
       .sec-message__img-wrap
         .sec-message__img(:style="{ backgroundImage: 'url(/static/images/message/image03.jpg)' }")
-  .sec-message.sec-message--last(data-scroll)
-    b-container
-      .sec-message__body-center
-        p 今はクリック一つで仕事も選択できる時代です。
-        p では我々はなぜ存在しているのか。
-        p 我々の介在価値はどこにあるのか。
-        p これからキャリアはもっと自由になっていく。
-        p そんな世の中で我々は必要とされるサービスを常に生み出していきたい、そう考えています。
-        p 様々なキャリアを受容し、圧倒的な成長と共に変化していく仲間を求めています。
 </template>
 
 <script>
@@ -60,11 +64,24 @@ export default {
 @import '../assets/scss/custom.scss';
 @import url("https://fonts.googleapis.com/css?family=Sawarabi+Mincho");
 
-.container .sec-message:first-child{
-  margin-top: 4rem;
-  @include media-breakpoint-up(md) {
-    margin-top: 12rem;
+.sec-message-intro{
+  &__body{
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
   }
+  padding: 6rem 0 18rem;
+  @include media-breakpoint-up(lg) {
+    padding: 10rem 0 24rem;
+    &__body-center  {
+      margin: 0 auto;
+      width: 800px;
+    }
+  }
+  // margin-top: 4rem;
+  // @include media-breakpoint-up(md) {
+  //   margin-top: 12rem;
+  // }
 }
 
 .sec-message {
@@ -135,28 +152,28 @@ export default {
       left: 0;
     }
   }
-  &--last{
-    padding: 5rem 0;
-    background: #F0F1F7;
-    margin-bottom: -5rem !important;
-    p{
-      margin-bottom: 2rem;
-    }
-    &:before{
-      font-family: "Sawarabi Mincho";
-      position: absolute;
-      content: 'message';
-      text-align: center;
-      font-size: 5rem;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -60%);
-      transform: translate(-50%, -60%);
-      z-index: 0;
-      opacity: .8;
-      color: #fff;
-    }
-  }
+  // &--last{
+  //   padding: 5rem 0;
+  //   background: #F0F1F7;
+  //   margin-bottom: -5rem !important;
+  //   p{
+  //     margin-bottom: 2rem;
+  //   }
+  //   &:before{
+  //     font-family: "Sawarabi Mincho";
+  //     position: absolute;
+  //     content: 'message';
+  //     text-align: center;
+  //     font-size: 5rem;
+  //     top: 50%;
+  //     left: 50%;
+  //     -webkit-transform: translate(-50%, -60%);
+  //     transform: translate(-50%, -60%);
+  //     z-index: 0;
+  //     opacity: .8;
+  //     color: #fff;
+  //   }
+  // }
 
   @include media-breakpoint-up(lg) {
     margin-bottom: 12rem;
@@ -197,4 +214,59 @@ export default {
     }
   }
 }
+
+.sec-message-intro{
+  overflow: hidden;
+  position: relative;
+  z-index: -2;
+  &__text{
+    background-position: right center;
+    height: 140px;
+    width: 3600px;
+    position: absolute;
+    z-index: -1;
+  }
+  &__text01{
+    background: url(/static/images/message/text01.svg) repeat-x;
+    animation: slide1 60s linear infinite;
+    top: 0;
+  }
+  &__text02{
+    background: url(/static/images/message/text02.svg) repeat-x;
+    animation: slide2 60s linear infinite;
+    top: 140px;
+  }
+  &__text03{
+    background: url(/static/images/message/text03.svg) repeat-x;
+    animation: slide1 60s linear infinite;
+    top: 280px;
+  }
+  &__text04{
+    background: url(/static/images/message/text04.svg) repeat-x;
+    animation: slide2 60s linear infinite;
+    top: 420px;
+  }
+  &__text05{
+    background: url(/static/images/message/text05.svg) repeat-x;
+    animation: slide1 60s linear infinite;
+    top: 560px;
+  }
+}
+@keyframes slide1{
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  100%{
+    transform: translate3d(-1692px, 0, 0);
+  }
+}
+@keyframes slide2{
+  0%{
+    transform: translate3d(-1692px, 0, 0);
+  }
+  100%{
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 </style>

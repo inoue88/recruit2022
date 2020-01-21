@@ -42,13 +42,30 @@
       h3.text-center 会社概要
       table.culture-table.mt-5
         tr
-          th 社名
+          th 会社名
           td アイムファクトリー株式会社
+        tr
+          th 設立
+          td 2008年7月8日
+        tr
+          th 資本金
+          td 15,000,000円
         tr
           th 代表者
           td 久利可奈恵
         tr
-          th 本社所在地
+          th 事業内容
+          td
+            |IT/Webエンジニアやクリエイターなど世の中に新しい価値を提供する人材に特化したビジネスを展開しています<br>
+            |○プロジェクト就労支援事業（フリーランス）<br>
+            |○人材紹介事業（正社員/契約社員）<br>
+            |○IT/Webエンジニア向けのキャリア情報発信事業
+            br
+            a(href='https://www.engineer-factory.com/' target='_blank') エンジニアファクトリー
+            br
+            a(href='https://se-navi.jp/' target='_blank') 社内SE転職ナビ
+        tr
+          th 東京本社
           td
             |〒102-0083 東京都千代田区麹町3-2 麹町共同ビル3F
         tr
@@ -57,18 +74,6 @@
         tr
           th 田川サテライト
           td 〒825-0002 福岡県田川市大字伊田4869-1-A
-        tr
-          th 事業内容
-          td
-            | 人材紹介事業（正社員/契約社員）
-            br
-            | プロジェクト就労支援事業（フリーランス）
-            br
-            | IT/Webエンジニア向けのキャリア情報発信事業
-            br
-            a(href='https://www.engineer-factory.com/' target='_blank') エンジニアファクトリー
-            br
-            a(href='https://se-navi.jp/' target='_blank') 社内SE転職ナビ
 </template>
 
 <script>
