@@ -264,9 +264,9 @@ export default {
   }
 }
 .interview-image01[data-scroll="in"]{
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
 }
 .interview-footer{
   position: relative;

@@ -15,7 +15,7 @@ header.footer
       b-col
         img(src='/static/images/common/logo-landscape.svg' class='footer__logo')
         span RECRUIT 2021
-        span.footer__copy-right Copyright (C) 2018 aimfactory Inc.
+        span.footer__copy-right Copyright (C) 2020 aimfactory Inc.
 </template>
 
 <script>
