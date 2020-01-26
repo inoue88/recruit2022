@@ -34,7 +34,7 @@ export default {
           title = {En: 'member', Ja: 'メンバー', Code: 'member'}
           return title
         case '/job':
-          title = {En: 'job', Ja: '採用情報', Code: 'job'}
+          title = {En: 'Recruitment information', Ja: '採用情報', Code: 'job'}
           return title
         case '/entry':
           title = {En: 'entry', Ja: 'エントリー', Code: 'entry'}
