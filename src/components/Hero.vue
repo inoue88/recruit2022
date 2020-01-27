@@ -27,10 +27,10 @@
   &__contain{
     font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", "Noto Serif JP", serif;
     position: relative;
-    margin-top: 86%;
+    margin-top: 76%;
     margin-left: 1rem;
     z-index: 1;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: #fff;
     height: 200px;
     width: auto;
