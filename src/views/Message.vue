@@ -172,7 +172,7 @@ export default {
   &__text{
     background-position: right center;
     height: 100px;
-    width: 3600px;
+    width: 4800px;
     position: absolute;
     z-index: -1;
   }
