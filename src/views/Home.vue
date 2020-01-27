@@ -136,6 +136,7 @@ export default {
     }
   }
 }
+
 .VueCarousel{
   &-slide{
     position: relative;
@@ -183,6 +184,7 @@ export default {
   transform: translateY(50px);
   transition-duration: 4s;
 }
+
 .section-intro[data-scroll="in"]{
   transform: translateY(0);
   opacity: 1;
@@ -300,6 +302,12 @@ export default {
     &__action{
       text-align: left
     }
+  }
+}
+
+.home{
+  .container{
+    position: inherit;
   }
 }
 

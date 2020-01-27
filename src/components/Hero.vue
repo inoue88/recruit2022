@@ -84,7 +84,7 @@
   }
   @include media-breakpoint-up(lg) {
     &__contain{
-      margin-top: 30%;
+      margin-top: 26%;
     }
   }
 

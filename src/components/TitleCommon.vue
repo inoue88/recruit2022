@@ -67,12 +67,11 @@ export default {
   &__img img{
     opacity: 0.6;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: auto;
     min-width: 100%;
-    // min-height: 100%;
     max-width: inherit;
     background-attachment: fixed;
     animation: grow 60s linear 10ms infinite;
@@ -92,6 +91,10 @@ export default {
   @include media-breakpoint-up(lg) {
     &__body {
       top: 50%;
+    }
+    &__img img{
+      bottom: inherit;
+      top: 0;
     }
     margin-bottom: 5rem;
     & {

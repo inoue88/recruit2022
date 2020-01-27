@@ -7,8 +7,9 @@
       tr(v-for="(item, index) in EntryNum01" v-bind:key="item.id")
         th {{ item.th }}
         td(v-html="item.td")
-    .text-center.p-5.mb-5
+    .text-center.mb-5.mt-5
       b-button(size="lg" squared variant='aimred' to='/entry') ENTRY
+    div.p-5
 </template>
 
 <script>

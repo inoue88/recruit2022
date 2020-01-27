@@ -97,7 +97,8 @@ export default new Router({
         footer: Footer,
         title: TitleCommon,
         default: Job
-      }
+      },
+      meta: { title: '採用情報｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
     },
     {
       path: '/entry',
@@ -106,7 +107,8 @@ export default new Router({
         footer: Footer,
         title: TitleCommon,
         default: Entry
-      }
+      },
+      meta: { title: 'エントリー｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
     },
     {
       path: '/entry/completed',
@@ -115,7 +117,8 @@ export default new Router({
         footer: Footer,
         title: TitleCommon,
         default: EntryCompleted
-      }
+      },
+      meta: { title: '応募完了｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
     }
   ],
   scrollBehavior (to, from, savedPosition) {

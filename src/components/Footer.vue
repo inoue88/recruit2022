@@ -5,7 +5,7 @@ header.footer
       b-col
         b-nav.footer__nav
           b-nav-item(to="/message") MESSAGE
-          b-nav-item(to="/culture") CULTUIRE
+          b-nav-item(to="/culture") CULTURE
           b-nav-item(to="/style") STYLE
           b-nav-item(to="/member") MEMBER
         b-nav.footer__nav

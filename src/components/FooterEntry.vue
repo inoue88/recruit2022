@@ -7,7 +7,7 @@
       b-row(align-v="center")
         b-col(lg='9')
           h2.foot-entry__title 社会に変革をもたらす<br>ヒトと企業を加速する
-          p 私たちは、ミッションである「社会に変革をもたらすヒトと企業を加速する」を着実に実現してきました。<br>しかし、まだまだご支援したい企業・IT人材のため、実現したいサービス、チャレンジしたい事業があり、私たちの挑戦は続きます。<br>ともに挑戦し、アイムファクトリーの未来を創るトップリーダーとして活躍してください。
+          p.foot-entry__txt 私たちは、ミッションである「社会に変革をもたらすヒトと企業を加速する」を着実に実現してきました。<br>しかし、まだまだご支援したい企業・IT人材のため、実現したいサービス、チャレンジしたい事業があり、私たちの挑戦は続きます。<br>ともに挑戦し、アイムファクトリーの未来を創るトップリーダーとして活躍してください。
         b-col(lg='3')
           b-button(size="lg" variant='aimred' to="/job" squared) ENTRY
 </template>
@@ -26,7 +26,10 @@
     line-height: 1.4;
     margin-bottom: 1rem;
     font-weight: normal;
-    font-size: 2rem;
+    font-size:   1.8rem;
+  }
+  &__txt {
+    font-size: .9rem;
   }
   video {
     position: absolute;
@@ -56,6 +59,9 @@
     text-align: left;
     &__title {
       font-size: 3rem;
+    }
+    &__txt {
+      font-size: 1rem;
     }
   }
 }
