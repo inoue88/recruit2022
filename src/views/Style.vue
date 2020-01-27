@@ -60,37 +60,51 @@ export default {
 </script>
 
 <style lang='scss'>
-  .culture-head{
-    padding: 0 0 2rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #000;
-    &__title{
-      font-size: 2rem;
-      font-weight: bold;
-      line-height: 1.5;
+@import '../assets/scss/custom.scss';
+
+.culture-head{
+  padding: 0 0 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #000;
+  &__title{
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: .5em;
+    br{
+      display: none;
     }
   }
-  .culture-wrap{
-    position: relative;
-    padding: 5rem 0 1rem;
-    margin-bottom: 5rem;
-    &:after{
-      position: absolute;
-      top: 0;
-      left: 0;
-      content: "";
-      display: block;
-      height: 100%;
-      width: 0%;
-      background: #F0F1F7;
-      z-index: -1;
-      -webkit-transition: all 1s 100ms ease;
-      transition: all 1s 100ms ease;
-    }
-    &[data-scroll="in"]{
-      &:after{
-        width: 86%;
+  @include media-breakpoint-up(md) {
+    &__title{
+      font-size: 2rem;
+      br{
+        display: block;
       }
     }
   }
+}
+.culture-wrap{
+  position: relative;
+  padding: 5rem 0 1rem;
+  margin-bottom: 5rem;
+  &:after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #F0F1F7;
+    z-index: -1;
+    -webkit-transition: all 1s 100ms ease;
+    transition: all 1s 100ms ease;
+  }
+  &[data-scroll="in"]{
+    &:after{
+      width: 86%;
+    }
+  }
+}
 </style>

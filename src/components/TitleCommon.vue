@@ -81,7 +81,7 @@ export default {
     position: absolute;
     color: var(--white);
     width: 100%;
-    top: 50%;
+    top: 60%;
     text-align: center;
     z-index: 3;
   }
@@ -90,6 +90,9 @@ export default {
     font-weight: 600;
   }
   @include media-breakpoint-up(lg) {
+    &__body {
+      top: 50%;
+    }
     margin-bottom: 5rem;
     & {
       height: 25vw;

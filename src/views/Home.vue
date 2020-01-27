@@ -169,9 +169,14 @@ export default {
   padding: 5rem 0 3rem;
   &__title{
     line-height: 1.5em;
+    font-size: 1.5rem;
     margin-bottom: 1em;
   }
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
+    &__title{
+      font-size: 2rem;
+      line-height: 1.5em;
+    }
     padding: 6rem 4rem 12rem;
   }
   opacity: 0;

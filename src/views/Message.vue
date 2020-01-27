@@ -60,16 +60,27 @@ export default {
 <style lang='scss' scoped>
 @import '../assets/scss/custom.scss';
 
+.message{
+  .container{
+    overflow: hidden;
+  }
+}
 .sec-message-intro{
   &__body{
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: bold;
   }
-  padding: 6rem 1rem 10rem;
+  margin-bottom: 3rem;
+  padding: 6rem 1rem 8rem;
+  @include media-breakpoint-up(md) {
+    padding: 8rem 1rem 11rem;
+    margin-bottom: 6rem;
+  }
   @include media-breakpoint-up(lg) {
-    padding: 10rem 0 24rem;
+    padding: 8rem 0 12rem;
     &__body-center  {
+      font-size: 1.3rem;
       margin: 0 auto;
       width: 800px;
     }
@@ -102,7 +113,7 @@ export default {
   }
   &__img {
     width: 100%;
-    height: 240px;
+    padding-top: 60%;
     display: block;
     background-repeat: no-repeat;
     background-size: cover;
@@ -145,8 +156,8 @@ export default {
       margin-top: 2rem;
     }
     &__img {
-      width: 680px;
-      height: 400px;
+      width: 60%;
+      padding-top: 50%;
       position: absolute;
       right: 0;
       top: -3rem;
@@ -160,35 +171,40 @@ export default {
   z-index: -2;
   &__text{
     background-position: right center;
-    height: 140px;
+    height: 100px;
     width: 3600px;
     position: absolute;
     z-index: -1;
   }
   &__text01{
     background: url(/static/images/message/text01.svg) repeat-x;
+    background-size: contain;
     animation: slide1 60s linear infinite;
     top: 0;
   }
   &__text02{
     background: url(/static/images/message/text02.svg) repeat-x;
+    background-size: contain;
     animation: slide2 60s linear infinite;
-    top: 140px;
+    top: 100px;
   }
   &__text03{
     background: url(/static/images/message/text03.svg) repeat-x;
+    background-size: contain;
     animation: slide1 60s linear infinite;
-    top: 280px;
+    top: 200px;
   }
   &__text04{
     background: url(/static/images/message/text04.svg) repeat-x;
+    background-size: contain;
     animation: slide2 60s linear infinite;
-    top: 420px;
+    top: 300px;
   }
   &__text05{
     background: url(/static/images/message/text05.svg) repeat-x;
+    background-size: contain;
     animation: slide1 60s linear infinite;
-    top: 560px;
+    top: 400px;
   }
   @keyframes slide1{
     0%{

@@ -18,7 +18,6 @@
         section.interview-content__section(v-for='(n,index) in 3')
           h3.interview-content__q(v-html="item.question[`${index}`]")
           .interview-content__a(v-html="item.answer[`${index}`]")
-      .bg-text 2021
   .interview-image01
     b-img(v-bind:src="`/static/images/member/0${ id }/image02.jpg`")
   b-container(v-if='item')
@@ -94,7 +93,7 @@ export default {
 
 .title-interview {
   position: relative;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
   background: var(--primary);
   z-index: 2;
   height: 50vh;
@@ -138,7 +137,8 @@ export default {
     padding: 1.5rem;
   }
   &__name{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    margin-bottom: .25em;
   }
   &__dep{
     border: 1px solid white;
@@ -150,7 +150,7 @@ export default {
     font-weight: 600;
     font-size: 1.8rem;
     line-height: 1.4;
-    margin-bottom: 1.5rem;
+    margin-bottom: .5em;
     br{
       display: none;
     }
@@ -163,10 +163,13 @@ export default {
     &__body{
       padding-left: 40%;
     }
+    &__name{
+      font-size: 1.8rem;
+    }
     &__title{
       font-size: 2.4rem;
       font-weight: bold;
-      margin-bottom: 2rem;
+      margin-bottom: 1em;
       br{
         display: inline;
       }
@@ -248,7 +251,7 @@ export default {
   transition-duration: 2s;
   img{
     display: block;
-    width: 140%;
+    width: 100%;
     margin-left: auto;
     z-index: -1;
   }
@@ -296,7 +299,6 @@ export default {
     color: #fff;
     width: 100%;
     font-size: 0.8125rem;
-    // transform: translate(-5%,-0);
   }
   @include media-breakpoint-up(lg) {
     &__img{
@@ -339,6 +341,13 @@ export default {
   &__text05{
     background: url(/static/images/member/text05.svg) repeat-x;
     animation: slide1 60s linear infinite;
+  }
+}
+.interview--3 .title-interview__title,
+.interview--5 .title-interview__title,
+.interview--6 .title-interview__title{
+  @include media-breakpoint-down(md) {
+    font-size: 1.5rem;
   }
 }
 .interview{
@@ -386,15 +395,5 @@ export default {
 
 .container{
   position: relative;
-}
-.bg-text{
-  position: fixed;
-  top: 0;
-  right: 0;
-  font-size: 40rem;
-  font-weight: bold;
-  opacity: .7;
-  z-index: -5;
-  color: lighten(#001377, 73%);
 }
 </style>

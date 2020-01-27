@@ -138,12 +138,12 @@ export default {
       margin-bottom: 10rem;
       display: flex;
       #{$parent}__image {
-        width: 60%;
+        width: 56%;
         padding-top: 36%;
         margin-bottom: 0;
       }
       #{$parent}__title {
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin-bottom: 3rem;
       }
       #{$parent}__count {

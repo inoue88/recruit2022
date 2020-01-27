@@ -31,7 +31,6 @@
     margin-left: 1rem;
     z-index: 1;
     font-size: 1.4rem;
-    padding: 0 1rem;
     color: #fff;
     height: 200px;
     width: auto;
@@ -73,15 +72,19 @@
       }
     }
   }
-
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(md) {
     &__contain{
-      margin-top: 30%;
+      margin-top: 60%;
       font-size: 2.4rem;
       left: 5%;
       br{
         display: none;
       }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    &__contain{
+      margin-top: 30%;
     }
   }
 
@@ -134,8 +137,7 @@ video {
   z-index: 1;
   opacity: 0.6;
   @include media-breakpoint-up(lg) {
-    right: inherit;
-    left: 0;
+    right: 0;
   }
 }
 </style>

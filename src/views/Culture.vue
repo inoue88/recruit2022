@@ -35,8 +35,6 @@
       section.sec-message.sec-message--narrow
         .sec-message__body
           h2.sec-message__title 毎年約130%の売上げ拡大
-          p.sec-message__txt IT業界の変化に終わりはありません。<br>私たちも「変化することが前提」で、変化し続けるニーズに対して臨機応変に対応できなければ、<br>将来に渡る事業成長は見込めません。
-          p.sec-message__txt 私たちが目指すのは「変化を加速し、イノベーションを生み出せる人を増やす」こと。<br>だからこそ、私たち自身が大小さまざまな変化を楽しみながら挑戦していくことが必要です。
         img.sec-message__img-wide(src="/static/images/culture/image03.svg")
   section.culture-overview
     b-container
@@ -52,8 +50,13 @@
           th 資本金
           td 15,000,000円
         tr
-          th 代表取締役
-          td 久利可奈恵
+          th 役員
+          td
+            |<span class='mr-4'>代表取締役社長</span>久利可奈恵
+            br
+            |<span class='mr-4'>取締役</span>飯田陽二郎
+            br
+            |<span class='mr-4'>社外取締役</span>岡本和己
         tr
           th 事業内容
           td
@@ -99,11 +102,24 @@ export default {
 
 .worker{
   color: var(--primary);
-  margin-bottom: 2rem;
+  margin: 1rem 0 1rem;
+  line-height: 1.2;
   &__count{
     font-size: 4rem;
-    line-height: 1;
     font-weight: bold;
+    margin-bottom: .25em;
+  }
+  &__sub{
+    font-size: .85rem;
+  }
+  @include media-breakpoint-up(lg) {
+  margin-bottom: 3rem;
+    &__count{
+      font-size: 4rem;
+    }
+    &__sub{
+      font-size: 1.2rem;
+    }
   }
 }
 
@@ -144,7 +160,7 @@ export default {
 
 .sec-message {
   $parent: &;
-  margin-bottom: 8rem;
+  margin-bottom: 6rem;
   position: relative;
   &__body{
     opacity: 0;
@@ -156,7 +172,7 @@ export default {
     }
   }
   &__title {
-    font-size: 2.2rem;
+    font-size: 1.6rem;
     br{
       display: none;
     }
@@ -168,7 +184,7 @@ export default {
   }
   &__img {
     width: 100%;
-    height: 240px;
+    padding-top: 60%;
     display: block;
     background-repeat: no-repeat;
     background-size: cover;
@@ -209,7 +225,6 @@ export default {
       }
     }
   }
-
   @include media-breakpoint-up(lg) {
     margin-bottom: 16rem;
     margin-top: 10rem;
@@ -217,14 +232,15 @@ export default {
       width: 620px;
     }
     &__title {
+      font-size: 2.2rem;
       br{
         display: block;
       }
       margin-bottom: 2rem;
     }
     &__img {
-      width: 600px;
-      height: 400px;
+      width: 50%;
+      padding-top: 40%;
       position: absolute;
       right: 0;
       top: -3rem;
