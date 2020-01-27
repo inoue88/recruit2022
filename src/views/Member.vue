@@ -164,8 +164,8 @@ export default {
       padding-left: 40%;
     }
     &__title{
-      font-size: 3.2rem;
-      font-weight: normal;
+      font-size: 2.4rem;
+      font-weight: bold;
       margin-bottom: 2rem;
       br{
         display: inline;
@@ -304,7 +304,7 @@ export default {
       transform: translate(0,0);
     }
     &__discription{
-      width: 480px;
+      width: 420px;
       transform: translate(-5%,-100%);
     }
   }
@@ -343,13 +343,13 @@ export default {
 }
 .interview{
   @include media-breakpoint-up(lg) {
-    &--1,&--2,&--6{
+    &--1,&--2,&--3{
       .title-interview__body{
         padding-right: 40%;
         padding-left: 0;
       }
     }
-    &--1,&--2,&--5,&--6{
+    &--1,&--2,&--3,&--4,&--6{
       .interview-footer__discription{
         margin-left: auto;
         transform: translate(5%,-100%);

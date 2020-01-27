@@ -1,15 +1,15 @@
 <template lang="pug">
 .Hero
-  video(playsinline autoplay muted loop)
+  video(playsinline autoplay muted loop poster="/static/images/common/hero.jpg")
     source(src="/static/images/common/hero.mp4" type="video/mp4")
-    //- source(src="/static/images/common/footer-entry.webm" type="video/webm")
+    source(src="/static/images/common/hero.mp4.webm" type="video/webm")
   .Hero__contain
      .Hero__message.Hero__message-1
         span AIM FACTORY
         span RECRUIT 2021
      .Hero__message.Hero__message-2
         span 変革で世の中に影響を与え、
-        span テクノロジーと企業が作る未来を紡ぐ
+        span テクノロジーと企業が作る<br>未来を紡ぐ
 </template>
 
 <script>
@@ -26,13 +26,15 @@
   overflow: hidden;
   &__contain{
     font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", "Noto Serif JP", serif;
-    position: absolute;
+    position: relative;
+    margin-top: 86%;
+    margin-left: 1rem;
     z-index: 1;
-    font-size: 2.6rem;
-    top: 44%;
+    font-size: 1.4rem;
+    padding: 0 1rem;
     color: #fff;
-    margin: 0 auto;
-    width: 100%;
+    height: 200px;
+    width: auto;
   }
   &__message{
     position: absolute;
@@ -71,50 +73,57 @@
       }
     }
   }
-@keyframes titleAnimation-1 {
-    0% {
-      transform: translateY(-50px);
-      opacity: 0;
-      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
-      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
-  }
-  80% {
-       transform: translateY(0);
-       opacity: 1;
-      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
-      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
-  }
-  100% {
-       transform: translateY(50px);
-       opacity: 0;
-      -webkit-clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
-      clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
-  }
-}
 
-@keyframes titleAnimation-2 {
-    0% {
-      transform: translateY(-50px);
-      opacity: 0;
-      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
-      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
-  }
-  100% {
-       transform: translateY(0);
-       opacity: 1;
-      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
-      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
-  }
-}
   @include media-breakpoint-up(lg) {
     &__contain{
+      margin-top: 30%;
+      font-size: 2.4rem;
       left: 5%;
+      br{
+        display: none;
+      }
+    }
+  }
+
+  @keyframes titleAnimation-1 {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+    }
+    80% {
+      transform: translateY(0);
+      opacity: 1;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+    }
+    100% {
+      transform: translateY(50px);
+      opacity: 0;
+      -webkit-clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
+      clip-path: polygon(100% 0, 100% -0%, 0 100%, 0 100%);
+    }
+  }
+
+  @keyframes titleAnimation-2 {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 15%);
     }
   }
 }
 video {
   position: absolute;
-  left: 0;
+  right: -45%;
   top: 0;
   width: auto;
   height: auto;
@@ -124,5 +133,9 @@ video {
   z-index: -1;
   z-index: 1;
   opacity: 0.6;
+  @include media-breakpoint-up(lg) {
+    right: inherit;
+    left: 0;
+  }
 }
 </style>
