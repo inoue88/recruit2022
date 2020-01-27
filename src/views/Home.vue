@@ -278,7 +278,7 @@ export default {
         #{$parent}__bg{
         position: absolute;
         left: 0;
-        width: 100vw;
+        width: 100%;
         padding: 0;
         padding-top: 600px;
       }
