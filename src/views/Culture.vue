@@ -34,7 +34,7 @@
         .sec-message__img(:style="{ backgroundImage: 'url(/static/images/culture/image02.jpg)' }")
       section.sec-message.sec-message--narrow
         .sec-message__body
-          h2.sec-message__title 毎年約130%の売上げ拡大
+          h2.sec-message__title 毎年120%以上の売上げ拡大
         img.sec-message__img-wide(src="/static/images/culture/image03.svg")
   section.culture-overview
     b-container
@@ -52,22 +52,24 @@
         tr
           th 役員
           td
-            |<span class='mr-4'>代表取締役社長</span>久利可奈恵
+            |<span class='mr-4'>代表取締役社長</span>久利 可奈恵
             br
-            |<span class='mr-4'>取締役</span>飯田陽二郎
+            |<span class='mr-4'>　　　　取締役</span>飯田 陽二郎
             br
-            |<span class='mr-4'>社外取締役</span>岡本和己
+            |<span class='mr-4'>　　社外取締役</span>岡本 和己
         tr
           th 事業内容
           td
-            |IT/Webエンジニアやクリエイターなど世の中に新しい価値を提供する人材に特化したビジネスを展開しています<br>
-            |○プロジェクト就労支援事業（フリーランス）<br>
+            |IT/Webエンジニアやクリエイターなど<br class='wb--rev'>世の中に新しい価値を提供する人材に特化したビジネスを展開<br>
+            |○プロジェクト就労支援事業<br class='wb'>（フリーランス）<br>
             |○人材紹介事業（正社員/契約社員）<br>
-            |○IT/Webエンジニア向けのキャリア情報発信事業
+            |○キャリア情報発信事業
             br
-            a(href='https://www.engineer-factory.com/' target='_blank') エンジニアファクトリー
+            a(href='https://www.engineer-factory.com/' target='_blank')
+              |　エンジニアファクトリー
             br
-            a(href='https://se-navi.jp/' target='_blank') 社内SE転職ナビ
+            a(href='https://se-navi.jp/' target='_blank')
+              |　エンジニアファクトリー
         tr
           th 東京本社
           td
@@ -118,7 +120,7 @@ export default {
       font-size: 4rem;
     }
     &__sub{
-      font-size: 1.2rem;
+      font-size: .85rem;
     }
   }
 }
@@ -138,6 +140,9 @@ export default {
     margin-top: 1rem;
     padding-bottom: 0;
   }
+  .wb--rev{
+    display: none;
+  }
   @include media-breakpoint-up(lg) {
     th,
     td {
@@ -146,6 +151,12 @@ export default {
     }
     th {
       width: 12rem;
+    }
+    .wb{
+      display: none;
+    }
+    .wb--rev{
+      display: block;
     }
   }
 }

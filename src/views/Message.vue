@@ -2,7 +2,7 @@
 .message
   .sec-message-intro
     .sec-message-intro__body
-      p 今はクリック一つで仕事も選択できる時代です。
+      p 今はクリック一つで仕事も選択できる時代。
       p では我々はなぜ存在しているのか。
       p 我々の介在価値はどこにあるのか。
       p これからキャリアはもっと自由になっていく。
@@ -25,21 +25,21 @@
     section.sec-message.sec-message--rev
       .sec-message__body
         h2.sec-message__title 卒業と起業
-        p.sec-message__txt 出産などのライフイベントが重なり自身のバランスと時間を確保する為にその会社を卒業しましたが今なら様々な働き方がありますので辞めていなかったかもしれません。
-        p.sec-message__txt そして当時はリーマンショックが起こったまさにその時だったので、多くの組織が崩壊し色々な人が職を失っていくのをみました。「安定」とは何か、「キャリア」とはどうあるべきなのか。
+        p.sec-message__txt 出産などのライフイベントが重なり自身のバランスと時間を確保する為に、その会社を卒業しました。しかし今なら様々な働き方がありますので、辞めていなかったかもしれません。
+        p.sec-message__txt そして当時はリーマンショックが起こったまさにその時だったので、多くの組織が崩壊し色々な人が職を失っていくのを見ました。「安定」とは何か、「キャリア」とはどうあるべきなのか。
         p.sec-message__txt 世の中を通し、感じ、見て、じっくり考えることができたのは幸運でもありました。
-        p.sec-message__txt 新しい価値観が生れ、また大きく変わっていくであろう節目にマンションの一室を借りて、スタートしたのがアイムファクトリーです。
+        p.sec-message__txt 新しい価値観が生れまた大きく変わっていくであろう節目に、マンションの一室を借りてスタートしたのがアイムファクトリーです。
       .sec-message__img(:style="{ backgroundImage: 'url(/static/images/message/image02.jpg)' }")
     section.sec-message
       .sec-message__body
         h2.sec-message__title アイムファクトリーという<br>会社でのやりがい
         p.sec-message__txt 私たちの仕事は「IT×人材」の領域にあります。
-        p.sec-message__txt IT業界には「世の中はもっと便利になる」イノベーションを起こし熱意と技術を持って臨んでいる人々がたくさんいます。私たちはその企業と人、そして世の中の点と線を繋げる仕事です。
-        p.sec-message__txt ITエンジニアは技術と経験さえあれば、年齢も性別も問いません。<br >働き方もキャリアも多様化しています。転職回数が多いのは悪いことですか。正社員が安定？非正規はネガティブでしょうか。正解はつねに変化しています。
+        p.sec-message__txt IT業界には「世の中はもっと便利になる」。イノベーションを起こし熱意と技術を持って臨んでいる人々がたくさんいます。私たちの仕事はその企業と人、そして世の中の点と線を繋げる事です。
+        p.sec-message__txt ITエンジニアは技術と経験さえあれば、年齢も性別も問いません。<br >働き方もキャリアも多様化しています。転職回数が多いのは悪いことですか？正社員が安定？非正規はネガティブでしょうか？正解はつねに変化しています。
         p.sec-message__txt 答えがないものを考えサービスを豊かにすることがイノベーティブでありキャリアだと思います。
       .sec-message__img(:style="{ backgroundImage: 'url(/static/images/message/image03.jpg)' }")
 </template>
-
+ｘ
 <script>
 import ScrollOut from 'scroll-out'
 export default {

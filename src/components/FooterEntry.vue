@@ -19,7 +19,6 @@
   overflow: hidden;
   padding: 6rem 0;
   color: #fff;
-  text-align: center;
   margin-top: 5rem;
   background: var(--primary);
   &__title {
@@ -30,6 +29,9 @@
   }
   &__txt {
     font-size: .9rem;
+  }
+  .col-lg-3{
+    text-align: center
   }
   video {
     position: absolute;

@@ -4,8 +4,8 @@
   b-container
     .section-intro
       h2.section-intro__title 社会に変革をもたらす<br>ヒトと企業を加速する
-      p アイムファクトリー株式会社は世の中に新しい価値を提供する【IT人材】に特化したビジネスを展開しています。
-      p 変化が早いIT業界だから湧いてくる好奇心。大企業への経営戦略支援、柔軟な思考と対応力を誇る私たちのベンチャースピリッツが次に目指すものは、IT人材サービスのフルラインナップ化と全国展開です。
+      p アイムファクトリー株式会社は世の中に新しい価値を提供する<br class='wb'>【IT人材】に特化したビジネスを展開しています。
+      p 変化が早いIT業界だから湧いてくる好奇心。<br>柔軟な思考と対応力を誇り、常に進化し続けるそれがアイムファクトリーです。
     .section.section--rev(data-scroll)
       .section__bg
         .section__img(:style="{ backgroundImage: 'url(/static/images/home/message.jpg)' }")
@@ -13,7 +13,7 @@
       .section__body
         span.section__sub-title message
         h2.section__title 代表メッセージ
-        p.small 次々に進化を続けるIT業界の変革スピード。IT人材-企業の間に、私たちアイムファクトリーが存在する価値とは。アイムファクトリー代表久利からのメッセージ。
+        p.small 次々に進化を続けるIT業界の変革スピード。IT人材と企業の間に、私たちアイムファクトリーが存在する価値とは。アイムファクトリー代表久利からのメッセージ。
         .section__action
           b-button(variant='primary' to="/message" squared class='entry-button btn-sm') READ ME
     .section
@@ -43,7 +43,7 @@
       .section__body
         span.section__sub-title MEMBER
         h2.section__title メンバー
-        p.small 次々に進化を続けるIT業界の変革スピード。IT人材-企業の間に、私たちアイムファクトリーが存在する価値とは。アイムファクトリー代表久利からのメッセージ。
+        p.small 次々に進化を続けるIT業界の変革スピード。IT人材と企業の間に、私たちアイムファクトリーが存在する価値とは。アイムファクトリー代表久利からのメッセージ。
         .section__action
           b-button(variant='primary' to="/message" squared class='entry-button btn-sm') READ ME
 </template>
@@ -173,7 +173,14 @@ export default {
     font-size: 1.5rem;
     margin-bottom: 1em;
   }
+  .wb{
+    display: none;
+  }
   @include media-breakpoint-up(lg) {
+    .wb{
+      display: block;
+    }
+
     &__title{
       font-size: 2rem;
       line-height: 1.5em;
