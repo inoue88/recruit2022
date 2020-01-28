@@ -52,11 +52,11 @@
         tr
           th 役員
           td
-            |<span class='mr-4'>代表取締役社長</span>久利 可奈恵
+            |<span class='culture-table__officer1'>代表取締役社長</span>久利 可奈恵
             br
-            |<span class='mr-4'>　　　　取締役</span>飯田 陽二郎
+            |<span class='culture-table__officer2'>取締役</span>飯田 陽二郎
             br
-            |<span class='mr-4'>　　社外取締役</span>岡本 和己
+            |<span class='culture-table__officer3'>社外取締役</span>岡本 和己
         tr
           th 事業内容
           td
@@ -65,11 +65,11 @@
             |○人材紹介事業（正社員/契約社員）<br>
             |○キャリア情報発信事業
             br
-            a(href='https://www.engineer-factory.com/' target='_blank')
-              |　エンジニアファクトリー
+            a(href='https://www.engineer-factory.com/' target='_blank' class='pl-3')
+              |エンジニアファクトリー
             br
-            a(href='https://se-navi.jp/' target='_blank')
-              |　エンジニアファクトリー
+            a(href='https://se-navi.jp/' target='_blank' class='pl-3')
+              |エンジニアファクトリー
         tr
           th 東京本社
           td
@@ -142,6 +142,15 @@ export default {
   }
   .wb--rev{
     display: none;
+  }
+  .culture-table__officer1{
+    padding-right: 2rem;
+  }
+  .culture-table__officer2{
+    padding: 0 2em 0 4em;
+  }
+  .culture-table__officer3{
+    padding: 0 2em 0 2em;
   }
   @include media-breakpoint-up(lg) {
     th,
