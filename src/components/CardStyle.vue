@@ -43,7 +43,6 @@ export default {
     position: relative;
   }
   &__ttl {
-    font-family: Lato;
     font-weight: bold;
     line-height: 1.5;
     font-size: 1.4rem;
