@@ -175,6 +175,7 @@ export default {
     post_entry: function () {
       axios.defaults.headers.common['Accept'] = 'application/json'
       axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+      axios.defaults.baseURL = process.env.CORP_URL
       axios.post('/api/entries', { new_graduate: this.entry }).then((response) => {
         if (response.data.status === 'success') {
           this.$router.push({ path: '/entry/completed' })
