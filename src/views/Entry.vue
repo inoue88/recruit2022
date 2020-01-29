@@ -219,7 +219,7 @@ export default {
   background-color: #ffdada;
   padding: 1rem;
   border: 1px solid red;
-  color: #fff;
+  color: red;
   font-weight: bold;
   display: none;
 }
