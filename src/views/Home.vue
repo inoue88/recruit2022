@@ -43,9 +43,9 @@
       .section__body
         span.section__sub-title MEMBER
         h2.section__title メンバー
-        p.small 次々に進化を続けるIT業界の変革スピード。IT人材と企業の間に、私たちアイムファクトリーが存在する価値とは。アイムファクトリー代表久利からのメッセージ。
+        p.small [社会に変革をもたらすヒトと企業を加速する]が企業ミッション。「常に考え、行動する」メンバーのアイムファクトリーに出逢った時の印象や、アイムファクトリの魅力、そしてこれからの目標を語ってもらいました。
         .section__action
-          b-button(variant='primary' to="/message" squared class='entry-button btn-sm') READ ME
+          b-button(variant='primary' to="/member" squared class='entry-button btn-sm') READ ME
 </template>
 
 <script>
