@@ -57,7 +57,7 @@
             td
               b-row
                 b-col(lg='7')
-                  b-form-input(v-model='entry.zip' required='required')
+                  b-form-input(v-model='entry.zip' placeholder='※「-（ハイフン）」なし半角数字' required='required')
           tr
             th 住所
             td
