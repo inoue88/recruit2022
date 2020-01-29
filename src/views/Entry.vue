@@ -2,44 +2,48 @@
   .entry
     #entry__message
     b-container.container-small
-      p.mb-4 必要項目を入力後、確認画面が表示されます。<br>内容に間違いがなければ、ページ最下部の確認ボタンを押して下さい。
+      p.mb-4 以下の応募フォームを入力ください。
       div#error
       <form @submit.prevent="post_entry">
         table.entry-table
           tr
-            th 応募職種
+            th
+              span.required 応募職種
             td
               b-form-select(v-model='entry.entry_type' :options='optJob' required='required')
           tr
             th
-              |お名前
-              span.entry-table__supplement (漢字)
+              span.required お名前
+                span.entry-table__supplement (漢字)
             td
               b-row
                 b-col(lg='7')
                   b-form-input(v-model='entry.name' required='required' placeholder='田中    太郎')
           tr
             th
-              |お名前
-              span.entry-table__supplement (フリガナ)
+              span.required お名前
+                span.entry-table__supplement  (フリガナ)
             td
               b-row
                 b-col(lg='7')
                   b-form-input(v-model='entry.name_kana' required='required' placeholder='タナカ    タロウ')
           tr
-            th 性別
+            th
+              span.required 性別
             td
               b-row
                 b-col(lg='3')
                   b-form-select(v-model='entry.gender' required='required' :options='gender')
           tr
-            th 生年月日
+            th
+              span.required 生年月日
             td
               b-row.cell-space(no-gutters)
                 b-col(lg='3')
                   b-form-input(v-model='entry.birth' placeholder='2000' type='date' required='required')
           tr
-            th メールアドレス
+            th
+              span.required メールアドレス
             td
               b-row
                 b-col.mb-1(lg='7')
@@ -47,22 +51,25 @@
                 b-col(lg='7')
                   b-form-input(v-model='entry.email_confirmation' type='email' placeholder='確認のためもう一度ご入力ください' required='required')
           tr
-            th 電話番号
-            td
-              b-row
-                b-col(lg='9')
-                  b-form-input(v-model='entry.tel1' placeholder='※「-（ハイフン）」なし半角数字' required='required')
-          tr
-            th 郵便番号
+            th
+              span.required 電話番号
             td
               b-row
                 b-col(lg='7')
+                  b-form-input(v-model='entry.tel1' placeholder='※「-（ハイフン）」なし半角数字' required='required')
+          tr
+            th
+              span.required 郵便番号
+            td
+              b-row
+                b-col(lg='5')
                   b-form-input(v-model='entry.zip' placeholder='※「-（ハイフン）」なし半角数字' required='required')
           tr
-            th 住所
+            th
+              span.required 住所
             td
               b-row.mb-1
-                b-col(lg='3')
+                b-col(lg='5')
                   b-form-select(v-model='entry.prefecture_id' :options='prefecture_id' required='required')
               b-row.mb-1
                 b-col(lg='11')
@@ -212,13 +219,25 @@ export default {
   background-color: #ffdada;
   padding: 1rem;
   border: 1px solid red;
-  color: red;
+  color: #fff;
   font-weight: bold;
   display: none;
 }
-
 .entry{
   margin-bottom: 10rem;
+}
+.required{
+  position: relative;
+  &:before{
+    color: #f00;
+    padding: 0 .5rem;
+    border-radius: .4em;
+    position: absolute;
+    content: '必須';
+    font-size: 10px;
+    top: -1rem;
+    left: -.5rem;
+  }
 }
 .entry-table {
   width: 100%;
