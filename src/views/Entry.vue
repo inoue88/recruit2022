@@ -73,7 +73,10 @@
             |個人情報の取り扱い
           |についてをよくお読み下さい。
         .text-center.mb-5
-          b-button(size='lg' type="submit" squared variant='aimred') 個人情報の取扱に同意して応募
+          b-button(size='lg' type="submit" squared variant='aimred' v-show="!show") 個人情報の取扱に同意して応募
+          .load-container(v-show="show")
+            .loader
+            | 通信中...
       </form>
 </template>
 
@@ -90,6 +93,7 @@ export default {
   name: 'Entry',
   data () {
     return {
+      show: false,
       entry: {
         entry_type: null,
         gender: null,
@@ -173,6 +177,8 @@ export default {
   },
   methods: {
     post_entry: function () {
+      var self = this
+      this.show = true
       axios.defaults.headers.common['Accept'] = 'application/json'
       axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
       axios.defaults.baseURL = process.env.CORP_URL
@@ -191,6 +197,8 @@ export default {
           errorMassageTarget,
           '申し訳ございません。エラーが発生しました。時間をおいて、再度お試しください。'
         )
+      }).then(function () {
+        self.show = false
       })
     }
   }
@@ -254,5 +262,74 @@ export default {
     margin-bottom: .3rem;
   }
 }
-
+.load-container {
+    width: 5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loader {
+  font-size: 10px;
+  margin: 0;
+  text-indent: -9999em;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: #000000;
+  background: -moz-linear-gradient(left, #000000 10%, rgba(0,0,0, 0) 42%);
+  background: -webkit-linear-gradient(left, #000000 10%, rgba(0,0,0, 0) 42%);
+  background: -o-linear-gradient(left, #000000 10%, rgba(0,0,0, 0) 42%);
+  background: -ms-linear-gradient(left, #000000 10%, rgba(0,0,0, 0) 42%);
+  background: linear-gradient(to right, #000000 10%, rgba(0,0,0, 0) 42%);
+  position: relative;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.loader:before {
+  width: 50%;
+  height: 50%;
+  background: #000000;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+.loader:after {
+  background: #ffffff;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
 </style>
