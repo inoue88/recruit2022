@@ -65,10 +65,10 @@
             |○人材紹介事業（正社員/契約社員）<br>
             |○キャリア情報発信事業
             br
-            a(href='https://www.engineer-factory.com/' target='_blank' class='pl-3')
-              |エンジニアファクトリー
-            br
             a(href='https://se-navi.jp/' target='_blank' class='pl-3')
+              |社内SE転職ナビ
+            br
+            a(href='https://www.engineer-factory.com/' target='_blank' class='pl-3')
               |エンジニアファクトリー
         tr
           th 東京本社
