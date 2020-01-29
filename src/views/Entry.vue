@@ -211,7 +211,7 @@ export default {
   background-color: #ffdada;
   padding: 1rem;
   border: 1px solid red;
-  color: red;
+  color: #fff;
   font-weight: bold;
   display: none;
 }
@@ -221,11 +221,13 @@ export default {
 .required{
   position: relative;
   &:before{
-    color: red;
+    color: #f00;
+    padding: 0 .5rem;
+    border-radius: .4em;
     position: absolute;
-    content: '※';
+    content: '必須';
     font-size: 10px;
-    top: -.5rem;
+    top: -1rem;
     left: -.5rem;
   }
 }
