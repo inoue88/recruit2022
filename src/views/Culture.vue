@@ -56,7 +56,7 @@
             br
             |<span class='culture-table__officer2'>取締役</span>飯田 陽二郎
             br
-            |<span class='culture-table__officer3'>社外取締役</span>岡本 和己
+            |<span class='culture-table__officer3'>社外取締役</span>岡本 和巳
         tr
           th 事業内容
           td
