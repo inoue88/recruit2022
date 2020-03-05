@@ -54,8 +54,6 @@
           td
             |<span class='culture-table__officer1'>代表取締役社長</span>久利 可奈恵
             br
-            |<span class='culture-table__officer2'>取締役</span>飯田 陽二郎
-            br
             |<span class='culture-table__officer3'>社外取締役</span>岡本 和巳
         tr
           th 事業内容
