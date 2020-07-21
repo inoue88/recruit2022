@@ -1,15 +1,17 @@
 <template lang='pug'>
 .job
   b-container.container-small
+    .text-center.mb-5.mt-5.entry-close
+      |21新卒採用は終了いたしました。
+      br
+      |今年度も多数のご応募ありがとうございました。
     .mb-5
       h1.h2 募集要項
     table.job-table
       tr(v-for="(item, index) in EntryNum01" v-bind:key="item.id")
         th {{ item.th }}
         td(v-html="item.td")
-    .text-center.mb-5.mt-5
-      b-button(size="lg" squared variant='aimred' to='/entry') ENTRY
-    div.p-5
+  .p-5
 </template>
 
 <script>
@@ -57,6 +59,16 @@ export default {
 
 <style lang='scss' scoped>
 @import '../assets/scss/custom.scss';
+.entry-close{
+  font-size: 1.2rem;
+  border: 3px solid #ff8c8c;
+  padding: 2rem;
+  background: #ffe5e5;
+  color: #333;
+  margin: 0 auto 3rem;
+  max-width: 980px;
+}
+
 .job-table {
   width: 100%;
   tr {

@@ -13,8 +13,6 @@ import Style from '@/views/Style'
 import MemberList from '@/views/MemberList'
 import Member from '@/views/Member'
 import Job from '@/views/Job'
-import Entry from '@/views/Entry'
-import EntryCompleted from '@/views/EntryCompleted'
 Vue.use(Router)
 
 export default new Router({
@@ -99,26 +97,6 @@ export default new Router({
         default: Job
       },
       meta: { title: '採用情報｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
-    },
-    {
-      path: '/entry',
-      components: {
-        header: Header,
-        footer: Footer,
-        title: TitleCommon,
-        default: Entry
-      },
-      meta: { title: 'エントリー｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
-    },
-    {
-      path: '/entry/completed',
-      components: {
-        header: Header,
-        footer: Footer,
-        title: TitleCommon,
-        default: EntryCompleted
-      },
-      meta: { title: '応募完了｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
     }
   ],
   scrollBehavior (to, from, savedPosition) {
