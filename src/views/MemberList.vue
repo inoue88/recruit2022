@@ -26,7 +26,7 @@
       )
   .interview-wrap
     b-container
-      CardMember(v-for='(n, index) in 2'
+      CardMember(v-for='(n, index) in 1'
         :name='`${ list[index + 4].name }`'
         :nameEn='`${ list[index + 4].nameEn }`'
         :yearEntry='`${ list[index + 4].yearEntry }`'
