@@ -177,31 +177,31 @@ export default {
     z-index: -1;
   }
   &__text01{
-    background: url(./static/images/message/text01.svg) repeat-x;
+    background: url(/static/images/message/text01.svg) repeat-x;
     background-size: contain;
     animation: slide1 60s linear infinite;
     top: 0;
   }
   &__text02{
-    background: url(./static/images/message/text02.svg) repeat-x;
+    background: url(/static/images/message/text02.svg) repeat-x;
     background-size: contain;
     animation: slide2 60s linear infinite;
     top: 100px;
   }
   &__text03{
-    background: url(./static/images/message/text03.svg) repeat-x;
+    background: url(/static/images/message/text03.svg) repeat-x;
     background-size: contain;
     animation: slide1 60s linear infinite;
     top: 200px;
   }
   &__text04{
-    background: url(./static/images/message/text04.svg) repeat-x;
+    background: url(/static/images/message/text04.svg) repeat-x;
     background-size: contain;
     animation: slide2 60s linear infinite;
     top: 300px;
   }
   &__text05{
-    background: url(./static/images/message/text05.svg) repeat-x;
+    background: url(/static/images/message/text05.svg) repeat-x;
     background-size: contain;
     animation: slide1 60s linear infinite;
     top: 400px;

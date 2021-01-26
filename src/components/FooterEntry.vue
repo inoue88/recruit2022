@@ -1,8 +1,8 @@
 <template lang="pug">
   .foot-entry
     video(playsinline autoplay muted loop)
-      source(src="./static/images/common/footer-entry.mp4" type="video/mp4")
-      source(src="./static/images/common/footer-entry.webm" type="video/webm")
+      source(src="/static/images/common/footer-entry.mp4" type="video/mp4")
+      source(src="/static/images/common/footer-entry.webm" type="video/webm")
     b-container
       b-row(align-v="center")
         b-col(lg='9')

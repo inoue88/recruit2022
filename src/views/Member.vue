@@ -323,23 +323,23 @@ export default {
     width: 3600px;
   }
   &__text01{
-    background: url(./static/images/member/text01.svg) repeat-x;
+    background: url("/static/images/member/text01.svg") repeat-x;
     animation: slide1 60s linear infinite;
   }
   &__text02{
-    background: url(./static/images/member/text02.svg) repeat-x;
+    background: url("/static/images/member/text02.svg") repeat-x;
     animation: slide2 60s linear infinite;
   }
   &__text03{
-    background: url(./static/images/member/text03.svg) repeat-x;
+    background: url("/static/images/member/text03.svg") repeat-x;
     animation: slide1 60s linear infinite;
   }
   &__text04{
-    background: url(./static/images/member/text04.svg) repeat-x;
+    background: url("/static/images/member/text04.svg") repeat-x;
     animation: slide1 60s linear infinite;
   }
   &__text05{
-    background: url(./static/images/member/text05.svg) repeat-x;
+    background: url("/static/images/member/text05.svg") repeat-x;
     animation: slide1 60s linear infinite;
   }
 }
