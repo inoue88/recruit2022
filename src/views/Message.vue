@@ -21,7 +21,7 @@
         p.sec-message__txt 何もかも自分で考えながらやっていかなければならない状況の中、ビジネスの本質も理解できていなかったので毎日が試行錯誤の連続でした。
         p.sec-message__txt しかし私としては給与をもらいながらトライアンドエラーを繰り返していける環境というのは非常に魅力的で不満は一切ありませんでした。顧客の声を聴き世の中のニーズを理解し最適解を見つける。一つひとつの体験を幅広く積み上げていけたのはベンチャーならではだったと思います。
         p.sec-message__txt 会社も自分の成長と歩調を合わせるように大きくなっていったので、とてもやりがいを感じビジネスの醍醐味を経験できました。
-      .sec-message__img(:style="{ backgroundImage: 'url(/static/images/message/image01.jpg)' }")
+      .sec-message__img(:style="{ backgroundImage: 'url(./static/images/message/image01.jpg)' }")
     section.sec-message.sec-message--rev
       .sec-message__body
         h2.sec-message__title 卒業と起業
@@ -29,7 +29,7 @@
         p.sec-message__txt そして当時はリーマンショックが起こったまさにその時だったので、多くの組織が崩壊し色々な人が職を失っていくのを見ました。「安定」とは何か、「キャリア」とはどうあるべきなのか。
         p.sec-message__txt 世の中を通し、感じ、見て、じっくり考えることができたのは幸運でもありました。
         p.sec-message__txt 新しい価値観が生れまた大きく変わっていくであろう節目に、マンションの一室を借りてスタートしたのがアイムファクトリーです。
-      .sec-message__img(:style="{ backgroundImage: 'url(/static/images/message/image02.jpg)' }")
+      .sec-message__img(:style="{ backgroundImage: 'url(./static/images/message/image02.jpg)' }")
     section.sec-message
       .sec-message__body
         h2.sec-message__title アイムファクトリーという<br>会社でのやりがい
@@ -37,7 +37,7 @@
         p.sec-message__txt IT業界には「世の中はもっと便利になる」。イノベーションを起こし熱意と技術を持って臨んでいる人々がたくさんいます。私たちの仕事はその企業と人、そして世の中の点と線を繋げる事です。
         p.sec-message__txt ITエンジニアは技術と経験さえあれば、年齢も性別も問いません。<br >働き方もキャリアも多様化しています。転職回数が多いのは悪いことですか？正社員が安定？非正規はネガティブでしょうか？正解はつねに変化しています。
         p.sec-message__txt 答えがないものから新しい価値観を見つける事でサービスは豊かになります。<br>様々なキャリアを受容し我々は常にイノベーティブで在り続けたいと考えています。
-      .sec-message__img(:style="{ backgroundImage: 'url(/static/images/message/image03.jpg)' }")
+      .sec-message__img(:style="{ backgroundImage: 'url(./static/images/message/image03.jpg)' }")
 </template>
 ｘ
 <script>
@@ -177,31 +177,31 @@ export default {
     z-index: -1;
   }
   &__text01{
-    background: url(/static/images/message/text01.svg) repeat-x;
+    background: url(./static/images/message/text01.svg) repeat-x;
     background-size: contain;
     animation: slide1 60s linear infinite;
     top: 0;
   }
   &__text02{
-    background: url(/static/images/message/text02.svg) repeat-x;
+    background: url(./static/images/message/text02.svg) repeat-x;
     background-size: contain;
     animation: slide2 60s linear infinite;
     top: 100px;
   }
   &__text03{
-    background: url(/static/images/message/text03.svg) repeat-x;
+    background: url(./static/images/message/text03.svg) repeat-x;
     background-size: contain;
     animation: slide1 60s linear infinite;
     top: 200px;
   }
   &__text04{
-    background: url(/static/images/message/text04.svg) repeat-x;
+    background: url(./static/images/message/text04.svg) repeat-x;
     background-size: contain;
     animation: slide2 60s linear infinite;
     top: 300px;
   }
   &__text05{
-    background: url(/static/images/message/text05.svg) repeat-x;
+    background: url(./static/images/message/text05.svg) repeat-x;
     background-size: contain;
     animation: slide1 60s linear infinite;
     top: 400px;

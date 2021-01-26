@@ -3,8 +3,8 @@
   .title-interview(v-if='item')
     .title-interview__wrap
       picture.title-interview__img
-        source(media="(min-width: 960px)" v-bind:srcset="'/static/images/member/0' + `${num}` + '/header--pc.jpg'")
-        source(media="(min-width: 320px)" v-bind:srcset="'/static/images/member/0' + `${num}` + '/header--sp.jpg'")
+        source(media="(min-width: 960px)" v-bind:srcset="'./static/images/member/0' + `${num}` + '/header--pc.jpg'")
+        source(media="(min-width: 320px)" v-bind:srcset="'./static/images/member/0' + `${num}` + '/header--sp.jpg'")
         img(src="images/picture_s.gif" alt="")
     b-container
       .title-interview__body
@@ -19,7 +19,7 @@
           h3.interview-content__q(v-html="item.question[`${index}`]")
           .interview-content__a(v-html="item.answer[`${index}`]")
   .interview-image01
-    b-img(v-bind:src="`/static/images/member/0${ id }/image02.jpg`")
+    b-img(v-bind:src="`./static/images/member/0${ id }/image02.jpg`")
   b-container(v-if='item')
     .interview-content.interview-content--rev
       section.interview-content__section(v-for='(n,index) in 3')
@@ -323,23 +323,23 @@ export default {
     width: 3600px;
   }
   &__text01{
-    background: url(/static/images/member/text01.svg) repeat-x;
+    background: url(./static/images/member/text01.svg) repeat-x;
     animation: slide1 60s linear infinite;
   }
   &__text02{
-    background: url(/static/images/member/text02.svg) repeat-x;
+    background: url(./static/images/member/text02.svg) repeat-x;
     animation: slide2 60s linear infinite;
   }
   &__text03{
-    background: url(/static/images/member/text03.svg) repeat-x;
+    background: url(./static/images/member/text03.svg) repeat-x;
     animation: slide1 60s linear infinite;
   }
   &__text04{
-    background: url(/static/images/member/text04.svg) repeat-x;
+    background: url(./static/images/member/text04.svg) repeat-x;
     animation: slide1 60s linear infinite;
   }
   &__text05{
-    background: url(/static/images/member/text05.svg) repeat-x;
+    background: url(./static/images/member/text05.svg) repeat-x;
     animation: slide1 60s linear infinite;
   }
 }

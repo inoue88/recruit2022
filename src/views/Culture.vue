@@ -8,7 +8,7 @@
           p.sec-message__txt IT業界の変化に終わりはありません。<br>私たちも「変化することが前提」で、変化し続けるニーズに対して臨機応変に対応できなければ、<br>将来に渡る事業成長は見込めません。
           p.sec-message__txt 私たちが目指すのは「変化を加速し、イノベーションを生み出せる人を増やす」こと。<br>だからこそ、私たち自身が大小さまざまな変化を楽しみながら挑戦していくことが必要です。
           p.sec-message__txt アイムファクトリーは、IT人材キャリア支援のプロとしてこの想いに共感し、<br>「常に考え、行動する」メンバーとともにミッションを実現していきたいと考えています。
-        .sec-message__img(:style="{ backgroundImage: 'url(/static/images/culture/image01.jpg)' }")
+        .sec-message__img(:style="{ backgroundImage: 'url(./static/images/culture/image01.jpg)' }")
       section.sec-message.sec-message--rev
         .sec-message__body
           h2.sec-message__title 働き方にとらわれず、<br>さまざまなスタッフが在籍
@@ -29,7 +29,7 @@
               .worker
                 .worker__count 7%
                 span.worker__title フリーランス
-        .sec-message__img(:style="{ backgroundImage: 'url(/static/images/culture/image02.jpg)' }")
+        .sec-message__img(:style="{ backgroundImage: 'url(./static/images/culture/image02.jpg)' }")
       //- section.sec-message.sec-message--narrow
       //-   .sec-message__body
       //-     h2.sec-message__title 毎年120%以上の売上げ拡大

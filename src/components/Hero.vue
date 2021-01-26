@@ -1,8 +1,8 @@
 <template lang="pug">
 .Hero
   video(playsinline autoplay muted loop poster="/static/images/common/hero.jpg")
-    source(src="/static/images/common/hero.mp4" type="video/mp4")
-    source(src="/static/images/common/hero.mp4.webm" type="video/webm")
+    source(src="./static/images/common/hero.mp4" type="video/mp4")
+    source(src="./static/images/common/hero.mp4.webm" type="video/webm")
   .Hero__contain
      .Hero__message.Hero__message-1
         span AIM FACTORY
