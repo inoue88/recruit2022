@@ -8,7 +8,7 @@
       p 変化が早いIT業界だから湧いてくる好奇心。<br>柔軟な思考と対応力を誇り、常に進化し続けるそれがアイムファクトリーです。
     .section.section--rev(data-scroll)
       .section__bg
-        .section__img(:style="{ backgroundImage: 'url(/static/images/home/message.jpg)' }")
+        .section__img(:style="{ backgroundImage: 'url(./static/images/home/message.jpg)' }")
         .section__img-blind
       .section__body
         span.section__sub-title message
@@ -18,7 +18,7 @@
           b-button(variant='primary' to="/message" squared class='entry-button btn-sm') READ ME
     .section
       .section__bg
-        .section__img(:style="{ backgroundImage: 'url(/static/images/home/about.jpg)' }")
+        .section__img(:style="{ backgroundImage: 'url(./static/images/home/about.jpg)' }")
         .section__img-blind
       .section__body
         span.section__sub-title CULTURE
@@ -28,7 +28,7 @@
           b-button(variant='primary' to="/culture" squared class='entry-button btn-sm') READ ME
     .section.section--spread(data-scroll)
       .section__bg
-        .section__img(:style="{ backgroundImage: 'url(/static/images/home/culture.jpg)' }")
+        .section__img(:style="{ backgroundImage: 'url(./static/images/home/culture.jpg)' }")
         .section__img-blind
       .section__body
         span.section__sub-title STYLE
@@ -38,7 +38,7 @@
           b-button(variant='primary' to="/style" squared class='entry-button btn-sm') READ ME
     .section.section--rev(data-scroll)
       .section__bg
-        .section__img(:style="{ backgroundImage: 'url(/static/images/home/member.jpg)' }")
+        .section__img(:style="{ backgroundImage: 'url(./static/images/home/member.jpg)' }")
         .section__img-blind
       .section__body
         span.section__sub-title MEMBER
