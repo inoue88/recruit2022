@@ -15,7 +15,7 @@ import Job from '@/views/Job'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   base: 'new_graduates',
   routes: [
     {
