@@ -15,27 +15,58 @@
           b-form-row
             b-col(cols="6")
               .worker
-                .worker__count 68%
-                span.worker__title 正社員
-                span.worker__sub （フル勤務）
+                .worker__count 80%
+                span.worker__title フルタイム勤務社員
             b-col(cols="6")
               .worker
-                .worker__count 13%
-                span.worker__title 正社員
-                span.worker__sub （時短/リモート/週3勤務）
+                .worker__count 4%
+                span.worker__title 時短勤務社員
             b-col(cols="6")
               .worker
-                .worker__count 8%
+                .worker__count 9%
                 span.worker__title インターン＆アルバイト
             b-col(cols="6")
               .worker
-                .worker__count 11%
+                .worker__count 7%
                 span.worker__title フリーランス
         .sec-message__img(:style="{ backgroundImage: 'url(/static/images/culture/image02.jpg)' }")
-      section.sec-message.sec-message--narrow
-        .sec-message__body
-          h2.sec-message__title 毎年120%以上の売上げ拡大
-        img.sec-message__img-wide(src="/static/images/culture/image03.svg")
+      //- section.sec-message.sec-message--narrow
+      //-   .sec-message__body
+      //-     h2.sec-message__title 毎年120%以上の売上げ拡大
+      //-   img.sec-message__img-wide(src="/static/images/culture/image03.svg")
+  section
+    .culture
+      b-container
+        b-row.mb-4
+          b-col(v-for='(n, index) in 3' v-bind:key='list.id' cols='12' lg='4')
+            CardStyle(
+              :title='`${list[index].title}`'
+              :txt='`${list[index].txt}`'
+              :id='`${n}`'
+              )
+      .div.culture-wrap
+        b-container
+          .culture-head
+            .culture-head__title 仕事を「引き受ける」のではなく<br>「生み出す」人材へ
+            .culture-head__text スキルアップやキャリアアップのための様々な機会を創出するだけでなく、個々のポテンシャルと意欲を信じて任せる文化があります。新規事業プロジェクトや、チームリーダーにも新卒入社のメンバーが抜擢されています。
+          b-row.mb-4
+            b-col(v-for='(n, index) in 3' v-bind:key='list.id' cols='12' lg='4')
+              CardStyle(
+                :title='`${list[index + 3].title}`'
+                :txt='`${list[index + 3].txt}`'
+                :id='`${n + 3}`'
+                )
+      b-container
+        .culture-head
+          .culture-head__title ライフイベントに左右されない環境で<br>自己成長を続ける
+          .culture-head__text アイムファクトリーは、ライフが充実するからこそ、仕事でアウトプットの質も上がると考えます。出産・育児・介護などライフイベントを経ても、ビジネスパーソンとして成長できる職場環境を目指して様々な制度、イベントでバックアップしています。
+        b-row.mb-4
+          b-col(v-for='(n, index) in 3' v-bind:key='list.id' cols='12' lg='4')
+            CardStyle(
+              :title='`${list[index + 6].title}`'
+              :txt='`${list[index + 6].txt}`'
+              :id='`${n + 6}`'
+              )
   section.culture-overview
     b-container
       h3.text-center 会社概要
@@ -81,9 +112,18 @@
 </template>
 
 <script>
+import CardStyle from '../components/CardStyle.vue'
+import culture from '@/api/culture.js'
 import ScrollOut from 'scroll-out'
+
 export default {
   name: 'Culture',
+  components: {
+    CardStyle
+  },
+  computed: {
+    list: () => culture.fetch()
+  },
   mounted () {
     ScrollOut({
       once: true,

@@ -9,7 +9,6 @@ import TitleCommon from '@/components/TitleCommon'
 import Home from '@/views/Home'
 import Culture from '@/views/Culture'
 import Message from '@/views/Message'
-import Style from '@/views/Style'
 import MemberList from '@/views/MemberList'
 import Member from '@/views/Member'
 import Job from '@/views/Job'
@@ -50,18 +49,7 @@ export default new Router({
         title: TitleCommon,
         default: Culture
       },
-      meta: { title: 'カルチャー ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
-    },
-    {
-      path: '/style',
-      components: {
-        header: Header,
-        footer: Footer,
-        footerEntry: FooterEntry,
-        title: TitleCommon,
-        default: Style
-      },
-      meta: { title: 'スタイル ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
+      meta: { title: 'アイムファクトリーについて ｜ アイムファクトリー株式会社 2021年新卒採用 ｜ アイムファクトリー株式会社', desc: '' }
     },
     {
       path: '/member',

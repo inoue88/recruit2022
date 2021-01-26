@@ -25,16 +25,13 @@ export default {
           title = {En: 'message', Ja: 'メッセージ', Code: 'message'}
           return title
         case '/culture':
-          title = {En: 'culture', Ja: 'カルチャー', Code: 'culture'}
-          return title
-        case '/style':
-          title = {En: 'style', Ja: 'スタイル', Code: 'style'}
+          title = {En: 'culture ＆ style', Ja: 'アイムファクトリーについて', Code: 'culture'}
           return title
         case '/member':
           title = {En: 'member', Ja: 'メンバー', Code: 'member'}
           return title
         case '/job':
-          title = {En: 'Recruitment information', Ja: '採用情報', Code: 'job'}
+          title = {En: 'recruitment information', Ja: '採用情報', Code: 'job'}
           return title
         case '/entry':
           title = {En: 'entry', Ja: 'エントリー', Code: 'entry'}
