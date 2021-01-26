@@ -59,7 +59,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../docs'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/recruit2022',
+    assetsPublicPath: '/recruit2022/static',
 
     /**
      * Source Maps
